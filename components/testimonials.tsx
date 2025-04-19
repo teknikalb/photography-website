@@ -4,6 +4,9 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import useEmblaCarousel from 'embla-carousel-react'
 import { Quote } from "lucide-react"
+import { FaStar } from 'react-icons/fa'
+import { FaGoogle, FaYelp } from 'react-icons/fa'
+import { SiTrustpilot } from 'react-icons/si'
 
 const testimonials = [
   {
@@ -84,6 +87,37 @@ export default function Testimonials() {
             ))}
           </div>
         </motion.div>
+
+        {/* Review Source Boxes */}
+        <div className="mt-8 flex flex-wrap justify-center gap-6">
+          <div className="flex flex-col items-center p-4 border border-gray-200 rounded-lg">
+            <FaGoogle className="text-3xl text-blue-600" />
+            <div className="flex items-center mt-2">
+              <span className="text-sm font-semibold mr-2">5/5</span>
+              {[...Array(5)].map((_, i) => (
+                <FaStar key={i} className="text-yellow-500" />
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col items-center p-4 border border-gray-200 rounded-lg">
+            <SiTrustpilot className="text-3xl text-green-500" />
+            <div className="flex items-center mt-2">
+              <span className="text-sm font-semibold mr-2">4.8/5</span>
+              {[...Array(5)].map((_, i) => (
+                <FaStar key={i} className={i < 4 ? "text-yellow-500" : "text-gray-300"} />
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col items-center p-4 border border-gray-200 rounded-lg">
+            <FaYelp className="text-3xl text-red-600" />
+            <div className="flex items-center mt-2">
+              <span className="text-sm font-semibold mr-2">4.5/5</span>
+              {[...Array(5)].map((_, i) => (
+                <FaStar key={i} className={i < 4 ? "text-yellow-500" : "text-gray-300"} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

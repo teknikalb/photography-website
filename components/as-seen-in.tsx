@@ -6,33 +6,14 @@ import { motion, useInView } from "framer-motion"
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
-const publications = [
-  {
-    name: "Style Me Pretty",
-    logo: "/logos/style-me-pretty.svg",
-    alt: "Style Me Pretty Logo"
-  },
-  {
-    name: "Martha Stewart Weddings",
-    logo: "/logos/martha-stewart-weddings.svg",
-    alt: "Martha Stewart Weddings Logo"
-  },
-  {
-    name: "Ruffled Blog",
-    logo: "/logos/ruffled.svg",
-    alt: "Ruffled Blog Logo"
-  },
-  {
-    name: "The Knot",
-    logo: "/logos/the-knot.svg",
-    alt: "The Knot Logo"
-  },
-  {
-    name: "Wedding Chicks",
-    logo: "/logos/wedding-chicks.svg",
-    alt: "Wedding Chicks Logo"
-  }
-]
+// Define sample logo images using placeholder URLs
+const asSeenInImages = [
+  { src: "/as-seen-in1.png", alt: "As Seen In Style Me Pretty" },
+  { src: "/as-seen-in2.png", alt: "As Seen In Image 2" },
+  { src: "/as-seen-in3.png", alt: "As Seen In Image 3" },
+  { src: "/as-seen-in4.png", alt: "As Seen In Image 4" },
+  { src: "/as-seen-in5.png", alt: "As Seen In Image 5" },
+];
 
 const carouselImages = [
   {
@@ -73,16 +54,6 @@ export default function AsSeenIn() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   
-  const [logoRef] = useEmblaCarousel(
-    { 
-      loop: true,
-      dragFree: true,
-      align: "start",
-      containScroll: "trimSnaps"
-    },
-    [Autoplay()]
-  )
-
   const [imageRef] = useEmblaCarousel(
     { 
       loop: true,
@@ -105,27 +76,22 @@ export default function AsSeenIn() {
             <h2 className="font-serif text-2xl font-light text-gray-800">As Seen In</h2>
           </motion.div>
 
-          <div className="mt-8 overflow-hidden" ref={logoRef}>
-            <div className="flex -ml-4">
-              {publications.map((pub, index) => (
-                <motion.div
-                  key={pub.name}
-                  className="flex-[0_0_50%] min-w-0 pl-4 sm:flex-[0_0_33.33%] md:flex-[0_0_25%] lg:flex-[0_0_20%]"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <div className="relative h-12 sm:h-16 grayscale transition-all duration-300 hover:grayscale-0">
-                    <Image
-                      src={pub.logo}
-                      alt={pub.alt}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-10 lg:gap-12">
+            {asSeenInImages.map((image, index) => (
+              <motion.div
+                key={index}
+                className="relative w-36 h-16 md:w-48 md:h-20 lg:w-56 lg:h-24"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-contain grayscale transition-all duration-300 hover:grayscale-0"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -144,6 +110,7 @@ export default function AsSeenIn() {
                   fill
                   className="object-cover rounded-lg"
                   sizes="15vw"
+                  unoptimized={true}
                 />
               </div>
             ))}

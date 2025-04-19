@@ -44,29 +44,31 @@ export default function ContactPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Hero Section */}
+      {/* Hero Section - Add Background Image Here */}
       <section className="relative h-[50vh] w-full overflow-hidden">
         <Image
-          src="/placeholder.svg?height=800&width=1920"
-          alt="Contact hero image"
+          src="https://images.unsplash.com/photo-1629646620956-0f4b37ee450d?q=80&w=1920&auto=format&fit=crop"
+          alt="Contact hero image - Desk with laptop"
           fill
           priority
-          className="object-cover brightness-[0.85]"
+          className="object-cover brightness-[0.6]"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl">Get in Touch</h1>
-          <p className="mt-6 max-w-md text-lg font-light md:max-w-lg md:text-xl">
-            Let's discuss your photography needs and create something beautiful together
-          </p>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+          <div className="bg-black/40 backdrop-blur-sm rounded-lg p-6 md:p-8 max-w-xl">
+            <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-white">Get in Touch</h1>
+            <p className="mt-4 text-lg font-light md:max-w-lg md:text-xl text-white">
+              Let's discuss your photography needs and create something beautiful together
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Contact Form Section - Remove Background Image */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container relative z-10 mx-auto px-4">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-            {/* Contact Information */}
-            <div className="md:col-span-1">
+            {/* Contact Information - Remove semi-transparent background */}
+            <div className="md:col-span-1 p-8 rounded-lg shadow-md border border-gray-200">
               <h2 className="font-serif text-2xl font-light text-gray-800">Contact Information</h2>
               <p className="mt-4 text-muted-foreground">
                 Feel free to reach out via phone or email, or use the contact form.
@@ -146,7 +148,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Contact Form - Keep white background */}
             <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
               <h2 className="font-serif text-2xl font-light">Send a Message</h2>
               <p className="mt-2 text-muted-foreground">
@@ -236,12 +238,10 @@ export default function ContactPage() {
                       required
                     >
                       <option value="">Select a service</option>
-                      <option value="wedding">Wedding Photography</option>
-                      <option value="engagement">Engagement Session</option>
+                      <option value="events">Event Photography</option>
                       <option value="family">Family Portrait</option>
-                      <option value="newborn">Newborn Session</option>
                       <option value="maternity">Maternity Session</option>
-                      <option value="portrait">Portrait Session</option>
+                      <option value="portraits">Portrait Session</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
@@ -275,8 +275,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="bg-gray-50 py-20">
+      {/* FAQ Section - Keep page background (likely white) */}
+      <section id="faq" className="py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-3xl font-light tracking-wide md:text-4xl">Frequently Asked Questions</h2>
@@ -284,51 +284,63 @@ export default function ContactPage() {
           </div>
 
           <div className="mx-auto mt-12 max-w-3xl">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>How do I book a session with you?</AccordionTrigger>
-                <AccordionContent>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="item-1" className="border border-gray-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 text-left font-medium hover:bg-gray-50 transition-colors">
+                  How do I book a session with you?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600">
                   To book a session, simply fill out the contact form above or send me an email. We'll discuss your
                   vision, select a date, and I'll send you a contract and invoice for the deposit to secure your date.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-2">
-                <AccordionTrigger>How far in advance should I book?</AccordionTrigger>
-                <AccordionContent>
-                  For weddings, I recommend booking 8-12 months in advance to ensure availability. For portrait
+              <AccordionItem value="item-2" className="border border-gray-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 text-left font-medium hover:bg-gray-50 transition-colors">
+                  How far in advance should I book?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600">
+                  For events, I recommend booking several months in advance, especially for popular dates. For portrait/maternity
                   sessions, 1-2 months in advance is typically sufficient, though more notice is better during busy
                   seasons (spring and fall).
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-3">
-                <AccordionTrigger>What is your payment policy?</AccordionTrigger>
-                <AccordionContent>
+              <AccordionItem value="item-3" className="border border-gray-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 text-left font-medium hover:bg-gray-50 transition-colors">
+                  What is your payment policy?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600">
                   A 50% non-refundable retainer is required to secure your date, with the remaining balance due two
-                  weeks before your session or wedding date. Payment plans are available upon request.
+                  weeks before your session or event date. Payment plans are available upon request.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-4">
-                <AccordionTrigger>How long until I receive my photos?</AccordionTrigger>
-                <AccordionContent>
-                  Wedding galleries are delivered within 6-8 weeks. Portrait sessions are delivered within 2-3 weeks.
-                  You'll receive a few sneak peeks within 48 hours of your session or wedding.
+              <AccordionItem value="item-4" className="border border-gray-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 text-left font-medium hover:bg-gray-50 transition-colors">
+                  How long until I receive my photos?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600">
+                  Event galleries are delivered within 4-6 weeks. Portrait/maternity sessions are delivered within 2-3 weeks.
+                  You'll receive a few sneak peeks within 48 hours of your session or event.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-5">
-                <AccordionTrigger>Do you travel for sessions or weddings?</AccordionTrigger>
-                <AccordionContent>
+              <AccordionItem value="item-5" className="border border-gray-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 text-left font-medium hover:bg-gray-50 transition-colors">
+                  Do you travel for sessions or events?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600">
                   Yes! I serve all of Connecticut and am available for travel throughout New England. For destinations
                   beyond, travel fees may apply. Contact me for a custom quote.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-6">
-                <AccordionTrigger>What should we wear for our session?</AccordionTrigger>
-                <AccordionContent>
+              <AccordionItem value="item-6" className="border border-gray-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 text-left font-medium hover:bg-gray-50 transition-colors">
+                  What should we wear for our session?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600">
                   After booking, I'll send you a detailed style guide with tips for selecting outfits that photograph
                   beautifully. We can also discuss your options during your consultation.
                 </AccordionContent>
