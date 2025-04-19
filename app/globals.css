@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 30 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+    --primary: 30 15% 25%;
+    --primary-foreground: 30 15% 95%;
+    --secondary: 30 10% 95%;
+    --secondary-foreground: 30 15% 25%;
+    --muted: 30 10% 95%;
+    --muted-foreground: 30 10% 50%;
+    --accent: 30 15% 90%;
+    --accent-foreground: 30 15% 25%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 30 15% 25%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 30 10% 5%;
+    --foreground: 30 10% 95%;
+    --card: 30 10% 10%;
+    --card-foreground: 30 10% 95%;
+    --popover: 30 10% 5%;
+    --popover-foreground: 30 10% 95%;
+    --primary: 30 15% 85%;
+    --primary-foreground: 30 15% 10%;
+    --secondary: 30 10% 15%;
+    --secondary-foreground: 30 10% 95%;
+    --muted: 30 10% 15%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 30 10% 20%;
+    --accent-foreground: 30 10% 95%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 30 15% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#F5F0EA] text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+    @apply text-foreground;
+    line-height: 1.3;
+  }
+  h1 {
+    @apply text-4xl font-light tracking-wide sm:text-5xl md:text-6xl lg:text-7xl;
+  }
+  h2 {
+    @apply text-4xl font-light tracking-wide md:text-5xl lg:text-6xl;
+  }
+  h3 {
+    @apply text-3xl font-light tracking-wide md:text-4xl;
+  }
+  p {
+    @apply text-base md:text-lg font-light text-muted-foreground;
+  }
+}
+
+/* Custom Fonts */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass Morphism */
+.glass {
+  @apply bg-white/60 backdrop-blur-lg;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  @apply bg-black/50 backdrop-blur-lg;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Image Hover Effects */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full border border-primary bg-transparent px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+}
+
+.btn-outline {
+  @apply relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white bg-transparent px-8 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:shadow-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2;
+}
+
+/* Gallery Overlay */
+.gallery-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.img-hover-zoom:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Service Card */
+.service-card {
+  @apply relative overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300;
+}
+
+.service-card:hover {
+  @apply shadow-lg;
+  transform: translateY(-5px);
+}
+
+/* Service Tab */
+.service-tab {
+  @apply relative flex cursor-pointer flex-col items-center justify-center rounded-lg px-4 py-3 text-center transition-all duration-300;
+}
+
+.service-tab.active {
+  @apply bg-primary/10 text-primary;
+}
+
+.service-tab:not(.active):hover {
+  @apply bg-gray-100;
+}
+
+.service-tab::after {
+  content: "";
+  @apply absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-primary transition-all duration-300;
+}
+
+.service-tab.active::after {
+  @apply w-full;
+}
+
+/* Hover Underline */
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Navbar Styles */
+.navbar-glass {
+  @apply bg-white/80 backdrop-blur-md;
+}
+
+/* Divider */
+.divider {
+  @apply mx-auto my-8 h-px w-16 bg-primary/50;
+}
+
+/* Pill Badge */
+.pill-badge {
+  @apply inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary;
+}
+
+/* Gradient Overlay */
+.gradient-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent;
+}
+
+/* Staggered Animation */
+.stagger-animation > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggerFadeIn 0.5s ease forwards;
+}
+
+@keyframes staggerFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-animation > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-animation > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-animation > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-animation > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stagger-animation > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stagger-animation > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.stagger-animation > *:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.stagger-animation > *:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  @apply relative rounded-2xl bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl;
+}
+
+.testimonial-card::before {
+  content: '"';
+  @apply absolute -left-2 -top-2 text-6xl font-serif text-primary/20;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Masonry Grid */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 10px;
+  grid-gap: 10px;
+}
+
+.masonry-item {
+  grid-row-end: span var(--masonry-height, 30);
+}
+
+/* Symmetrical Layout */
+.symmetrical-grid {
+  @apply grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.symmetrical-grid-2 {
+  @apply grid grid-cols-1 gap-8 md:grid-cols-2;
+}
+
+.symmetrical-grid-4 {
+  @apply grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4;
+}
+
+/* Polaroid Effect */
+.polaroid {
+  @apply bg-white p-2 shadow-md;
+  transform: rotate(var(--rotate, 0deg));
+}
+
+/* Tilt Effect */
+.tilt {
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.1s ease;
+}
+
+/* Typewriter Effect */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 2s steps(40) forwards;
+}
+
+/* Text Gradient */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary to-amber-600 bg-clip-text text-transparent;
+}
+
+@layer components {
+  /* Navbar Styles */
+  .navbar {
+    @apply fixed top-0 left-0 right-0 z-50 flex h-24 items-center justify-between px-6 transition-all duration-300 lg:px-12;
+  }
+
+  .navbar-glass {
+    @apply bg-black/10 backdrop-blur-md;
+  }
+
+  .navbar-scrolled {
+    @apply bg-white shadow-md;
+  }
+
+  .navbar-logo {
+    @apply relative h-16 w-auto;
+  }
+
+  .navbar-center {
+    @apply absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-8;
+  }
+
+  .nav-link {
+    @apply relative text-lg font-light text-white transition-colors hover:text-white/80;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-[1px] w-0 bg-white transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .navbar-right {
+    @apply flex items-center gap-6;
+  }
+
+  .social-icons {
+    @apply flex items-center gap-4;
+  }
+
+  .social-icon {
+    @apply text-white opacity-80 transition-opacity hover:opacity-100;
+  }
+
+  .nav-button {
+    @apply rounded-full border border-white bg-white/10 px-6 py-2 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white hover:text-black;
+  }
+
+  /* Scrolled state styles */
+  .navbar-scrolled .nav-link {
+    @apply text-gray-800;
+  }
+
+  .navbar-scrolled .nav-link::after {
+    @apply bg-gray-800;
+  }
+
+  .navbar-scrolled .social-icon {
+    @apply text-gray-800;
+  }
+
+  .navbar-scrolled .nav-button {
+    @apply border-primary bg-primary text-white hover:bg-primary/90;
+  }
+}
