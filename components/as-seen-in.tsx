@@ -76,11 +76,11 @@ export default function AsSeenIn() {
             <h2 className="font-serif text-2xl font-light text-gray-800">As Seen In</h2>
           </motion.div>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-10 lg:gap-12">
+          <div className="mt-8 flex flex-nowrap overflow-x-auto items-center justify-start gap-4 md:flex-wrap md:justify-center md:gap-10 lg:gap-12 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
             {asSeenInImages.map((image, index) => (
               <motion.div
                 key={index}
-                className="relative w-36 h-16 md:w-48 md:h-20 lg:w-56 lg:h-24"
+                className="relative w-24 h-10 flex-shrink-0 md:w-48 md:h-20 lg:w-56 lg:h-24"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
