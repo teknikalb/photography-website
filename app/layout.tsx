@@ -19,7 +19,7 @@ const cormorant = Cormorant({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drenanoellephotography.com"),
+  metadataBase: new URL("https://drenanoellephoto.com"),
   title: {
     default: "Drena Noelle Photography | Connecticut Wedding & Portrait Photographer",
     template: `%s | Drena Noelle Photography`,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://drenanoellephotography.com",
+    url: "https://drenanoellephoto.com",
     title: "Drena Noelle Photography | Connecticut Wedding & Portrait Photographer",
     description:
       "Authentic and heartfelt wedding and portrait photography based in Hartford, Connecticut.",

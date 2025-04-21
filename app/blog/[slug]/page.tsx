@@ -3,68 +3,161 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react"
 
-// This would typically come from a CMS or database
-const blogPosts = {
+type BlogPost = {
+  title: string;
+  date: string;
+  author: string;
+  category: string;
+  image: string;
+  content: string;
+  relatedPosts: { id: string; title: string; image: string }[];
+};
+
+const blogPosts: Record<string, BlogPost> = {
   "wedding-planning-tips": {
     title: "10 Essential Wedding Planning Tips Every Couple Should Know",
     date: "April 10, 2023",
     author: "Emma Davis",
     category: "Wedding Tips",
-    image: "/placeholder.svg?height=800&width=1200",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop",
     content: `
-      <p>Planning a wedding can be both exciting and overwhelming. As a wedding photographer who has witnessed hundreds of special days, I've gathered insights on what makes the planning process smoother and the day itself more enjoyable. Here are my top 10 tips for couples planning their wedding:</p>
-      
-      <h2>1. Start with a realistic budget</h2>
-      <p>Before you book any vendors or venues, sit down together and determine how much you can comfortably spend. Be sure to include a 10-15% buffer for unexpected expenses that inevitably arise.</p>
-      
-      <h2>2. Prioritize what matters most</h2>
-      <p>Every couple has different priorities. Maybe photography is at the top of your list, or perhaps it's the venue or food. Identify your top three priorities and allocate more of your budget to these areas.</p>
-      
-      <h2>3. Book your photographer early</h2>
-      <p>The best photographers book up 12-18 months in advance, especially for peak wedding season dates. Once you've set a date and secured a venue, your photographer should be one of the first vendors you book.</p>
-      
-      <h2>4. Consider a first look</h2>
-      <p>While traditional couples may prefer to wait until the ceremony to see each other, a "first look" session before the ceremony provides intimate photo opportunities and can help calm nerves. It also allows you to join your cocktail hour instead of spending that time taking photos.</p>
-      
-      <h2>5. Create a realistic timeline</h2>
-      <p>Work with your photographer and planner to create a timeline that allows ample time for everything. Always add buffer time between events - hair and makeup almost always takes longer than expected!</p>
-      
-      <h2>6. Plan for good light</h2>
-      <p>As a photographer, I can't stress this enough: lighting matters tremendously for your photos. Consider the time of day when scheduling your ceremony and portraits. The golden hour (1-2 hours before sunset) provides the most flattering natural light.</p>
-      
-      <h2>7. Unplug your ceremony</h2>
-      <p>Consider asking guests to put away their phones and cameras during the ceremony. This allows them to be fully present and ensures your professional photos won't be filled with guests holding up devices.</p>
-      
-      <h2>8. Delegate day-of tasks</h2>
-      <p>Assign trusted friends or family members to handle small tasks on the wedding day, or better yet, hire a day-of coordinator. You shouldn't be answering logistical questions or solving problems on your wedding day.</p>
-      
-      <h2>9. Take moments together</h2>
-      <p>Your wedding day will fly by in a blur of activity. Plan for a few moments alone as a couple to soak it all in. Some couples take 10 minutes after the ceremony for private time, or step away briefly during the reception.</p>
-      
-      <h2>10. Remember what it's all about</h2>
-      <p>When planning gets stressful, take a step back and remember the purpose of the day: celebrating your love and commitment. The details are important, but they're not as important as the meaning behind the celebration.</p>
-      
-      <p>Remember, your wedding day is just the beginning of your marriage journey. While you want it to be beautiful and memorable, try not to let the pressure of planning overshadow the joy of the experience.</p>
-      
-      <p>If you're planning your wedding and looking for a photographer who can help guide you through the process while capturing beautiful, authentic moments, I'd love to chat!</p>
+      <p>Planning your Connecticut wedding can be both exciting and overwhelming. As a Connecticut wedding photographer, I've witnessed hundreds of special days and have gathered insights on what makes the planning process smoother and the day itself more enjoyable. Here are my top 10 tips for couples planning their wedding in Connecticut:</p>
+      <h2>1. Start with a Realistic Budget</h2>
+      <p>Before you book any vendors or venues, sit down together and determine how much you can comfortably spend. Be sure to include a 10-15% buffer for unexpected expenses that inevitably arise. Connecticut offers a wide range of venues and services, so having a clear budget will help you narrow down your options.</p>
+      <h2>2. Prioritize What Matters Most</h2>
+      <p>Every couple has different priorities. Maybe photography is at the top of your list, or perhaps it's the venue or food. Identify your top three priorities and allocate more of your budget to these areas. For Connecticut couples, popular priorities include scenic venues, experienced photographers, and delicious catering.</p>
+      <h2>3. Book Your Photographer Early</h2>
+      <p>The best Connecticut wedding photographers book up 12-18 months in advance, especially for peak wedding season dates. Once you've set a date and secured a venue, your photographer should be one of the first vendors you book. Look for a photographer whose style matches your vision and who has experience with Connecticut venues.</p>
+      <h2>4. Consider a First Look</h2>
+      <p>While traditional couples may prefer to wait until the ceremony to see each other, a "first look" session before the ceremony provides intimate photo opportunities and can help calm nerves. It also allows you to join your cocktail hour instead of spending that time taking photos. Many Connecticut venues offer beautiful private spots for first looks.</p>
+      <h2>5. Create a Realistic Timeline</h2>
+      <p>Work with your photographer and planner to create a timeline that allows ample time for everything. Always add buffer time between events—hair and makeup almost always takes longer than expected! Connecticut weddings often include travel between locations, so factor in extra time for transportation.</p>
+      <h2>6. Plan for Good Light</h2>
+      <p>As a photographer, I can't stress this enough: lighting matters tremendously for your photos. Consider the time of day when scheduling your ceremony and portraits. The golden hour (1-2 hours before sunset) provides the most flattering natural light, especially at Connecticut's scenic outdoor venues.</p>
+      <h2>7. Unplug Your Ceremony</h2>
+      <p>Consider asking guests to put away their phones and cameras during the ceremony. This allows them to be fully present and ensures your professional photos won't be filled with guests holding up devices. Many Connecticut couples now opt for unplugged ceremonies for a more meaningful experience.</p>
+      <h2>8. Delegate Day-Of Tasks</h2>
+      <p>Assign trusted friends or family members to handle small tasks on the wedding day, or better yet, hire a day-of coordinator. You shouldn't be answering logistical questions or solving problems on your wedding day. Connecticut has many talented coordinators who can help your day run smoothly.</p>
+      <h2>9. Take Moments Together</h2>
+      <p>Your wedding day will fly by in a blur of activity. Plan for a few moments alone as a couple to soak it all in. Some couples take 10 minutes after the ceremony for private time, or step away briefly during the reception. Connecticut's beautiful landscapes provide the perfect backdrop for these quiet moments.</p>
+      <h2>10. Remember What It's All About</h2>
+      <p>When planning gets stressful, take a step back and remember the purpose of the day: celebrating your love and commitment. The details are important, but they're not as important as the meaning behind the celebration. Your Connecticut wedding is the start of your marriage journey—enjoy every moment!</p>
+      <p>If you're planning your wedding in Connecticut and looking for a photographer who can help guide you through the process while capturing beautiful, authentic moments, I'd love to chat! My experience with Connecticut venues and couples ensures your memories will be preserved for a lifetime.</p>
     `,
     relatedPosts: [
-      {
-        id: "wedding-day-timeline",
-        title: "Creating the Perfect Wedding Day Photography Timeline",
-        image: "/placeholder.svg?height=400&width=600",
-      },
-      {
-        id: "choosing-wedding-photographer",
-        title: "How to Choose the Right Wedding Photographer for Your Style",
-        image: "/placeholder.svg?height=400&width=600",
-      },
+      { id: "wedding-day-timeline", title: "Creating the Perfect Wedding Day Photography Timeline", image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop" },
+      { id: "choosing-wedding-photographer", title: "How to Choose the Right Wedding Photographer for Your Style", image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=600&auto=format&fit=crop" },
+    ],
+  },
+  "what-to-wear-family-session": {
+    title: "What to Wear: Family Portrait Session Edition",
+    date: "March 15, 2023",
+    author: "Emma Davis",
+    category: "Family Photography",
+    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <p>Choosing outfits for your family photo session in Connecticut doesn't have to be stressful. As a Connecticut family photographer, I help families coordinate looks that photograph beautifully in every season. Here are some tips for a successful family session wardrobe:</p>
+      <ul>
+        <li><strong>Pick a color palette:</strong> Choose 2-3 main colors and coordinate, but don't match exactly. Earthy tones and pastels work well in Connecticut's natural settings.</li>
+        <li><strong>Dress for the location and season:</strong> Connecticut offers beaches, parks, and urban backdrops. Dress appropriately for the setting and weather.</li>
+        <li><strong>Keep comfort in mind:</strong> Especially for kids! Comfortable clothes mean happy smiles.</li>
+        <li><strong>Avoid large logos or distracting patterns:</strong> Simple, classic styles keep the focus on your family's connection.</li>
+      </ul>
+      <p>With a little planning, your family will look and feel great for your session. Connecticut's beautiful parks and beaches provide the perfect backdrop for timeless family portraits. If you need help choosing outfits or locations, I'm always happy to offer guidance as your Connecticut family photographer.</p>
+    `,
+    relatedPosts: [
+      { id: "newborn-session-preparation", title: "How to Prepare for Your Newborn Photography Session", image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop" },
+    ],
+  },
+  "newborn-session-preparation": {
+    title: "How to Prepare for Your Newborn Photography Session",
+    date: "February 22, 2023",
+    author: "Emma Davis",
+    category: "Newborn Photography",
+    image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <p>Welcoming a new baby is exciting and exhausting. As a Connecticut newborn photographer, I want to make your session as stress-free as possible. Here's how to prepare for a beautiful newborn photography experience in Connecticut:</p>
+      <ul>
+        <li><strong>Schedule your session early:</strong> The best time for newborn photos is within the first two weeks after birth. Connecticut families often book their session before baby arrives.</li>
+        <li><strong>Keep baby warm and well-fed:</strong> A cozy, content baby is easier to pose and photograph.</li>
+        <li><strong>Have extra blankets, diapers, and outfits ready:</strong> Connecticut weather can be unpredictable, so bring layers if you're planning outdoor photos.</li>
+        <li><strong>Relax and trust your photographer:</strong> My experience with Connecticut newborns means I know how to capture those sweet, fleeting moments safely and beautifully.</li>
+      </ul>
+      <p>Whether in your home or at a Connecticut studio, newborn sessions are a wonderful way to celebrate your growing family. Contact me to book your Connecticut newborn photography session today!</p>
+    `,
+    relatedPosts: [
+      { id: "what-to-wear-family-session", title: "What to Wear: Family Portrait Session Edition", image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop" },
+    ],
+  },
+  "engagement-session-locations": {
+    title: "Top 5 Engagement Session Locations in Connecticut",
+    date: "January 18, 2023",
+    author: "Emma Davis",
+    category: "Engagement Photography",
+    image: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <p>Connecticut offers a variety of stunning locations for engagement photos. As a Connecticut engagement photographer, here are my top 5 favorite spots for romantic, memorable sessions:</p>
+      <ol>
+        <li><strong>Harkness Memorial State Park:</strong> Beautiful gardens, ocean views, and historic architecture make this a top choice for Connecticut couples.</li>
+        <li><strong>Elizabeth Park Rose Garden:</strong> Lush blooms and winding paths create a dreamy setting in Hartford, CT.</li>
+        <li><strong>Yale University Campus:</strong> Iconic stone buildings and tree-lined walkways offer a classic New England vibe.</li>
+        <li><strong>Wadsworth Falls State Park:</strong> Waterfalls and forest trails provide a natural, adventurous backdrop.</li>
+        <li><strong>Downtown Mystic:</strong> Quaint streets, waterfront views, and a charming atmosphere perfect for storytelling.</li>
+      </ol>
+      <p>Each location offers unique scenery and a romantic atmosphere for your session. If you're planning an engagement session in Connecticut, I'd love to help you choose the perfect spot and capture your love story!</p>
+    `,
+    relatedPosts: [
+      { id: "wedding-planning-tips", title: "10 Essential Wedding Planning Tips Every Couple Should Know", image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=600&auto=format&fit=crop" },
+    ],
+  },
+  "wedding-day-timeline": {
+    title: "Creating the Perfect Wedding Day Photography Timeline",
+    date: "December 5, 2022",
+    author: "Emma Davis",
+    category: "Wedding Tips",
+    image: "https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <p>A well-planned timeline ensures we capture all the important moments. As a Connecticut wedding photographer, here's how to structure your day for photography success:</p>
+      <ul>
+        <li><strong>Start with hair and makeup:</strong> Allow extra time for touch-ups and getting ready photos.</li>
+        <li><strong>Plan for a first look and couple portraits:</strong> Connecticut venues offer beautiful spots for these special moments.</li>
+        <li><strong>Allow time for family and wedding party photos:</strong> Group photos are easier with a clear plan and list.</li>
+        <li><strong>Schedule sunset portraits:</strong> Connecticut's golden hour light is perfect for romantic images.</li>
+      </ul>
+      <p>Work with your photographer to create a timeline that fits your unique day. My experience with Connecticut weddings ensures we won't miss a moment!</p>
+    `,
+    relatedPosts: [
+      { id: "choosing-wedding-photographer", title: "How to Choose the Right Wedding Photographer for Your Style", image: "https://images.unsplash.com/photo-1581467655410-0c2bf55d9d6c?q=80&w=600&auto=format&fit=crop" },
+    ],
+  },
+  "choosing-wedding-photographer": {
+    title: "How to Choose the Right Wedding Photographer for Your Style",
+    date: "November 12, 2022",
+    author: "Emma Davis",
+    category: "Wedding Tips",
+    image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <p>With so many talented photographers in Connecticut, how do you find the one that's right for you? This guide will help you make the perfect match for your Connecticut wedding or event:</p>
+      <ul>
+        <li><strong>Review portfolios:</strong> Look for a style you love and consistency in quality. Connecticut photographers often showcase local venues and couples.</li>
+        <li><strong>Read reviews and ask for referrals:</strong> Word of mouth is powerful in the Connecticut wedding community.</li>
+        <li><strong>Meet with photographers:</strong> Discuss your vision and see if your personalities are a good fit.</li>
+        <li><strong>Choose someone you trust:</strong> Your photographer will be by your side all day—make sure you feel comfortable and confident in their abilities.</li>
+      </ul>
+      <p>Your Connecticut photographer should be experienced, creative, and passionate about telling your story. If you're searching for a photographer in Connecticut, I'd love to connect and see if we're the right fit for your special day!</p>
+    `,
+    relatedPosts: [
+      { id: "wedding-day-timeline", title: "Creating the Perfect Wedding Day Photography Timeline", image: "https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?q=80&w=600&auto=format&fit=crop" },
     ],
   },
   // Add other blog posts as needed
 }
 
-export default function BlogPostPage({ params }) {
+interface BlogPostPageProps {
+  params: { slug: string };
+}
+
+export default function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = params
 
   // Check if post exists
@@ -178,7 +271,7 @@ export default function BlogPostPage({ params }) {
               <div className="mt-12 border-t border-gray-200 pt-8">
                 <h3 className="text-lg font-medium">You might also like</h3>
                 <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  {post.relatedPosts.map((relatedPost) => (
+                  {post.relatedPosts.map((relatedPost: { id: string; title: string; image: string }) => (
                     <Link
                       key={relatedPost.id}
                       href={`/blog/${relatedPost.id}`}

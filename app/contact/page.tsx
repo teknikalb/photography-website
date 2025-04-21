@@ -88,8 +88,8 @@ export default function ContactPage() {
                   <Mail className="mr-4 h-6 w-6 text-primary" />
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <a href="mailto:hello@drenanoellephotography.com" className="text-muted-foreground hover:text-primary">
-                      hello@drenanoellephotography.com
+                    <a href="mailto:hello@drenanoellephoto.com" className="text-muted-foreground hover:text-primary">
+                      hello@drenanoellephoto.com
                     </a>
                   </div>
                 </div>

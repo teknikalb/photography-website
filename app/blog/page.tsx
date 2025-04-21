@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 
 // This would typically come from a CMS or database
 const blogPosts = [
@@ -65,31 +68,32 @@ const blogPosts = [
   },
 ]
 
+const POSTS_PER_PAGE = 6;
+
 export default function BlogPage() {
+  const [page, setPage] = useState(1);
+  const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE);
+  const paginatedPosts = blogPosts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
       {/* Hero Section */}
-      <section className="relative h-[50vh] w-full overflow-hidden">
-        <Image
-          src="/placeholder.svg?height=800&width=1920"
-          alt="Blog hero image"
-          fill
-          priority
-          className="object-cover brightness-[0.85]"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl">Blog</h1>
-          <p className="mt-6 max-w-md text-lg font-light md:max-w-lg md:text-xl">
-            Photography tips, client stories, and behind-the-scenes insights
-          </p>
+      <section className="w-full py-20 bg-[#F5F0EA] text-center">
+        <div className="container mx-auto px-4">
+          <div className="inline-block rounded-xl shadow-lg px-8 py-10">
+            <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900">Blog</h1>
+            <p className="mt-6 max-w-xl text-lg font-light md:max-w-2xl md:text-xl text-gray-700 mx-auto">
+              Photography tips, client stories, and behind-the-scenes insights
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Blog Posts */}
-      <section className="py-20">
+      <section className="py-20 bg-[#F5F0EA]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post) => (
+            {paginatedPosts.map((post) => (
               <BlogPostCard
                 key={post.id}
                 id={post.id}
@@ -103,39 +107,42 @@ export default function BlogPage() {
             ))}
           </div>
 
+          {/* Pagination */}
           <div className="mt-16 flex justify-center">
             <nav className="flex space-x-2">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-medium text-primary-foreground">
-                1
-              </span>
-              <Link
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-muted-foreground hover:bg-gray-100"
+              <button
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                disabled={page === 1}
+                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-colors ${page === 1 ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-primary text-primary-foreground hover:bg-primary/90'}`}
+                aria-label="Previous page"
               >
-                2
-              </Link>
-              <Link
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-muted-foreground hover:bg-gray-100"
+                &lt;
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i + 1}
+                  onClick={() => setPage(i + 1)}
+                  className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-colors ${page === i + 1 ? 'bg-primary text-primary-foreground' : 'bg-white text-gray-700 hover:bg-primary/10'}`}
+                  aria-current={page === i + 1 ? 'page' : undefined}
+                >
+                  {i + 1}
+                </button>
+              ))}
+              <button
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                disabled={page === totalPages}
+                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-colors ${page === totalPages ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-primary text-primary-foreground hover:bg-primary/90'}`}
+                aria-label="Next page"
               >
-                3
-              </Link>
-              <span className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-muted-foreground">
-                ...
-              </span>
-              <Link
-                href="#"
-                className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium text-muted-foreground hover:bg-gray-100"
-              >
-                Next
-              </Link>
+                &gt;
+              </button>
             </nav>
           </div>
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-3xl font-light">Join the Newsletter</h2>
@@ -163,7 +170,17 @@ export default function BlogPage() {
   )
 }
 
-function BlogPostCard({ id, title, excerpt, date, category, image, author }) {
+interface BlogPostCardProps {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  image: string;
+  author: string;
+}
+
+function BlogPostCard({ id, title, excerpt, date, category, image, author }: BlogPostCardProps) {
   return (
     <article className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
       <Link href={`/blog/${id}`} className="block">

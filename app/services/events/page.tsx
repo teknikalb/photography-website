@@ -13,11 +13,13 @@ export default function EventServicePage() {
           priority
           className="object-cover opacity-70"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-40 p-4">
-          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl">Event Photography</h1>
-          <p className="mt-6 max-w-md text-lg font-light md:max-w-lg md:text-xl">
-            Documenting your milestones and celebrations.
-          </p>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
+          <div className="bg-black/50 backdrop-blur-md rounded-xl shadow-lg px-6 py-8 inline-block">
+            <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-white">Event Photography</h1>
+            <p className="mt-6 max-w-md text-lg font-light md:max-w-lg md:text-xl text-white">
+              Documenting your milestones and celebrations.
+            </p>
+          </div>
         </div>
       </section>
 
