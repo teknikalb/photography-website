@@ -99,6 +99,26 @@ const services = [
       },
     ],
   },
+  {
+    id: "mothers-day-minis",
+    title: "Mother's Day Minis",
+    description: "Celebrate the beautiful bond between you and your little ones with a special mini session.",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=800&auto=format&fit=crop",
+    packages: [
+      {
+        name: "Mother's Day Mini Session",
+        price: "$300",
+        features: [
+          "30 minutes of guided photography",
+          "20 professionally edited photos",
+          "Intimate session designed to honor every mama",
+          "Capture memories with your babies, no matter how big or small",
+          "Arrive on time as sessions are scheduled back-to-back",
+          "Laugh, cuddle, and capture these fleeting moments"
+        ],
+      },
+    ],
+  },
 ]
 
 const faqs = [

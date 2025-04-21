@@ -55,6 +55,14 @@ const categories = [
     image: "https://images.unsplash.com/photo-1484665754804-74b091211472?q=80&w=1200&auto=format&fit=crop",
     href: "/portfolio/milestones",
   },
+  {
+    id: "mothers-day-minis",
+    icon: <Heart className="h-6 w-6" />,
+    title: "Mother's Day Minis",
+    description: "Special mini sessions to celebrate the beautiful bond between you and your little ones.",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop",
+    href: "/services/mothers-day-minis",
+  },
 ]
 
 export default function ServiceSelector() {
