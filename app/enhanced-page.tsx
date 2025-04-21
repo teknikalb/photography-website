@@ -61,10 +61,10 @@ export default function EnhancedHome() {
             className="max-w-4xl"
           >
             <h1 className="font-serif text-4xl font-bold tracking-wide text-white/95 sm:text-5xl md:text-6xl lg:text-7xl">
-              Capturing Life's Beautiful Moments
+              Connecticut Family, Maternity & Portrait Photographer
             </h1>
             <p className="mt-6 text-lg font-medium text-white/90 md:text-xl">
-              Connecticut-based photographer specializing in weddings, families, and life's milestone moments
+              Specializing in family, maternity, milestone, and portrait photography in Hartford, New Haven, and all of Connecticut and New England.
             </p>
             <div className="mt-10 flex flex-col space-y-6 sm:flex-row sm:justify-center sm:space-x-8 sm:space-y-0">
               <Link 
@@ -88,6 +88,17 @@ export default function EnhancedHome() {
             </div>
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* Mini Session Highlight Banner */}
+      <section className="w-full bg-primary/10 py-8 flex justify-center items-center">
+        <div className="max-w-2xl text-center">
+          <h2 className="font-serif text-3xl font-bold text-primary mb-2">Spring Mini Sessions Now Booking!</h2>
+          <p className="text-lg text-gray-700 mb-4">Celebrate the beauty of spring in Connecticut with quick, affordable mini sessions for families, maternity, and portraits. Limited spots available in Hartford, New Haven, and all of Connecticut. Book your spring mini session today!</p>
+          <Link href="/mini-sessions" className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow">
+            View All Mini Sessions
+          </Link>
+        </div>
       </section>
 
       {/* As Seen In Section - 15px padding */}

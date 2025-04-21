@@ -132,6 +132,42 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Mini-Sessions Primary Section */}
+      <section className="bg-[#F5F0EA] py-12">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="font-serif text-3xl font-light tracking-wide md:text-4xl text-primary">Mini-Sessions: The Most Popular Choice</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700">
+              Quick, affordable, and fun mini sessions for every season! Book your spot for spring, summer, fall, holiday, and more in Hartford, New Haven, and all of Connecticut.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Example mini-session cards, you can expand or map from a data array if desired */}
+            <div className="group relative rounded-2xl border border-gray-200 bg-white shadow-md p-6 flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <Image src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=600&auto=format&fit=crop" alt="Spring Mini Sessions" width={360} height={220} className="object-cover rounded-lg w-[360px] h-[220px] group-hover:scale-105 transition-transform duration-500" />
+              <h3 className="font-serif text-xl font-medium mb-2 text-center group-hover:text-primary transition-colors mt-4">Spring Mini Sessions</h3>
+              <p className="mb-4 text-gray-700 text-center">Celebrate the beauty of spring in Connecticut with outdoor family, maternity, and portrait mini sessions.</p>
+              <Link href="/mini-sessions/spring" className="mt-auto inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors group-hover:bg-primary/90 shadow">Book Your Spring Mini</Link>
+            </div>
+            <div className="group relative rounded-2xl border border-gray-200 bg-white shadow-md p-6 flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <Image src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=600&auto=format&fit=crop" alt="Mother's Day Minis" width={360} height={220} className="object-cover rounded-lg w-[360px] h-[220px] group-hover:scale-105 transition-transform duration-500" />
+              <h3 className="font-serif text-xl font-medium mb-2 text-center group-hover:text-primary transition-colors mt-4">Mother's Day Minis</h3>
+              <p className="mb-4 text-gray-700 text-center">Special Mother's Day mini sessions designed to honor the bond between mothers and their children.</p>
+              <Link href="/mini-sessions/mothers-day" className="mt-auto inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors group-hover:bg-primary/90 shadow">Reserve Your Mother's Day Mini</Link>
+            </div>
+            <div className="group relative rounded-2xl border border-gray-200 bg-white shadow-md p-6 flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <Image src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=600&auto=format&fit=crop" alt="Summer Mini Sessions" width={360} height={220} className="object-cover rounded-lg w-[360px] h-[220px] group-hover:scale-105 transition-transform duration-500" />
+              <h3 className="font-serif text-xl font-medium mb-2 text-center group-hover:text-primary transition-colors mt-4">Summer Mini Sessions</h3>
+              <p className="mb-4 text-gray-700 text-center">Take advantage of long days and golden sunsets with summer mini sessions. Ideal for families, couples, and milestone moments.</p>
+              <Link href="/mini-sessions/summer" className="mt-auto inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground transition-colors group-hover:bg-primary/90 shadow">Book Your Summer Mini</Link>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/mini-sessions" className="inline-block rounded-full border border-primary text-primary px-8 py-3 text-sm font-semibold transition-colors hover:bg-primary hover:text-white shadow">See All Mini-Sessions</Link>
+          </div>
+        </div>
+      </section>
+
       {/* Category Selector */}
       <section className="bg-[#F5F0EA] py-12">
         <div className="container mx-auto px-4">
@@ -192,56 +228,54 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Customization Note */}
+      {/* Customization Note & FAQ Section in a Row */}
       <section className="py-12 bg-[#F5F0EA]">
         <div className="container mx-auto px-4">
-          <div className="mt-24 rounded-2xl bg-white/70 backdrop-blur-md shadow-xl p-10 text-center mx-auto max-w-2xl">
-            <h3 className="font-serif text-2xl font-light text-gray-900">Looking for Something Custom?</h3>
-            <p className="mt-4 text-gray-700">
-              Every photography need is unique. Contact me to discuss custom packages tailored to your specific requirements.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow"
-            >
-              Get in Touch
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="bg-[#F5F0EA] py-20">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="font-serif text-3xl font-light tracking-wide md:text-4xl">Frequently Asked Questions</h2>
-            <p className="mt-4 text-gray-600">Everything you need to know about working together</p>
-          </div>
-
-          <div className="mx-auto max-w-2xl divide-y divide-gray-200 rounded-2xl bg-white/80 backdrop-blur p-2 shadow-xl">
-            {faqs.map((faq, idx) => (
-              <div key={faq.question}>
-                <button
-                  className="w-full flex items-center justify-between py-5 px-6 text-left focus:outline-none group"
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  aria-expanded={openFaq === idx}
-                >
-                  <span className="flex items-center gap-2 font-serif text-lg text-gray-900">
-                    <HelpCircle className="h-5 w-5 text-primary" />
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-gray-400 transition-transform duration-300 ${openFaq === idx ? "rotate-180" : ""}`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 px-6 ${openFaq === idx ? "max-h-40 py-2" : "max-h-0 py-0"}`}
-                  style={{}}
-                >
-                  <p className="text-gray-700 text-base leading-relaxed">{faq.answer}</p>
-                </div>
+          <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch">
+            {/* Customization Note (Get in Touch) */}
+            <div className="flex-1 rounded-2xl bg-white/70 backdrop-blur-md shadow-xl p-10 text-center max-w-2xl mx-auto lg:mx-0">
+              <h3 className="font-serif text-2xl font-light text-gray-900">Looking for Something Custom?</h3>
+              <p className="mt-4 text-gray-700">
+                Every photography need is unique. Contact me to discuss custom packages tailored to your specific requirements.
+              </p>
+              <Link
+                href="/contact"
+                className="mt-6 inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow"
+              >
+                Get in Touch
+              </Link>
+            </div>
+            {/* FAQ Section */}
+            <div className="flex-1 rounded-2xl bg-white/80 backdrop-blur shadow-xl p-8 max-w-2xl mx-auto lg:mx-0">
+              <div className="text-center mb-8">
+                <h2 className="font-serif text-2xl font-light tracking-wide md:text-3xl">Frequently Asked Questions</h2>
+                <p className="mt-2 text-gray-600 text-base">Everything you need to know about working together</p>
               </div>
-            ))}
+              <div className="divide-y divide-gray-200">
+                {faqs.map((faq, idx) => (
+                  <div key={faq.question}>
+                    <button
+                      className="w-full flex items-center justify-between py-4 text-left focus:outline-none group"
+                      onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                      aria-expanded={openFaq === idx}
+                    >
+                      <span className="flex items-center gap-2 font-serif text-lg text-gray-900">
+                        <HelpCircle className="h-5 w-5 text-primary" />
+                        {faq.question}
+                      </span>
+                      <ChevronDown
+                        className={`h-5 w-5 text-gray-400 transition-transform duration-300 ${openFaq === idx ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? "max-h-40 py-2 px-2" : "max-h-0 py-0 px-2"}`}
+                    >
+                      <p className="text-gray-700 text-base leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

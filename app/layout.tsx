@@ -21,18 +21,20 @@ const cormorant = Cormorant({
 export const metadata: Metadata = {
   metadataBase: new URL("https://drenanoellephoto.com"),
   title: {
-    default: "Drena Noelle Photography | Connecticut Wedding & Portrait Photographer",
+    default: "Connecticut Family, Maternity & Portrait Photographer | Drena Noelle Photography",
     template: `%s | Drena Noelle Photography`,
   },
   description:
-    "Authentic and heartfelt wedding and portrait photography based in Hartford, Connecticut, serving New England and beyond.",
+    "Connecticut photographer specializing in family, maternity, milestone, and portrait sessions. Serving Hartford, New Haven, and all of New England.",
   keywords: [
     "connecticut photographer",
-    "wedding photographer",
-    "portrait photographer",
     "family photographer",
-    "newborn photographer",
-    "Drena Noelle Photography",
+    "maternity photographer",
+    "Hartford CT photographer",
+    "Mother's Day mini sessions Connecticut",
+    "milestone photography Connecticut",
+    "New England photographer",
+    "professional portraits Connecticut"
   ],
   authors: [{ name: "Drena Noelle Photography" }],
   creator: "Drena Noelle Photography",
@@ -41,16 +43,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://drenanoellephoto.com",
-    title: "Drena Noelle Photography | Connecticut Wedding & Portrait Photographer",
+    title: "Connecticut Family, Maternity & Portrait Photographer | Drena Noelle Photography",
     description:
-      "Authentic and heartfelt wedding and portrait photography based in Hartford, Connecticut.",
+      "Authentic and heartfelt family, maternity, milestone, and portrait photography based in Hartford, Connecticut. Serving New Haven and all of New England.",
     siteName: "Drena Noelle Photography",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Drena Noelle Photography | Connecticut Wedding & Portrait Photographer",
+    title: "Connecticut Family, Maternity & Portrait Photographer | Drena Noelle Photography",
     description:
-      "Authentic and heartfelt wedding and portrait photography based in Hartford, Connecticut.",
+      "Authentic and heartfelt family, maternity, milestone, and portrait photography based in Hartford, Connecticut. Serving New Haven and all of New England.",
     creator: "@drenanoelle",
   },
   icons: {

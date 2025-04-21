@@ -7,54 +7,6 @@ import { useState } from "react"
 
 const services = [
   {
-    id: "weddings",
-    title: "Wedding Collections",
-    description: "Comprehensive coverage for your special day",
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=800&auto=format&fit=crop",
-    packages: [
-      {
-        name: "Essential",
-        price: "$2,800",
-        features: [
-          "6 hours of coverage",
-          "1 photographer",
-          "Online gallery with digital downloads",
-          "Engagement session",
-          "Wedding day timeline assistance",
-        ],
-      },
-      {
-        name: "Classic",
-        price: "$3,800",
-        popular: true,
-        features: [
-          "8 hours of coverage",
-          "2 photographers",
-          "Online gallery with digital downloads",
-          "Engagement session",
-          "Wedding day timeline assistance",
-          "Custom USB with high-resolution images",
-          "10x10 wedding album (20 pages)",
-        ],
-      },
-      {
-        name: "Luxury",
-        price: "$4,800",
-        features: [
-          "10 hours of coverage",
-          "2 photographers",
-          "Online gallery with digital downloads",
-          "Engagement session",
-          "Wedding day timeline assistance",
-          "Custom USB with high-resolution images",
-          "12x12 wedding album (30 pages)",
-          "Second day coverage (2 hours)",
-          "Bridal boudoir session",
-        ],
-      },
-    ],
-  },
-  {
     id: "portraits",
     title: "Portrait Sessions",
     description: "Capturing authentic moments for individuals and families",
@@ -70,19 +22,6 @@ const services = [
           "20 edited digital images",
           "Print release",
           "Location of your choice",
-        ],
-      },
-      {
-        name: "Newborn Session",
-        price: "$550",
-        features: [
-          "2-3 hour session",
-          "In-home or studio",
-          "Online gallery with digital downloads",
-          "25 edited digital images",
-          "Print release",
-          "Props and wraps provided",
-          "Parent and sibling poses included",
         ],
       },
       {
@@ -130,20 +69,20 @@ const faqs = [
   {
     question: "How far in advance should I book?",
     answer:
-      "For weddings, I recommend booking 8-12 months in advance to ensure availability. For portrait sessions, 1-2 months in advance is typically sufficient, though more notice is better during busy seasons.",
+      "For family, maternity, milestone, and portrait sessions, 1-2 months in advance is typically sufficient, though more notice is better during busy seasons in Connecticut.",
   },
   {
     question: "What is your payment policy?",
     answer:
-      "A 50% non-refundable retainer is required to secure your date, with the remaining balance due two weeks before your session or wedding date. Payment plans are available upon request.",
+      "A 50% non-refundable retainer is required to secure your date, with the remaining balance due two weeks before your session. Payment plans are available upon request.",
   },
   {
     question: "How long until I receive my photos?",
     answer:
-      "Wedding galleries are delivered within 6-8 weeks. Portrait sessions are delivered within 2-3 weeks. You'll receive a few sneak peeks within 48 hours of your session or wedding.",
+      "Portrait, family, and maternity session galleries are delivered within 2-3 weeks. You'll receive a few sneak peeks within 48 hours of your session.",
   },
   {
-    question: "Do you travel for sessions or weddings?",
+    question: "Do you travel for sessions?",
     answer:
       "Yes! I serve all of Connecticut and am available for travel throughout New England. For destinations beyond, travel fees may apply. Contact me for a custom quote.",
   },
@@ -217,13 +156,8 @@ export default function ServicesPage() {
                   {service.packages.map((pkg) => (
                     <div
                       key={pkg.name}
-                      className={`relative rounded-2xl border ${
-                        pkg.popular ? "border-primary bg-primary/5 shadow-xl scale-105 z-10" : "border-gray-200 bg-white shadow-md"
-                      } p-8 flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}
+                      className={"relative rounded-2xl border border-gray-200 bg-white shadow-md p-8 flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1"}
                     >
-                      {pkg.popular && (
-                        <div className="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-5 py-1.5 text-xs font-semibold text-primary-foreground shadow-lg border-2 border-white">Most Popular</div>
-                      )}
                       <h4 className="font-serif text-xl font-medium text-gray-900">{pkg.name}</h4>
                       <div className="mt-4 text-3xl font-bold text-primary">{pkg.price}</div>
                       <ul className="mt-6 space-y-3 w-full">
@@ -236,11 +170,7 @@ export default function ServicesPage() {
                       </ul>
                       <Link
                         href="/contact"
-                        className={`mt-8 w-full rounded-full ${
-                          pkg.popular
-                            ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                            : "border border-primary bg-white text-primary hover:bg-primary hover:text-white"
-                        } px-4 py-2 text-center text-sm font-semibold transition-colors shadow`}
+                        className="mt-8 w-full rounded-full border border-primary bg-white text-primary hover:bg-primary hover:text-white px-4 py-2 text-center text-sm font-semibold transition-colors shadow"
                       >
                         Book Now
                       </Link>

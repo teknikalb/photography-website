@@ -5,7 +5,17 @@ const baseUrl = "https://drenanoellephoto.com"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Main pages
-  const routes = ["", "/portfolio", "/services", "/about", "/blog", "/contact"].map((route) => ({
+  const routes = [
+    "",
+    "/portfolio",
+    "/services",
+    "/about",
+    "/blog",
+    "/contact",
+    "/privacy-policy",
+    "/terms-of-service",
+    "/cookies"
+  ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
@@ -13,7 +23,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Portfolio pages
-  const portfolioCategories = ["events", "couples", "family", "maternity", "portraits"].map((category) => ({
+  const portfolioCategories = [
+    "events",
+    "couples",
+    "family",
+    "maternity",
+    "portraits",
+    "milestones"
+  ].map((category) => ({
     url: `${baseUrl}/portfolio/${category}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
@@ -21,7 +38,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Service pages
-  const servicePages = ["events", "family", "maternity", "portraits", "milestones"].map((service) => ({
+  const servicePages = [
+    "events",
+    "family",
+    "maternity",
+    "portraits",
+    "milestones",
+    "mothers-day-minis"
+  ].map((service) => ({
     url: `${baseUrl}/services/${service}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
@@ -29,7 +53,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Blog posts
-  const blogSlugs = ["event-planning-tips", "maternity-session-guide", "choosing-photographer"].map((slug) => ({
+  const blogSlugs = [
+    "event-planning-tips",
+    "maternity-session-guide",
+    "choosing-photographer"
+  ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

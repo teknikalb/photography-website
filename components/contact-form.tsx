@@ -69,13 +69,11 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus("submitting");
-    console.log('Form Data:', formData);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    const success = Math.random() > 0.3;
-    if (success) {
+    try {
+      await submit(formData as any);
       setFormStatus("success");
       setFormData({ firstName: '', lastName: '', email: '', phone: '', interest: '', dateLocation: '', referral: '', message: '', event_type: '', date: '' });
-    } else {
+    } catch (err) {
       setFormStatus("error");
     }
   };
