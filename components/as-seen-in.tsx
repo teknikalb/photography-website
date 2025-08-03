@@ -8,7 +8,6 @@ import Autoplay from 'embla-carousel-autoplay'
 
 // Define sample logo images using placeholder URLs
 const asSeenInImages = [
-  { src: "/as-seen-in1.png", alt: "As Seen In Style Me Pretty" },
   { src: "/as-seen-in2.png", alt: "As Seen In Image 2" },
   { src: "/as-seen-in3.png", alt: "As Seen In Image 3" },
   { src: "/as-seen-in4.png", alt: "As Seen In Image 4" },
@@ -17,36 +16,44 @@ const asSeenInImages = [
 
 const carouselImages = [
   {
-    url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
-    alt: "Wedding stationery and details"
+    url: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800",
+    alt: "Family session at park"
   },
   {
     url: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=800",
     alt: "Couple walking motion blur"
   },
   {
-    url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800",
-    alt: "Wedding ceremony with floral arch"
+    url: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?q=80&w=800",
+    alt: "Newborn session at home"
   },
   {
-    url: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800",
-    alt: "Bride and groom portrait"
+    url: "https://images.unsplash.com/photo-1581467655410-0c2bf55d9d6c?q=80&w=800",
+    alt: "Portrait session outdoors"
   },
   {
-    url: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800",
-    alt: "Wedding chapel interior"
+    url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800",
+    alt: "Mother and child in field"
   },
   {
-    url: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&w=800",
-    alt: "Bridesmaids in blue dresses"
+    url: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=800",
+    alt: "Mother's Day mini session"
   },
   {
-    url: "https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?q=80&w=800",
-    alt: "Wedding celebration"
+    url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800",
+    alt: "Couple engagement session"
   },
   {
-    url: "https://images.unsplash.com/photo-1549417229-7686ac5595fd?q=80&w=800",
-    alt: "Outdoor wedding setup"
+    url: "https://images.unsplash.com/photo-1484665754804-74b091211472?q=80&w=800",
+    alt: "Milestone birthday celebration"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800",
+    alt: "Portrait of photographer"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
+    alt: "Event group photo"
   }
 ]
 
@@ -60,7 +67,8 @@ export default function AsSeenIn() {
       dragFree: true,
       align: "start",
       containScroll: "trimSnaps"
-    }
+    },
+    [Autoplay({ delay: 2500, stopOnInteraction: false })]
   )
 
   return (

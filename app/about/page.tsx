@@ -26,16 +26,16 @@ export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative h-[50vh] w-full overflow-hidden">
+      <section className="relative h-[30vh] w-full overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1515944472329-d74a614b20c7?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1515944472329-d74a614b20c7?q=80&w=1920&auto=format&fit=crop"
           alt="Film camera details"
           fill
           priority
           className="object-cover brightness-[0.85]"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl">About Me</h1>
+          <h1 className="font-serif text-4xl font-bold tracking-wide sm:text-5xl md:text-6xl">About Me</h1>
           <p className="mt-6 max-w-md text-lg font-light md:max-w-lg md:text-xl">
             The story behind Drena Noelle Photography
           </p>
@@ -43,12 +43,12 @@ export default function AboutPage() {
       </section>
 
       {/* About Section */}
-      <section className="py-20">
+      <section className="py-8 md:py-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
             <div className="overflow-hidden rounded-lg">
               <Image
-                src="https://images.unsplash.com/photo-1599547760409-98d3d4037468?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1591729458470-00f6ff7b3073?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Photographer portrait - Greta"
                 width={600}
                 height={800}
@@ -56,26 +56,15 @@ export default function AboutPage() {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="font-serif text-3xl font-light">Hello, I'm Greta</h2>
+              <h2 className="font-serif text-3xl font-semibold">Hello, I'm Greta</h2>
               <p className="text-muted-foreground">
-                I'm a Connecticut-based photographer with a passion for capturing authentic moments and creating
-                timeless images that tell your unique story.
+                Hey, I'm Greta —a coffee-loving, moment-chasing photographer who's all about capturing the real stuff: belly laughs, quiet glances, messy hugs, and everything in between. I believe the best photos happen in those spontaneous, unscripted moments—the kind that make you feel something every time you look at them.
               </p>
               <p className="text-muted-foreground">
-                My journey into photography began over 10 years ago when I picked up my first camera. What started as a
-                hobby quickly blossomed into a deep passion and eventually a fulfilling career. I've had the privilege
-                of documenting hundreds of weddings, families, and special moments throughout New England.
+                As a big family person myself, I know how fast time flies and how important it is to freeze those little chapters of life. Whether we're running barefoot through a field or snuggling up at home, I'm here to make the experience easy, relaxed, and totally you.
               </p>
               <p className="text-muted-foreground">
-                When I'm not behind the camera, you can find me exploring hiking trails with my golden retriever, trying
-                new recipes in the kitchen, or planning my next travel adventure. I'm a coffee enthusiast, a lover of
-                golden hour light, and believe that the best images happen when you're comfortable enough to be
-                yourself.
-              </p>
-              <p className="text-muted-foreground">
-                My approach to photography is rooted in authenticity. I believe in creating a relaxed, enjoyable
-                experience that allows your genuine emotions and connections to shine through. Whether I'm photographing
-                your wedding day or a casual family session, my goal is to create images that reflect who you truly are.
+                Let's grab some coffee (or bring it to the shoot—I won't judge), and create something beautiful together.
               </p>
               <div className="pt-4">
                 <Link 
@@ -94,10 +83,10 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-20">
+      <section className="py-14 md:py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-light">My Philosophy</h2>
+            <h2 className="font-serif text-3xl font-semibold">My Philosophy</h2>
             <p className="mt-6 text-muted-foreground">
               I believe that photography is about more than just taking pretty pictures. It's about preserving moments,
               emotions, and connections that tell your unique story. My approach combines documentary-style capture with
@@ -105,7 +94,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <PhilosophyCard
               icon={<Heart className="h-8 w-8" />}
               title="Connection Over Perfection"
@@ -141,14 +130,14 @@ export default function AboutPage() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20">
+      <section className="py-14 md:py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-light">Experience & Education</h2>
+            <h2 className="font-serif text-3xl font-semibold">Experience & Education</h2>
             <p className="mt-4 text-muted-foreground">My journey and credentials in photography</p>
           </div>
 
-          <div className="mt-12 space-y-8">
+          <div className="mt-8 space-y-8">
             <TimelineItem
               year="2013"
               title="Started Photography Journey"
@@ -186,30 +175,10 @@ export default function AboutPage() {
       {/* Contact Form Section */}
       <section ref={contactRef} className="relative py-16 md:py-24">
         <div className="container relative z-10 mx-auto px-4">
-          <motion.div
-            className="text-center mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={contactInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="pill-badge">Contact</span>
-            <h2 className="mt-4 font-serif text-3xl font-light tracking-wide md:text-4xl lg:text-5xl text-gray-800">
-              Get In Touch
-            </h2>
-            <div className="divider"></div>
-             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700">
-                Ready to capture your story? Send me a message!
-             </p>
-          </motion.div>
-          
-          <motion.div
-            className="mx-auto max-w-4xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={contactInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          >
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-3xl font-bold text-center mb-8">Get In Touch</h2>
             <ContactForm />
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
@@ -220,7 +189,7 @@ function PhilosophyCard({ icon, title, description }: PhilosophyCardProps) {
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
       <div className="mb-4 text-primary">{icon}</div>
-      <h3 className="mb-2 font-serif text-xl font-medium">{title}</h3>
+      <h3 className="mb-2 font-serif text-xl font-semibold">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </div>
   )
@@ -234,7 +203,7 @@ function TimelineItem({ year, title, description }: TimelineItemProps) {
         <div className="mt-2 h-full w-px bg-gray-200"></div>
       </div>
       <div className="pb-8">
-        <h3 className="font-serif text-xl font-medium">{title}</h3>
+        <h3 className="font-serif text-xl font-semibold">{title}</h3>
         <p className="mt-2 text-muted-foreground">{description}</p>
       </div>
     </div>

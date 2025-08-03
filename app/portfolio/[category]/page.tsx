@@ -51,7 +51,75 @@ const getImagesForCategory = (category: string) => {
       { id: 'maternity-12', src: 'https://images.unsplash.com/photo-1545688355-7d57b58415d1?q=80&w=1200&auto=format&fit=crop', alt: 'Couple looking at baby bump' },
     ]
   }
-  
+
+  if (category === 'couples') {
+    return [
+      { id: 'couples-1', src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop', alt: 'Couple embracing outdoors' },
+      { id: 'couples-2', src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop', alt: 'Engagement session in nature' },
+      { id: 'couples-3', src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1200&auto=format&fit=crop', alt: 'Couple walking on the beach' },
+      { id: 'couples-4', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Urban couple portrait' },
+      { id: 'couples-5', src: 'https://images.unsplash.com/photo-1519121782439-2c5f2c2e6c1e?q=80&w=1200&auto=format&fit=crop', alt: 'Couple at sunset' },
+      { id: 'couples-6', src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop', alt: 'Engagement ring closeup' },
+      { id: 'couples-7', src: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop', alt: 'Couple laughing together' },
+      { id: 'couples-8', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Romantic couple in city' },
+      { id: 'couples-9', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Couple holding hands' },
+      { id: 'couples-10', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Couple in field' },
+      { id: 'couples-11', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Engagement session in park' },
+      { id: 'couples-12', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Couple at home' },
+    ];
+  }
+
+  if (category === 'milestones') {
+    return [
+      { id: 'milestones-1', src: 'https://images.unsplash.com/photo-1484665754804-74b091211472?q=80&w=1200&auto=format&fit=crop', alt: 'Birthday celebration' },
+      { id: 'milestones-2', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Graduation moment' },
+      { id: 'milestones-3', src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop', alt: 'First steps' },
+      { id: 'milestones-4', src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1200&auto=format&fit=crop', alt: 'Anniversary party' },
+      { id: 'milestones-5', src: 'https://images.unsplash.com/photo-1519121782439-2c5f2c2e6c1e?q=80&w=1200&auto=format&fit=crop', alt: 'Retirement celebration' },
+      { id: 'milestones-6', src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop', alt: 'Baby’s first birthday' },
+      { id: 'milestones-7', src: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop', alt: 'Family milestone' },
+      { id: 'milestones-8', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Special achievement' },
+      { id: 'milestones-9', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Milestone cake' },
+      { id: 'milestones-10', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Graduation cap toss' },
+      { id: 'milestones-11', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'First car' },
+      { id: 'milestones-12', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Retirement party' },
+    ];
+  }
+
+  if (category === 'motherhood') {
+    return [
+      { id: 'motherhood-1', src: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and child outdoors' },
+      { id: 'motherhood-2', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Mother holding baby' },
+      { id: 'motherhood-3', src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and daughter' },
+      { id: 'motherhood-4', src: 'https://images.unsplash.com/photo-1519121782439-2c5f2c2e6c1e?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and son' },
+      { id: 'motherhood-5', src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop', alt: 'Motherhood embrace' },
+      { id: 'motherhood-6', src: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and baby at home' },
+      { id: 'motherhood-7', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and toddler' },
+      { id: 'motherhood-8', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and newborn' },
+      { id: 'motherhood-9', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and children' },
+      { id: 'motherhood-10', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and baby laughing' },
+      { id: 'motherhood-11', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and child in field' },
+      { id: 'motherhood-12', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Mother and baby sleeping' },
+    ];
+  }
+
+  if (category === 'portraits') {
+    return [
+      { id: 'portraits-1', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Professional portrait outdoors' },
+      { id: 'portraits-2', src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop', alt: 'Studio portrait' },
+      { id: 'portraits-3', src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1200&auto=format&fit=crop', alt: 'Creative portrait' },
+      { id: 'portraits-4', src: 'https://images.unsplash.com/photo-1519121782439-2c5f2c2e6c1e?q=80&w=1200&auto=format&fit=crop', alt: 'Environmental portrait' },
+      { id: 'portraits-5', src: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop', alt: 'Senior portrait' },
+      { id: 'portraits-6', src: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop', alt: 'Personal branding' },
+      { id: 'portraits-7', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Portrait with natural light' },
+      { id: 'portraits-8', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Portrait in city' },
+      { id: 'portraits-9', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Portrait in field' },
+      { id: 'portraits-10', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Portrait with props' },
+      { id: 'portraits-11', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Portrait with creative lighting' },
+      { id: 'portraits-12', src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1200&auto=format&fit=crop', alt: 'Portrait in studio' },
+    ];
+  }
+
   // Default placeholder for other categories
   return baseImages.map((_, i) => ({
     id: `${category}-${i + 1}`,
@@ -111,6 +179,30 @@ const portfolioData: PortfolioData = {
       "Family milestone celebrations",
     ],
   },
+  milestones: {
+    title: "Milestone Photography",
+    description: "Commemorating life's special moments and achievements with creative, heartfelt imagery.",
+    featured: [
+      "Birthday celebrations",
+      "Graduations",
+      "Anniversaries",
+      "Retirement parties",
+      "First steps & milestones",
+      "Special achievements",
+    ],
+  },
+  motherhood: {
+    title: "Motherhood Photography",
+    description: "Capturing the unique bond and everyday magic between mothers and their children.",
+    featured: [
+      "Mother & child sessions",
+      "Lifestyle motherhood",
+      "Generational portraits",
+      "Candid moments",
+      "Motherhood milestones",
+      "At-home storytelling",
+    ],
+  },
   maternity: {
     title: "Maternity Photography",
     description: "Celebrating the beautiful journey to motherhood with elegant and intimate portraits.",
@@ -142,33 +234,25 @@ interface CategoryPageProps {
   params: { category: string };
 }
 
-// No async needed if not fetching data based on params here
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const { category } = params
+// Fix: Make the page async and await params
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { category } = params;
 
   // Check if category exists in data structure
   if (!portfolioData[category]) {
-    notFound()
+    notFound();
   }
 
-  const { title, description, featured } = portfolioData[category]
-  const images = getImagesForCategory(category) // Get images using helper
+  const { title, description, featured } = portfolioData[category];
+  const images = getImagesForCategory(category); // Get images using helper
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Hero Section - Use first image of category? */}
-      <section className="relative h-[50vh] w-full overflow-hidden">
-        <Image
-          // Use first image from the fetched list, or a default placeholder
-          src={images[0]?.src || "/placeholder.svg?height=800&width=1920"}
-          alt={`${title} hero image`}
-          fill
-          priority
-          className="object-cover brightness-[0.85]"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl">{title}</h1>
-          <p className="mt-6 max-w-md text-lg font-light md:max-w-lg md:text-xl">{description}</p>
+      {/* Hero Section - Now solid background, dark text, no image */}
+      <section className="w-full bg-[#F5F0EA] text-center py-10 md:py-14 mt-8">
+        <div className="w-full flex flex-col items-center justify-center">
+          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900">{title}</h1>
+          <p className="mt-4 max-w-md text-lg font-light md:max-w-lg md:text-xl text-gray-700">{description}</p>
         </div>
       </section>
 
@@ -217,5 +301,5 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         </div>
       </section>
     </div>
-  )
+  );
 }

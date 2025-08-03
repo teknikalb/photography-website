@@ -2,235 +2,278 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Check, ChevronDown, HelpCircle } from "lucide-react"
-import { useState } from "react"
+import { Check, Camera, Heart, Users, Calendar, Award, Sparkles, ArrowRight } from "lucide-react"
+import FAQ, { standardFAQs } from "@/components/faq"
+import Testimonials from "@/components/testimonials"
 
 const services = [
   {
-    id: "portraits",
-    title: "Portrait Sessions",
-    description: "Capturing authentic moments for individuals and families",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop",
+    id: "family",
+    title: "Family Sessions",
+    description: "Beautiful, natural family portraits that showcase your connections and create lasting memories.",
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800&auto=format&fit=crop",
+    icon: Users,
     packages: [
       {
-        name: "Family Session",
-        price: "$450",
+        name: "Full Family Session",
+        price: "$350",
         features: [
-          "1 hour session",
-          "Up to 6 family members",
+          "Up to 60 minutes of shooting time",
+          "1-2 thoughtfully chosen locations",
+          "2 outfit changes (optional)",
+          "25 edited images",
           "Online gallery with digital downloads",
-          "20 edited digital images",
           "Print release",
-          "Location of your choice",
+          "Perfect for families & motherhood sessions",
         ],
       },
+    ],
+  },
+  {
+    id: "couples",
+    title: "Couples & Engagements",
+    description: "Celebrating your love story with romantic, authentic portraits that capture your unique connection.",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop",
+    icon: Heart,
+    packages: [
+      {
+        name: "Couples Session",
+        price: "$350",
+        features: [
+          "Up to 60 minutes of shooting time",
+          "1-2 thoughtfully chosen locations",
+          "2 outfit changes (optional)",
+          "25 edited images",
+          "Online gallery with digital downloads",
+          "Print release",
+          "Perfect for couples & engagements",
+        ],
+      },
+    ],
+  },
+  {
+    id: "motherhood",
+    title: "Motherhood",
+    description: "Capturing the special bond between mothers and their children in intimate, meaningful sessions.",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop",
+    icon: Heart,
+    packages: [
+      {
+        name: "Motherhood Session",
+        price: "$350",
+        features: [
+          "Up to 60 minutes of shooting time",
+          "1-2 thoughtfully chosen locations",
+          "2 outfit changes (optional)",
+          "25 edited images",
+          "Online gallery with digital downloads",
+          "Print release",
+          "Perfect for maternity & motherhood",
+        ],
+      },
+    ],
+  },
+  {
+    id: "portraits",
+    title: "Portraits",
+    description: "Professional portraits that capture your authentic self and tell your unique story.",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop",
+    icon: Camera,
+    packages: [
       {
         name: "Portrait Session",
         price: "$350",
         features: [
-          "1 hour session",
+          "Up to 60 minutes of shooting time",
+          "1-2 thoughtfully chosen locations",
+          "2 outfit changes (optional)",
+          "25 edited images",
           "Online gallery with digital downloads",
-          "15 edited digital images",
           "Print release",
-          "Location of your choice",
-          "Outfit changes",
+          "Perfect for graduation & branding",
         ],
       },
     ],
-  },
-  {
-    id: "mothers-day-minis",
-    title: "Mother's Day Minis",
-    description: "Celebrate the beautiful bond between you and your little ones with a special mini session.",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=800&auto=format&fit=crop",
-    packages: [
-      {
-        name: "Mother's Day Mini Session",
-        price: "$300",
-        features: [
-          "30 minutes of guided photography",
-          "20 professionally edited photos",
-          "Intimate session designed to honor every mama",
-          "Capture memories with your babies, no matter how big or small",
-          "Arrive on time as sessions are scheduled back-to-back",
-          "Laugh, cuddle, and capture these fleeting moments"
-        ],
-      },
-    ],
-  },
-]
-
-const faqs = [
-  {
-    question: "How do I book a session with you?",
-    answer:
-      "To book a session, simply contact me through the contact form, email, or phone. We'll discuss your vision, select a date, and I'll send you a contract and invoice for the deposit to secure your date.",
-  },
-  {
-    question: "How far in advance should I book?",
-    answer:
-      "For family, maternity, milestone, and portrait sessions, 1-2 months in advance is typically sufficient, though more notice is better during busy seasons in Connecticut.",
-  },
-  {
-    question: "What is your payment policy?",
-    answer:
-      "A 50% non-refundable retainer is required to secure your date, with the remaining balance due two weeks before your session. Payment plans are available upon request.",
-  },
-  {
-    question: "How long until I receive my photos?",
-    answer:
-      "Portrait, family, and maternity session galleries are delivered within 2-3 weeks. You'll receive a few sneak peeks within 48 hours of your session.",
-  },
-  {
-    question: "Do you travel for sessions?",
-    answer:
-      "Yes! I serve all of Connecticut and am available for travel throughout New England. For destinations beyond, travel fees may apply. Contact me for a custom quote.",
-  },
-  {
-    question: "What should we wear for our session?",
-    answer:
-      "After booking, I'll send you a detailed style guide with tips for selecting outfits that photograph beautifully. We can also discuss your options during your consultation.",
   },
 ]
 
 export default function ServicesPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
+  
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
       {/* Hero Section */}
-      <section className="relative h-[50vh] w-full overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1920&auto=format&fit=crop"
-          alt="Services hero image"
-          fill
-          priority
-          className="object-cover brightness-[0.7]"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
-          <div className="bg-black/50 backdrop-blur-md rounded-xl shadow-lg px-8 py-10 inline-block">
-            <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-white drop-shadow-lg">Services & Pricing</h1>
-            <p className="mt-6 max-w-xl text-lg font-light md:max-w-2xl md:text-xl text-white drop-shadow">
-              Investment details for capturing your precious moments. All packages are customizable to fit your unique story.
-            </p>
-          </div>
+      <section className="pt-24 pb-16 bg-[#F5F0EA]">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-6">
+            Services & Investment
+          </h1>
+          <p className="text-xl font-light text-gray-700 max-w-3xl mx-auto">
+            At Drena Noelle Photography, we believe every season of life deserves to be captured with care, creativity, and connection. Our sessions are designed to give you time to breathe, relax, and fully enjoy the experience.
+          </p>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      {/* Services Categories */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="font-serif text-3xl font-light tracking-wide md:text-4xl">Your Investment</h2>
-            <p className="mt-4 text-gray-600">
-              I believe in transparent pricing and creating a package that fits your unique needs. All collections can be customized to ensure you get exactly what you're looking for.
-            </p>
-          </div>
-
-          <div className="mt-8 space-y-24">
-            {services.map((service) => (
-              <div key={service.id} className="space-y-12">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
-                  <div className="overflow-hidden rounded-2xl shadow-lg group relative">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      width={800}
-                      height={600}
-                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl pointer-events-none" />
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-3xl font-light text-gray-900">{service.title}</h3>
-                    <p className="mt-4 text-gray-600">{service.description}</p>
-                    <Link
-                      href={`/services/${service.id}`}
-                      className="mt-6 inline-block text-sm font-medium text-primary underline-offset-4 hover:underline"
-                    >
-                      View detailed information
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                  {service.packages.map((pkg) => (
-                    <div
-                      key={pkg.name}
-                      className={"relative rounded-2xl border border-gray-200 bg-white shadow-md p-8 flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1"}
-                    >
-                      <h4 className="font-serif text-xl font-medium text-gray-900">{pkg.name}</h4>
-                      <div className="mt-4 text-3xl font-bold text-primary">{pkg.price}</div>
-                      <ul className="mt-6 space-y-3 w-full">
-                        {pkg.features.map((feature, index) => (
-                          <li key={index} className="flex items-start text-gray-700">
-                            <Check className="mr-2 h-5 w-5 shrink-0 text-primary" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Link
-                        href="/contact"
-                        className="mt-8 w-full rounded-full border border-primary bg-white text-primary hover:bg-primary hover:text-white px-4 py-2 text-center text-sm font-semibold transition-colors shadow"
-                      >
-                        Book Now
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-24 rounded-2xl bg-white/70 backdrop-blur-md shadow-xl p-10 text-center mx-auto max-w-2xl">
-            <h3 className="font-serif text-2xl font-light text-gray-900">Looking for Something Custom?</h3>
-            <p className="mt-4 text-gray-700">
-              Every photography need is unique. Contact me to discuss custom packages tailored to your specific requirements.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow"
-            >
-              Get in Touch
-            </Link>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  service={service}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Process Section */}
+      <section className="py-16 bg-[#F5F0EA]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">How It Works</h2>
+            <p className="text-lg text-gray-700 mb-12">
+              From our first conversation to your final gallery, I'm here to make the process easy and enjoyable.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">1</span>
+                </div>
+                <h3 className="font-serif text-xl font-medium mb-3 text-gray-900">Book Your Session</h3>
+                <p className="text-gray-700">Contact me to discuss your vision and schedule your session. I'll send you a style guide and help you prepare.</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">2</span>
+                </div>
+                <h3 className="font-serif text-xl font-medium mb-3 text-gray-900">Capture Memories</h3>
+                <p className="text-gray-700">Relax and enjoy our time together. I'll guide you through poses while capturing natural, authentic moments.</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-primary">3</span>
+                </div>
+                <h3 className="font-serif text-xl font-medium mb-3 text-gray-900">Receive Your Gallery</h3>
+                <p className="text-gray-700">Within 2-3 weeks, you'll receive your beautiful, edited images in a private online gallery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* FAQ Section */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="font-serif text-3xl font-light tracking-wide md:text-4xl">Frequently Asked Questions</h2>
-            <p className="mt-4 text-gray-600">Everything you need to know about working together</p>
-          </div>
+      <FAQ faqs={standardFAQs} />
 
-          <div className="mx-auto max-w-2xl divide-y divide-gray-200 rounded-2xl bg-white/80 backdrop-blur p-2 shadow-xl">
-            {faqs.map((faq, idx) => (
-              <div key={faq.question}>
-                <button
-                  className="w-full flex items-center justify-between py-5 px-6 text-left focus:outline-none group"
-                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  aria-expanded={openFaq === idx}
-                >
-                  <span className="flex items-center gap-2 font-serif text-lg text-gray-900">
-                    <HelpCircle className="h-5 w-5 text-primary" />
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`h-5 w-5 text-gray-400 transition-transform duration-300 ${openFaq === idx ? "rotate-180" : ""}`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 px-6 ${openFaq === idx ? "max-h-40 py-2" : "max-h-0 py-0"}`}
-                  style={{}}
-                >
-                  <p className="text-gray-700 text-base leading-relaxed">{faq.answer}</p>
-                </div>
-              </div>
-            ))}
+      {/* Final CTA */}
+      <section className="py-16 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="font-serif text-3xl font-light mb-4 text-white">Ready to Get Started?</h2>
+            <p className="text-lg mb-8 text-gray-300">
+              Let's create something beautiful together. Book your session or reach out to discuss your vision.
+            </p>
+            <Link 
+              href="/contact" 
+              className="inline-block rounded-full bg-primary px-8 py-3 text-lg font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow-lg"
+            >
+              Book Your Session
+            </Link>
           </div>
         </div>
       </section>
     </div>
   )
+}
+
+// Service Card Component
+interface ServiceCardProps {
+  service: {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    icon: React.ComponentType<{ className?: string }>;
+    packages: Array<{
+      name: string;
+      price: string;
+      features: string[];
+    }>;
+  };
+}
+
+function ServiceCard({ service }: ServiceCardProps) {
+  const Icon = service.icon;
+  
+  return (
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+      <div className="relative h-64 w-full overflow-hidden">
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        
+        {/* Icon overlay */}
+        <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+          <Icon className="h-6 w-6 text-primary" />
+        </div>
+        
+        {/* Title overlay */}
+        <div className="absolute bottom-4 left-4">
+          <h3 className="font-serif text-2xl font-light text-white drop-shadow-lg">{service.title}</h3>
+        </div>
+      </div>
+      
+      <div className="p-6">
+        <p className="text-gray-700 mb-4">{service.description}</p>
+        
+        {/* Package Info */}
+        {service.packages.map((pkg) => (
+          <div key={pkg.name} className="mb-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-serif text-lg font-medium text-gray-900">{pkg.name}</span>
+              <span className="text-2xl font-bold text-primary">{pkg.price}</span>
+            </div>
+            <ul className="space-y-1 text-sm text-gray-600 mb-4">
+              {pkg.features.slice(0, 3).map((feature, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+              {pkg.features.length > 3 && (
+                <li className="text-gray-500 italic">+ {pkg.features.length - 3} more...</li>
+              )}
+            </ul>
+          </div>
+        ))}
+        
+        <div className="flex gap-3">
+          <Link
+            href={`/services/${service.id}`}
+            className="flex-1 rounded-full border border-primary bg-white text-primary hover:bg-primary hover:text-white px-4 py-2 text-center text-sm font-semibold transition-colors"
+          >
+            Learn More
+          </Link>
+          <Link
+            href="/contact"
+            className="flex-1 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 text-center text-sm font-semibold transition-colors"
+          >
+            Book Now
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }

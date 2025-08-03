@@ -41,7 +41,7 @@ export default function EnhancedHome() {
         <motion.div style={{ scale, y }} className="w-full h-full">
           <Image
             src="/hero1.jpg"
-            alt="Wedding photography hero image"
+            alt="Family, maternity, and portrait photography hero image"
             fill
             priority
             quality={90}
@@ -93,7 +93,7 @@ export default function EnhancedHome() {
       {/* Mini Session Highlight Banner */}
       <section className="w-full bg-primary/10 py-8 flex justify-center items-center">
         <div className="max-w-2xl text-center">
-          <h2 className="font-serif text-3xl font-bold text-primary mb-2">Spring Mini Sessions Now Booking!</h2>
+          <h2 className="font-serif text-3xl font-bold text-primary mb-2">Mini Sessions Now Booking!</h2>
           <p className="text-lg text-gray-700 mb-4">Celebrate the beauty of spring in Connecticut with quick, affordable mini sessions for families, maternity, and portraits. Limited spots available in Hartford, New Haven, and all of Connecticut. Book your spring mini session today!</p>
           <Link href="/mini-sessions" className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow">
             View All Mini Sessions
@@ -124,48 +124,13 @@ export default function EnhancedHome() {
         <Testimonials />
       </section>
 
-      {/* CTA / Contact Form Section - Reduced Padding */}
-      <section ref={ctaRef} className="relative py-[15px]">
-        {/* Background Image Removed */}
-        {/* 
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?q=80&w=1920&auto=format&fit=crop"
-            alt="Background"
-            fill
-            className="object-cover brightness-[0.3]"
-          />
-        </div> 
-        */}
+      {/* CTA / Contact Form Section */}
+      <section ref={ctaRef} className="relative py-16 bg-[#F5F0EA]">
         <div className="container relative z-10 mx-auto px-4">
-          {/* Centered Title */}    
-          <motion.div
-            className="text-center mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="pill-badge">Contact</span>
-            <h2 className="mt-4 font-serif text-3xl font-light tracking-wide md:text-4xl lg:text-5xl text-gray-800">
-              Get In Touch
-            </h2>
-            <div className="divider"></div>
-             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700">
-                Ready to capture your story? Send me a message!
-             </p>
-          </motion.div>
-          
-          {/* Contact Form Component Added - Wider Width */}
-          <motion.div
-            className="mx-auto max-w-4xl" // Increased from max-w-xl
-            initial={{ opacity: 0, y: 30 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          >
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-3xl font-light text-center mb-8 text-gray-900">Get In Touch</h2>
             <ContactForm />
-          </motion.div>
-          
-          {/* Old GlassCard and buttons removed */}
+          </div>
         </div>
       </section>
     </div>

@@ -46,7 +46,7 @@ export default function Testimonials() {
   })
 
   return (
-    <section ref={ref} className="py-16 md:py-24">
+    <section ref={ref} className="py-16 md:py-24 bg-[#F5F0EA]">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <motion.div

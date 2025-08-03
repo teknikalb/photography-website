@@ -35,13 +35,6 @@ const categories = [
 
 const portfolioItems = [
   {
-    id: 1,
-    category: "events",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",
-    title: "Sarah & Michael",
-    description: "Summer wedding at Lakeside Vineyard",
-  },
-  {
     id: 2,
     category: "family",
     image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop",
@@ -68,34 +61,6 @@ const portfolioItems = [
     image: "https://images.unsplash.com/photo-1581467655410-0c2bf55d9d6c?q=80&w=800&auto=format&fit=crop",
     title: "Madison",
     description: "Senior portraits, Class of 2023",
-  },
-  {
-    id: 6,
-    category: "events",
-    image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800&auto=format&fit=crop",
-    title: "Jessica & David",
-    description: "Winter wedding at Historic Mansion",
-  },
-  {
-    id: 7,
-    category: "family",
-    image: "https://images.unsplash.com/photo-1478061653917-455ba7f4a541?q=80&w=800&auto=format&fit=crop",
-    title: "The Martinez Family",
-    description: "Summer beach session",
-  },
-  {
-    id: 8,
-    category: "maternity",
-    image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop",
-    title: "Baby Noah",
-    description: "Lifestyle newborn at home",
-  },
-  {
-    id: 9,
-    category: "portraits",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=800&auto=format&fit=crop",
-    title: "Sophia",
-    description: "Professional headshots",
   },
 ]
 
