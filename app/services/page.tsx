@@ -30,14 +30,14 @@ const services = [
     ],
   },
   {
-    id: "couples",
-    title: "Couples & Engagements",
-    description: "Celebrating your love story with romantic, authentic portraits that capture your unique connection.",
+    id: "events",
+    title: "Events & Celebrations",
+    description: "Capturing your special moments and celebrations with authentic, candid photography.",
     image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop",
-    icon: Heart,
+    icon: Calendar,
     packages: [
       {
-        name: "Couples Session",
+        name: "Event Coverage",
         price: "$350",
         features: [
           "Up to 60 minutes of shooting time",
@@ -46,20 +46,20 @@ const services = [
           "25 edited images",
           "Online gallery with digital downloads",
           "Print release",
-          "Perfect for couples & engagements",
+          "Perfect for events & celebrations",
         ],
       },
     ],
   },
   {
-    id: "motherhood",
-    title: "Motherhood",
+    id: "maternity",
+    title: "Maternity",
     description: "Capturing the special bond between mothers and their children in intimate, meaningful sessions.",
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop",
     icon: Heart,
     packages: [
       {
-        name: "Motherhood Session",
+        name: "Maternity Session",
         price: "$350",
         features: [
           "Up to 60 minutes of shooting time",
