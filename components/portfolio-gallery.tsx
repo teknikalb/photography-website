@@ -121,10 +121,6 @@ export default function PortfolioGallery() {
                     className="h-[300px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                  <div className="absolute bottom-0 left-0 w-full p-6 text-white opacity-0 transition-all duration-300 group-hover:bottom-0 group-hover:opacity-100">
-                    <h3 className="font-serif text-xl text-white">{item.title}</h3>
-                    <p className="mt-1 text-sm text-white/80">{item.description}</p>
-                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>

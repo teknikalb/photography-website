@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Mail, MapPin, Instagram, Clock, CheckCircle, Camera, Heart, Users, Sparkles, ArrowRight, Star, Calendar, MessageCircle } from "lucide-react"
+import { MessageCircle as TikTok } from "lucide-react"
 import ContactForm from "@/components/contact-form"
 
 export default function ContactPage() {
@@ -115,28 +116,22 @@ export default function ContactPage() {
                   </div>
                 </div>
                 
-                {/* Social Media & Stats */}
+                {/* Social Media */}
                 <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20">
                   <h3 className="font-serif text-xl font-medium mb-6 text-gray-900">Follow My Journey</h3>
-                  <div className="flex gap-4 mb-8">
+                  <div className="flex gap-4">
                     <a 
                       href="https://instagram.com" 
                       className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
                     >
                       <Instagram className="h-6 w-6" />
                     </a>
-                  </div>
-                  
-                  {/* Quick Stats */}
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="text-center p-4 bg-primary/5 rounded-xl">
-                      <div className="text-3xl font-bold text-primary">500+</div>
-                      <div className="text-sm text-gray-600 font-medium">Happy Clients</div>
-                    </div>
-                    <div className="text-center p-4 bg-primary/5 rounded-xl">
-                      <div className="text-3xl font-bold text-primary">5+</div>
-                      <div className="text-sm text-gray-600 font-medium">Years Experience</div>
-                    </div>
+                    <a 
+                      href="https://tiktok.com" 
+                      className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+                    >
+                      <TikTok className="h-6 w-6" />
+                    </a>
                   </div>
                 </div>
               </div>

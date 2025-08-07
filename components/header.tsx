@@ -57,7 +57,7 @@ export default function Header() {
               </span>
             </Link>
             <span className="hidden md:block border-l border-gray-300 pl-4 text-sm text-gray-500 font-serif">
-              Hartford, Connecticut
+              Newington, Connecticut
             </span>
           </div>
 

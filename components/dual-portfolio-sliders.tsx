@@ -58,21 +58,22 @@ export default function DualPortfolioSliders() {
     <section className="py-8 w-screen overflow-hidden">
       <div className="overflow-hidden" ref={imageRef}>
         <div className="flex">
-          {carouselImages.map((image, index) => (
-            <div 
-              key={index}
-              className="flex-[0_0_15%] min-w-0 relative aspect-[2/3] mx-[0.25%]"
-            >
-              <Image
-                src={image.url}
-                alt={image.alt}
-                fill
-                className="object-cover rounded-lg"
-                sizes="15vw"
-                unoptimized={true}
-              />
-            </div>
-          ))}
+                      {carouselImages.map((image, index) => (
+              <div 
+                key={index}
+                className="group flex-[0_0_15%] min-w-0 relative aspect-[2/3] mx-[0.25%]"
+              >
+                <Image
+                  src={image.url}
+                  alt={image.alt}
+                  fill
+                  className="object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
+                  sizes="15vw"
+                  unoptimized={true}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg"></div>
+              </div>
+            ))}
         </div>
       </div>
     </section>
