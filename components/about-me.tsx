@@ -86,7 +86,7 @@ export default function AboutMe() {
             className="relative mx-auto w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full shadow-lg md:order-last"
           >
             <Image
-              src="/about-greta.jpg" // Replace with actual image path
+              src="/about-greta.webp" // Replace with actual image path
               alt="Photo of Greta, the photographer"
               fill
               className="object-cover object-top"

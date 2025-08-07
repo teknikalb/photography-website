@@ -48,7 +48,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
             <div className="overflow-hidden rounded-lg">
               <Image
-                src="/about-greta.jpg"
+                src="/about-greta.webp"
                 alt="Photographer portrait - Greta"
                 width={600}
                 height={800}

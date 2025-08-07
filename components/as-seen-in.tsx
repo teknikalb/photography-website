@@ -8,10 +8,10 @@ import Autoplay from 'embla-carousel-autoplay'
 
 // Define sample logo images using placeholder URLs
 const asSeenInImages = [
-  { src: "/as-seen-in2.png", alt: "As Seen In Image 2" },
-  { src: "/as-seen-in3.png", alt: "As Seen In Image 3" },
-  { src: "/as-seen-in4.png", alt: "As Seen In Image 4" },
-  { src: "/as-seen-in5.png", alt: "As Seen In Image 5" },
+  { src: "/as-seen-in2.webp", alt: "As Seen In Image 2" },
+  { src: "/as-seen-in3.webp", alt: "As Seen In Image 3" },
+  { src: "/as-seen-in4.webp", alt: "As Seen In Image 4" },
+  { src: "/as-seen-in5.webp", alt: "As Seen In Image 5" },
 ];
 
 const carouselImages = [
