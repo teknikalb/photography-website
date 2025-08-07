@@ -16,43 +16,43 @@ const asSeenInImages = [
 
 const carouselImages = [
   {
-    url: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1602255680702-c47261041a97?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Family session at park"
   },
   {
-    url: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1721635238761-569bcfb3b88e?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Couple walking motion blur"
   },
   {
-    url: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1605812830488-f4004ac546e7?q=80&w=694&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Newborn session at home"
   },
   {
-    url: "https://images.unsplash.com/photo-1581467655410-0c2bf55d9d6c?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1616003471864-9abfeee24576?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Portrait session outdoors"
   },
   {
-    url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1526277015674-026cb84653ec?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Mother and child in field"
   },
   {
-    url: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1551498624-3712f8e41930?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Mother's Day mini session"
   },
   {
-    url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1543420502-52efc1a35184?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Couple engagement session"
   },
   {
-    url: "https://images.unsplash.com/photo-1484665754804-74b091211472?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1734943757796-366ab4eb02b7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Milestone birthday celebration"
   },
   {
-    url: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1694199372711-c67a3b3ccc4d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Portrait of photographer"
   },
   {
-    url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
+    url: "https://images.unsplash.com/photo-1690223878885-4646ced5b907?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Event group photo"
   }
 ]

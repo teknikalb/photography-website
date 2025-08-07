@@ -12,7 +12,7 @@ const categories = [
     icon: <Users className="h-6 w-6" />,
     title: "Family",
     description: "Beautiful, natural family portraits that showcase your connections in Connecticut.",
-    image: "/family2.jpeg",
+    image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=1054&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/portfolio/family",
   },
   {
@@ -20,7 +20,7 @@ const categories = [
     icon: <Baby className="h-6 w-6" />,
     title: "Maternity",
     description: "Celebrating the beauty and anticipation of motherhood in Connecticut.",
-    image: "/family3.jpeg",
+    image: "https://images.unsplash.com/photo-1555961064-4bc7ec634bbc?q=80&w=1199&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/portfolio/maternity",
   },
   {
@@ -28,7 +28,7 @@ const categories = [
     icon: <Camera className="h-6 w-6" />,
     title: "Portraits",
     description: "Professional portraits that capture your authentic self in Hartford, New Haven, and all of New England.",
-    image: "/family4.jpeg",
+    image: "https://images.unsplash.com/photo-1649219025763-bb4a23fdf256?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/portfolio/portraits",
   },
   {
@@ -36,7 +36,7 @@ const categories = [
     icon: <Calendar className="h-6 w-6" />,
     title: "Milestones",
     description: "Commemorating life's special moments and achievements in Connecticut.",
-    image: "/family5.jpeg",
+    image: "https://images.unsplash.com/photo-1719004347698-5fc3de27c6a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/portfolio/milestones",
   },
   {
@@ -44,7 +44,7 @@ const categories = [
     icon: <Heart className="h-6 w-6" />,
     title: "Mother's Day Minis",
     description: "Special mini sessions to celebrate the beautiful bond between you and your little ones in Connecticut.",
-    image: "/family6.jpeg",
+    image: "https://images.unsplash.com/photo-1601388577503-64a04c24c7f7?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/services/mothers-day-minis",
   },
   {
@@ -52,7 +52,7 @@ const categories = [
     icon: <PawPrint className="h-6 w-6" />,
     title: "Pet Photography",
     description: "Because pets are family too! Capture your furry friends in beautiful, natural portraits in Connecticut.",
-    image: "/family7.jpeg",
+    image: "https://images.unsplash.com/flagged/photo-1583958211970-af3e1596ef32?q=80&w=768&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/services/pet-photography",
   },
 ]

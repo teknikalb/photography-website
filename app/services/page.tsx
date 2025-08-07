@@ -11,7 +11,7 @@ const services = [
     id: "family",
     title: "Family Sessions",
     description: "Beautiful, natural family portraits that showcase your connections and create lasting memories.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=1054&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: Users,
     packages: [
       {
@@ -33,7 +33,7 @@ const services = [
     id: "events",
     title: "Events & Celebrations",
     description: "Capturing your special moments and celebrations with authentic, candid photography.",
-    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1719004347698-5fc3de27c6a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: Calendar,
     packages: [
       {
@@ -55,7 +55,7 @@ const services = [
     id: "maternity",
     title: "Maternity",
     description: "Capturing the special bond between mothers and their children in intimate, meaningful sessions.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1555961064-4bc7ec634bbc?q=80&w=1199&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: Heart,
     packages: [
       {
@@ -77,7 +77,7 @@ const services = [
     id: "portraits",
     title: "Portraits",
     description: "Professional portraits that capture your authentic self and tell your unique story.",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1649219025763-bb4a23fdf256?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: Camera,
     packages: [
       {
@@ -91,6 +91,27 @@ const services = [
           "Online gallery with digital downloads",
           "Print release",
           "Perfect for graduation & branding",
+        ],
+      },
+    ],
+  },
+  {
+    id: "mini-sessions",
+    title: "Mini Sessions",
+    description: "Quick, affordable sessions perfect for capturing special moments and seasonal themes.",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop",
+    icon: Sparkles,
+    packages: [
+      {
+        name: "Mini Session",
+        price: "$200",
+        features: [
+          "30 minutes of shooting time",
+          "1 location",
+          "15 edited images",
+          "Online gallery with digital downloads",
+          "Print release",
+          "Perfect for quick portraits & seasonal themes",
         ],
       },
     ],

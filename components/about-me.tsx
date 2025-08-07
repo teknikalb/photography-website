@@ -21,7 +21,7 @@ export default function AboutMe() {
         >
           <span className="pill-badge">About</span>
           <h2 className="mt-4 font-serif text-3xl font-light tracking-wide md:text-4xl lg:text-5xl text-gray-800">
-            Meet Your Photographer
+            Hi! I'm Greta
           </h2>
           <div className="divider"></div>
           {/* Optional: Add a short subtitle if desired */}
@@ -39,9 +39,7 @@ export default function AboutMe() {
             className="text-center md:text-left"
           >
             {/* Script Heading */}
-            <h2 className="font-script text-4xl md:text-5xl text-gray-700 mb-2 text-center">
-              I'm Greta
-            </h2>
+            
             {/* Uppercase Subheading */}
             <p className="text-sm font-medium tracking-[0.2em] text-gray-600 mb-4 text-center">
               AND I CAN'T WAIT TO GET TO KNOW YOU!
