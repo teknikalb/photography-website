@@ -113,14 +113,14 @@ export default function AsSeenIn() {
             {carouselImages.map((image, index) => (
               <div 
                 key={index}
-                className="flex-[0_0_15%] min-w-0 relative aspect-[2/3] mx-[0.25%]"
+                className="flex-[0_0_55%] sm:flex-[0_0_35%] lg:flex-[0_0_15%] min-w-0 relative aspect-[2/3] mx-[0.5%]"
               >
                 <Image
                   src={image.url}
                   alt={image.alt}
                   fill
                   className="object-cover rounded-lg"
-                  sizes="(min-width: 1024px) 15vw, (min-width: 768px) 25vw, 50vw"
+                  sizes="(min-width: 1024px) 15vw, (min-width: 768px) 35vw, 55vw"
                 />
               </div>
             ))}
