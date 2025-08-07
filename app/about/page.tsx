@@ -52,7 +52,7 @@ export default function AboutPage() {
                 alt="Photographer portrait - Greta"
                 width={600}
                 height={800}
-                className="h-full w-full object-cover"
+                
               />
             </div>
             <div className="space-y-6">
@@ -146,7 +146,7 @@ export default function AboutPage() {
             <TimelineItem
               year="2015"
               title="Professional Training"
-              description="Completed intensive workshop training with renowned wedding photographers and earned certification in portrait photography."
+              description="Completed intensive workshop training and earned certification in portrait photography."
             />
             <TimelineItem
               year="2016"
@@ -156,7 +156,7 @@ export default function AboutPage() {
             <TimelineItem
               year="2018"
               title="Expanded to Full-Time"
-              description="Transitioned from part-time to full-time photographer, focusing on weddings and portrait work throughout Connecticut."
+              description="Transitioned from part-time to full-time photographer, focusing on portrait work throughout Connecticut."
             />
             <TimelineItem
               year="2020"
@@ -166,7 +166,7 @@ export default function AboutPage() {
             <TimelineItem
               year="2022"
               title="Industry Recognition"
-              description="Received multiple awards for wedding and portrait photography from industry associations and publications."
+              description="Received multiple awards for portrait photography from industry associations and publications."
             />
           </div>
         </div>

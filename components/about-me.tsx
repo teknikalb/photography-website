@@ -92,9 +92,13 @@ export default function AboutMe() {
               alt="Photo of Greta, the photographer"
               fill
               className="object-cover object-top"
+<<<<<<< HEAD
               sizes="(max-width: 768px) 60vw, 320px" 
               quality={100}
               priority
+=======
+              sizes="(max-width: 768px) 75vw, 320px" // Adjusted sizes attribute
+>>>>>>> 76a739028b05dc8c629afb1b2e7d64b7acc339a4
             />
           </motion.div>
         </div>

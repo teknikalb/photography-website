@@ -56,7 +56,7 @@ const testimonials = [
 export default function TestimonialsSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [autoplay, setAutoplay] = useState(true)
-  const autoplayRef = useRef(null)
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null)
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
