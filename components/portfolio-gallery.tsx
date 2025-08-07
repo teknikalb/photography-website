@@ -119,6 +119,7 @@ export default function PortfolioGallery() {
                     width={800}
                     height={600}
                     className="h-[300px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 90vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                 </motion.div>

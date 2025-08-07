@@ -93,10 +93,13 @@ export default function AsSeenIn() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <img
+                <Image
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-contain grayscale transition-all duration-300 hover:grayscale-0"
+                  fill
+                  className="object-contain grayscale transition-all duration-300 hover:grayscale-0"
+                  sizes="(min-width: 1024px) 14rem, (min-width: 768px) 12rem, 6rem"
+                  priority={index < 2}
                 />
               </motion.div>
             ))}
@@ -117,8 +120,7 @@ export default function AsSeenIn() {
                   alt={image.alt}
                   fill
                   className="object-cover rounded-lg"
-                  sizes="15vw"
-                  unoptimized={true}
+                  sizes="(min-width: 1024px) 15vw, (min-width: 768px) 25vw, 50vw"
                 />
               </div>
             ))}

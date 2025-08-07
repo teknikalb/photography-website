@@ -45,7 +45,8 @@ export default function EnhancedHome() {
             fill
             priority
             quality={90}
-            className="object-cover object-center"
+            sizes="100vw"
+            className="object-cover object-right md:object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
         </motion.div>

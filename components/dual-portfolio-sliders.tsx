@@ -68,8 +68,7 @@ export default function DualPortfolioSliders() {
                   alt={image.alt}
                   fill
                   className="object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
-                  sizes="15vw"
-                  unoptimized={true}
+                  sizes="(min-width: 1024px) 15vw, (min-width: 768px) 25vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-lg"></div>
               </div>

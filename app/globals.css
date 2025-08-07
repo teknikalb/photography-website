@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+/* Google Fonts import removed to avoid render-blocking; fonts loaded via next/font in layout */
 
 @tailwind base;
 @tailwind components;
@@ -57,7 +57,7 @@
   }
   body {
     @apply bg-[#F5F0EA] text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     font-size: 17px;
     line-height: 1.7;
   }
@@ -67,7 +67,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-serif), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     @apply text-foreground;
     line-height: 1.3;
   }
