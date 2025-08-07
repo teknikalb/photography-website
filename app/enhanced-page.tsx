@@ -40,7 +40,7 @@ export default function EnhancedHome() {
       <section ref={heroRef} className="relative h-[70vh] w-full overflow-hidden">
         <motion.div style={{ scale, y }} className="w-full h-full">
           <Image
-            src="/hero1.jpg"
+            src="/family10.webp"
             alt="Family, maternity, and portrait photography hero image"
             fill
             priority
