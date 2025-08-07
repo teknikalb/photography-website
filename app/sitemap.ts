@@ -44,7 +44,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "maternity",
     "portraits",
     "milestones",
-    "mothers-day-minis"
+    "mothers-day-minis",
+    "pet-photography"
   ].map((service) => ({
     url: `${baseUrl}/services/${service}`,
     lastModified: new Date(),

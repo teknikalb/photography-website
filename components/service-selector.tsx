@@ -4,7 +4,7 @@ import { useState, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, useInView } from "framer-motion"
-import { ArrowRight, Heart, Users, Baby, Camera, Calendar, MessageSquare } from "lucide-react"
+import { ArrowRight, Heart, Users, Baby, Camera, Calendar, MessageSquare, PawPrint } from "lucide-react"
 
 const categories = [
   {
@@ -12,7 +12,7 @@ const categories = [
     icon: <Users className="h-6 w-6" />,
     title: "Family",
     description: "Beautiful, natural family portraits that showcase your connections in Connecticut.",
-    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200&auto=format&fit=crop",
+    image: "/family2.jpeg",
     href: "/portfolio/family",
   },
   {
@@ -20,7 +20,7 @@ const categories = [
     icon: <Baby className="h-6 w-6" />,
     title: "Maternity",
     description: "Celebrating the beauty and anticipation of motherhood in Connecticut.",
-    image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=800&auto=format&fit=crop",
+    image: "/family3.jpeg",
     href: "/portfolio/maternity",
   },
   {
@@ -28,7 +28,7 @@ const categories = [
     icon: <Camera className="h-6 w-6" />,
     title: "Portraits",
     description: "Professional portraits that capture your authentic self in Hartford, New Haven, and all of New England.",
-    image: "https://images.unsplash.com/photo-1581467655410-0c2bf55d9d6c?q=80&w=1200&auto=format&fit=crop",
+    image: "/family4.jpeg",
     href: "/portfolio/portraits",
   },
   {
@@ -36,7 +36,7 @@ const categories = [
     icon: <Calendar className="h-6 w-6" />,
     title: "Milestones",
     description: "Commemorating life's special moments and achievements in Connecticut.",
-    image: "https://images.unsplash.com/photo-1484665754804-74b091211472?q=80&w=1200&auto=format&fit=crop",
+    image: "/family5.jpeg",
     href: "/portfolio/milestones",
   },
   {
@@ -44,8 +44,16 @@ const categories = [
     icon: <Heart className="h-6 w-6" />,
     title: "Mother's Day Minis",
     description: "Special mini sessions to celebrate the beautiful bond between you and your little ones in Connecticut.",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1200&auto=format&fit=crop",
+    image: "/family6.jpeg",
     href: "/services/mothers-day-minis",
+  },
+  {
+    id: "pet-photography",
+    icon: <PawPrint className="h-6 w-6" />,
+    title: "Pet Photography",
+    description: "Because pets are family too! Capture your furry friends in beautiful, natural portraits in Connecticut.",
+    image: "/family7.jpeg",
+    href: "/services/pet-photography",
   },
 ]
 

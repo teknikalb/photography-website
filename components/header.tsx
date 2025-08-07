@@ -13,6 +13,7 @@ const services = [
   { name: "Maternity", href: "/services/maternity" },
   { name: "Portraits", href: "/services/portraits" },
   { name: "Milestone Sessions", href: "/services/milestones" },
+  { name: "Pet Photography", href: "/services/pet-photography" },
   // Add more services as needed
 ]
 

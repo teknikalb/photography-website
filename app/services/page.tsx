@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Check, Camera, Heart, Users, Calendar, Award, Sparkles, ArrowRight } from "lucide-react"
+import { Check, Camera, Heart, Users, Calendar, Award, Sparkles, ArrowRight, PawPrint } from "lucide-react"
 import FAQ, { standardFAQs } from "@/components/faq"
 import Testimonials from "@/components/testimonials"
 
@@ -91,6 +91,26 @@ const services = [
           "Online gallery with digital downloads",
           "Print release",
           "Perfect for graduation & branding",
+        ],
+      },
+    ],
+  },
+  {
+    id: "pet-photography",
+    title: "Pet Photography",
+    description: "Beautiful portraits of your furry family members.",
+    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop",
+    icon: PawPrint,
+    packages: [
+      {
+        name: "Pet Photography Session",
+        price: "$250",
+        features: [
+          "45 minutes of shooting time",
+          "20 edited images",
+          "Owner + pet or pet-only",
+          "2 looks or locations",
+          "Perfect for holiday cards or framed prints!",
         ],
       },
     ],

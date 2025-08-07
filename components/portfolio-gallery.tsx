@@ -37,35 +37,34 @@ const portfolioItems = [
   {
     id: 2,
     category: "family",
-    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800&auto=format&fit=crop",
+    image: "/family8.jpeg",
     title: "The Johnson Family",
     description: "Fall family session at Cedar Park",
   },
   {
     id: 3,
     category: "maternity",
-    image: "https://images.unsplash.com/photo-1566004100631-35d015d6a491?q=80&w=800&auto=format&fit=crop",
+    image: "/family9.jpeg",
     title: "Baby Emma",
     description: "Newborn session at 8 days new",
   },
   {
     id: 4,
     category: "couples",
-    image: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=800&auto=format&fit=crop",
+    image: "/family10.jpeg",
     title: "Alex & Jamie",
     description: "Sunset engagement at Coastal Cliffs",
   },
   {
     id: 5,
     category: "portraits",
-    image: "https://images.unsplash.com/photo-1581467655410-0c2bf55d9d6c?q=80&w=800&auto=format&fit=crop",
+    image: "/family12.jpeg",
     title: "Madison",
     description: "Senior portraits, Class of 2023",
   },
 ]
 
 export default function PortfolioGallery() {
-  const [activeCategory, setActiveCategory] = useState("events")
   const [emblaRef] = useEmblaCarousel(
     { 
       loop: true,
@@ -76,8 +75,7 @@ export default function PortfolioGallery() {
     [Autoplay({ delay: 4000 })]
   )
 
-  const filteredItems =
-    activeCategory === "events" ? portfolioItems : portfolioItems.filter((item) => item.category === activeCategory)
+  const filteredItems = portfolioItems
 
   return (
     <section className="py-0">
@@ -94,12 +92,7 @@ export default function PortfolioGallery() {
           {categories.map((category) => (
             <button
               key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 md:px-6 md:py-2 ${
-                activeCategory === category.id
-                  ? "border-primary bg-primary text-white"
-                  : "border-gray-200 bg-white text-gray-700 hover:border-primary/50 hover:text-primary"
-              }`}
+              className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 md:px-6 md:py-2"
             >
               {category.name}
             </button>

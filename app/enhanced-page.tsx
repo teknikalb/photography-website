@@ -61,10 +61,10 @@ export default function EnhancedHome() {
             className="max-w-4xl"
           >
             <h1 className="font-serif text-4xl font-bold tracking-wide text-white/95 sm:text-5xl md:text-6xl lg:text-7xl">
-              Connecticut Family, Maternity & Portrait Photographer
+              Drena Noelle Photography
             </h1>
             <p className="mt-6 text-lg font-medium text-white/90 md:text-xl">
-              Specializing in family, maternity, milestone, and portrait photography in Hartford, New Haven, and all of Connecticut and New England.
+            Connecticut, New England Family Photographer
             </p>
             <div className="mt-10 flex flex-col space-y-6 sm:flex-row sm:justify-center sm:space-x-8 sm:space-y-0">
               <Link 

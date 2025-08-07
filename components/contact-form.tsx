@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react';
-import { Mail, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, Send, CheckCircle, AlertCircle, Sparkles, Heart, Camera } from 'lucide-react';
 import { useFormspark } from "@formspark/use-formspark";
 
 // Define the structure for the form data state
@@ -49,16 +49,21 @@ export default function ContactForm() {
   if (formStatus === "success") {
     return (
       <div className="text-center p-8">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="h-8 w-8 text-green-600" />
+        <div className="relative">
+          <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <CheckCircle className="h-10 w-10 text-green-600" />
+          </div>
+          <div className="absolute -top-2 -right-2">
+            <Sparkles className="h-6 w-6 text-primary animate-pulse" />
+          </div>
         </div>
-        <h3 className="font-serif text-2xl font-light mb-4 text-gray-900">Thank You!</h3>
-        <p className="text-gray-700 mb-6">
-          Your message has been sent successfully. I'll get back to you within 24 hours!
+        <h3 className="font-serif text-3xl font-light mb-4 text-gray-900">Thank You!</h3>
+        <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+          Your message has been sent successfully. I'll get back to you within 24 hours with excitement to discuss your vision!
         </p>
         <button 
           onClick={() => setFormStatus("")}
-          className="text-primary hover:underline"
+          className="text-primary hover:underline font-medium text-lg transition-colors hover:text-primary/80"
         >
           Send another message
         </button>
@@ -67,135 +72,175 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-8">
+      {/* Form Header */}
+      <div className="text-center mb-8">
+        <div className="flex items-center justify-center mb-4">
+          <Heart className="h-6 w-6 text-primary mr-2" />
+          <span className="text-sm font-medium text-primary">Let's Create Magic Together</span>
+          <Heart className="h-6 w-6 text-primary ml-2" />
+        </div>
+      </div>
+
       {/* Name and Email Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+        <div className="group">
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
             Full Name *
           </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            required
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-            placeholder="Your full name"
-          />
+          <div className="relative">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm"
+              placeholder="Your beautiful name"
+            />
+            <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+              <Sparkles className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
+            </div>
+          </div>
         </div>
         
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+        <div className="group">
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
             Email Address *
           </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            required
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-            placeholder="your@email.com"
-          />
+          <div className="relative">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm"
+              placeholder="your@email.com"
+            />
+            <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+              <Mail className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Phone and Session Type Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+        <div className="group">
+          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
             Phone Number
           </label>
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-            placeholder="(123) 456-7890"
-          />
+          <div className="relative">
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm"
+              placeholder="(123) 456-7890"
+            />
+            <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+              <Phone className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
+            </div>
+          </div>
         </div>
         
-        <div>
-          <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
+        <div className="group">
+          <label htmlFor="interest" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
             Session Type *
           </label>
-          <select 
-            name="interest"
-            id="interest"
-            value={formData.interest}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-          >
-            <option value="" disabled>Select session type...</option>
-            <option value="Full Photography Session ($350)">Full Photography Session ($350)</option>
-            <option value="Fall Mini Session ($200)">Fall Mini Session ($200)</option>
-            <option value="Christmas Mini Session ($200)">Christmas Mini Session ($200)</option>
-            <option value="Valentine's Mini Session ($200)">Valentine's Mini Session ($200)</option>
-            <option value="Family Session">Family Session</option>
-            <option value="Maternity Session">Maternity Session</option>
-            <option value="Couples/Engagement">Couples/Engagement</option>
-            <option value="Portraits/Headshots">Portraits/Headshots</option>
-            <option value="Graduation">Graduation</option>
-            <option value="Events">Events</option>
-            <option value="Other">Other (please specify in message)</option>
-          </select>
+          <div className="relative">
+            <select 
+              name="interest"
+              id="interest"
+              value={formData.interest}
+              onChange={handleChange}
+              required
+              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm appearance-none"
+            >
+              <option value="" disabled>Select your perfect session...</option>
+              <option value="Full Photography Session ($350)">Full Photography Session ($350)</option>
+              <option value="Fall Mini Session ($200)">Fall Mini Session ($200)</option>
+              <option value="Christmas Mini Session ($200)">Christmas Mini Session ($200)</option>
+              <option value="Valentine's Mini Session ($200)">Valentine's Mini Session ($200)</option>
+              <option value="Pet Photography Session ($250)">Pet Photography Session ($250)</option>
+              <option value="Family Session">Family Session</option>
+              <option value="Maternity Session">Maternity Session</option>
+              <option value="Couples/Engagement">Couples/Engagement</option>
+              <option value="Portraits/Headshots">Portraits/Headshots</option>
+              <option value="Graduation">Graduation</option>
+              <option value="Events">Events</option>
+              <option value="Other">Other (please specify in message)</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+              <Camera className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Preferred Date */}
-      <div>
-        <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-700 mb-2">
+      <div className="group">
+        <label htmlFor="preferredDate" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
           Preferred Date
         </label>
-        <input
-          type="date"
-          name="preferredDate"
-          id="preferredDate"
-          value={formData.preferredDate}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-        />
-        <p className="text-sm text-gray-500 mt-1">Optional - helps me check availability</p>
+        <div className="relative">
+          <input
+            type="date"
+            name="preferredDate"
+            id="preferredDate"
+            value={formData.preferredDate}
+            onChange={handleChange}
+            className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm"
+          />
+          <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+            <Sparkles className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
+          </div>
+        </div>
+        <p className="text-sm text-gray-500 mt-2 italic">Optional - helps me check availability for your perfect day</p>
       </div>
 
       {/* Message */}
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+      <div className="group">
+        <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
           Tell me about your vision *
         </label>
-        <textarea
-          name="message"
-          id="message"
-          rows={5}
-          required
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-vertical"
-          placeholder="Tell me about what you're looking for, any specific ideas you have, location preferences, or questions you might have. I'd love to hear your story!"
-        ></textarea>
+        <div className="relative">
+          <textarea
+            name="message"
+            id="message"
+            rows={6}
+            required
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm resize-none"
+            placeholder="Tell me about what you're looking for, any specific ideas you have, location preferences, or questions you might have. I'd love to hear your story and help bring your vision to life! ✨"
+          ></textarea>
+          <div className="absolute top-4 right-4 flex items-center pointer-events-none">
+            <Heart className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
+          </div>
+        </div>
       </div>
 
       {/* Submit Button */}
-      <div className="pt-4">
+      <div className="pt-6">
         <button
           type="submit"
           disabled={formStatus === "submitting"}
-          className="w-full bg-primary text-white px-8 py-4 rounded-lg font-semibold transition-colors hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 hover:from-primary/90 hover:to-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:scale-[1.02] transform"
         >
           {formStatus === "submitting" ? (
             <>
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-              Sending...
+              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+              Sending Your Message...
             </>
           ) : (
             <>
-              <Send className="h-5 w-5" />
+              <Send className="h-6 w-6" />
               Send Message
             </>
           )}
@@ -204,20 +249,15 @@ export default function ContactForm() {
 
       {/* Error State */}
       {formStatus === 'error' && (
-        <div className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-lg">
-          <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0" />
-          <p className="text-red-700">Something went wrong. Please try again or email me directly.</p>
+        <div className="flex items-center gap-3 p-6 bg-red-50 border-2 border-red-200 rounded-2xl">
+          <AlertCircle className="h-6 w-6 text-red-600 flex-shrink-0" />
+          <p className="text-red-700 font-medium">Something went wrong. Please try again or email me directly at hello@drenanoelle.com</p>
         </div>
       )}
 
       {/* Form Footer */}
-      <div className="text-center pt-4 border-t border-gray-200">
-        <p className="text-sm text-gray-600">
-          I typically respond within 24 hours. For urgent inquiries, call{' '}
-          <a href="tel:+1234567890" className="text-primary hover:underline font-medium">
-            (123) 456-7890
-          </a>
-        </p>
+      <div className="text-center pt-6 border-t border-gray-200">
+        {/* Removed urgent inquiries phone number as requested */}
       </div>
     </form>
   );

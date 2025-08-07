@@ -88,11 +88,13 @@ export default function AboutMe() {
             className="relative mx-auto w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full shadow-lg md:order-last"
           >
             <Image
-              src="/photographer.jpg" // Replace with actual image path
+              src="/about-greta.jpg" // Replace with actual image path
               alt="Photo of Greta, the photographer"
               fill
-              className="object-cover"
-              sizes="(max-width: 768px) 60vw, 320px" // Adjusted sizes attribute
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 60vw, 320px" 
+              quality={100}
+              priority
             />
           </motion.div>
         </div>

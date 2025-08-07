@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from "next/image"
 import Link from "next/link"
-import { Check, Heart, Clock, Camera, Users, Baby, Star, Gift, Image as ImageIcon } from "lucide-react"
+import { Check, Heart, Clock, Camera, Users, Baby, Star, Gift, Image as ImageIcon, PawPrint } from "lucide-react"
 import FAQ, { standardFAQs } from "@/components/faq"
 
 export default function PricingPage() {
@@ -103,6 +103,10 @@ export default function PricingPage() {
                         <Camera className="h-5 w-5 text-primary" />
                         <span className="font-medium text-gray-900">Branding & lifestyle portraits</span>
                       </div>
+                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                        <PawPrint className="h-5 w-5 text-primary" />
+                        <span className="font-medium text-gray-900">Pet photography</span>
+                      </div>
                     </div>
                   </div>
 
@@ -184,6 +188,16 @@ export default function PricingPage() {
               <div className="text-2xl font-bold text-primary mb-4">$200</div>
               <p className="text-gray-600 mb-4">30 minutes • 15 images • Romantic or playful</p>
               <Link href="/mini-sessions" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
+                Learn More
+              </Link>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-6 shadow-lg text-center border border-gray-200">
+              <div className="text-4xl mb-4">🐾</div>
+              <h3 className="font-serif text-xl font-medium mb-2">Holiday Pet Mini</h3>
+              <div className="text-2xl font-bold text-primary mb-4">$150</div>
+              <p className="text-gray-600 mb-4">30 minutes • 10 images • Festive setup</p>
+              <Link href="/services/pet-photography" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
                 Learn More
               </Link>
             </div>

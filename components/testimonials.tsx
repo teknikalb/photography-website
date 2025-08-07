@@ -12,27 +12,27 @@ const testimonials = [
   {
     name: "Sarah & Michael",
     event: "Wedding, Lakeside Vineyard",
-    quote: "Working with Katie was an absolute dream! She captured our day so perfectly, making us feel comfortable and natural. The photos are breathtaking!"
+    quote: "Working with Greta was an absolute dream! She captured our day so perfectly, making us feel comfortable and natural. The photos are breathtaking!"
   },
   {
     name: "The Johnson Family",
     event: "Family Session, Cedar Park",
-    quote: "Katie has a magical way with kids! She captured the genuine joy and chaos of our family beautifully. We treasure these photos."
+    quote: "Greta has a magical way with kids! She captured the genuine joy and chaos of our family beautifully. We treasure these photos."
   },
   {
     name: "Alex & Jamie",
     event: "Engagement Session, Coastal Cliffs",
-    quote: "We were nervous about being in front of the camera, but Katie made it so fun and easy. The photos truly reflect our relationship."
+    quote: "We were nervous about being in front of the camera, but Greta made it so fun and easy. The photos truly reflect our relationship."
   },
   {
     name: "Jessica & David",
     event: "Wedding, Historic Mansion",
-    quote: "From start to finish, Katie was professional, kind, and incredibly talented. Our wedding photos exceeded all expectations."
+    quote: "From start to finish, Greta was professional, kind, and incredibly talented. Our wedding photos exceeded all expectations."
   },
   {
     name: "The Martinez Family",
     event: "Summer Beach Session",
-    quote: "The photos are stunning! Katie captured the light and our family's connection perfectly. Highly recommend!"
+    quote: "The photos are stunning! Greta captured the light and our family's connection perfectly. Highly recommend!"
   }
 ]
 

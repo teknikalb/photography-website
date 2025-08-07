@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Check, Star, Gift, Calendar, Clock, Image as ImageIcon } from "lucide-react"
+import { Check, Star, Gift, Calendar, Clock, Image as ImageIcon, PawPrint } from "lucide-react"
 
 const bundles = [
   {
@@ -79,6 +79,14 @@ const individualSessions = [
     features: ["30 mins", "15 images", "Romantic or playful"],
     image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=600&auto=format&fit=crop",
     emoji: "💌"
+  },
+  {
+    id: "holiday-pet",
+    title: "Holiday Pet Mini",
+    price: "$150",
+    features: ["30 mins", "10 images", "Festive setup (Santa hats welcome!)"],
+    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=600&auto=format&fit=crop",
+    emoji: "🐾"
   }
 ]
 
@@ -102,7 +110,7 @@ export default function MiniSessionsPage() {
             Seasonal Mini Session Bundles
           </h1>
           <p className="text-xl font-light text-gray-700">
-            🍂🎄❤ FALL • CHRISTMAS • VALENTINE'S
+            🍂🎄❤🐾 FALL • CHRISTMAS • VALENTINE'S • HOLIDAY PET
           </p>
         </div>
       </section>
