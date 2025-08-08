@@ -112,6 +112,18 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          {/* Proactively unregister any existing service workers to avoid 404s from stale caches */}
+          <Script id="sw-unregister" strategy="afterInteractive">
+            {`
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(regs => {
+                  for (const reg of regs) {
+                    reg.unregister().catch(() => {});
+                  }
+                }).catch(() => {});
+              }
+            `}
+          </Script>
         </ThemeProvider>
       </body>
     </html>
