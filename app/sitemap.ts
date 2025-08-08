@@ -14,7 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/privacy-policy",
     "/terms-of-service",
-    "/cookies"
+    "/cookies",
+    // removed standalone mini-sessions
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -45,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "portraits",
     "milestones",
     "mothers-day-minis",
+    "mini-sessions",
     "pet-photography"
   ].map((service) => ({
     url: `${baseUrl}/services/${service}`,
@@ -53,11 +55,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  // Mini-session landing pages now under services
+  const miniSessionSlugs = [
+    "fall",
+    "spring",
+    "summer",
+    "holiday",
+    "mothers-day",
+    "back-to-school",
+  ].map((slug) => ({
+    url: `${baseUrl}/services/mini-sessions/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.65,
+  }))
+
+  const locations = [
+    "hartford",
+    "new-haven",
+    "west-hartford",
+    "stamford",
+    "glastonbury",
+  ].map((city) => ({
+    url: `${baseUrl}/locations/${city}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
+
   // Blog posts
   const blogSlugs = [
-    "event-planning-tips",
-    "maternity-session-guide",
-    "choosing-photographer"
+    "family-photo-outfit-guide-connecticut",
+    "best-locations-hartford-family-photos",
+    "maternity-session-tips-connecticut",
+    "mini-session-prep-checklist",
+    "portrait-posing-tips-connecticut",
+    "ct-fall-photos-guide",
+    "golden-hour-vs-midday-photos-ct",
+    "at-home-lifestyle-session-guide",
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
@@ -65,5 +100,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...routes, ...portfolioCategories, ...servicePages, ...blogSlugs]
+  return [...routes, ...portfolioCategories, ...servicePages, ...miniSessionSlugs, ...locations, ...blogSlugs]
 }

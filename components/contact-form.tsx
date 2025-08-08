@@ -12,11 +12,13 @@ interface FormData {
   interest: string;
   preferredDate: string;
   message: string;
+  honey?: string; // honeypot field
 }
 
 export default function ContactForm() {
+  const formId = process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID || "";
   const [submit, submitting] = useFormspark({
-    formId: process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID || "",
+    formId,
   });
 
   const [formData, setFormData] = useState<FormData>({
@@ -26,6 +28,7 @@ export default function ContactForm() {
     interest: "",
     preferredDate: "",
     message: "",
+    honey: "",
   });
 
   const [formStatus, setFormStatus] = useState("");
@@ -38,13 +41,28 @@ export default function ContactForm() {
     e.preventDefault();
     setFormStatus("submitting");
     try {
+      // Basic honeypot spam check
+      if (formData.honey && formData.honey.trim().length > 0) {
+        setFormStatus("");
+        return;
+      }
       await submit(formData as any);
       setFormStatus("success");
-      setFormData({ name: '', email: '', phone: '', interest: '', preferredDate: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', interest: '', preferredDate: '', message: '', honey: '' });
     } catch (err) {
       setFormStatus("error");
     }
   };
+
+  if (!formId) {
+    return (
+      <div className="text-center p-6 rounded-xl border border-yellow-200 bg-yellow-50 text-yellow-800">
+        Contact form is temporarily unavailable. Please email me directly at
+        {" "}
+        <a href="mailto:hello@drenanoelle.com" className="underline">hello@drenanoelle.com</a>.
+      </div>
+    );
+  }
 
   if (formStatus === "success") {
     return (
@@ -72,7 +90,19 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-8" noValidate>
+      {/* Honeypot */}
+      <input
+        type="text"
+        name="honey"
+        id="honey"
+        value={formData.honey}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
       {/* Form Header */}
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">

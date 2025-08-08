@@ -17,6 +17,14 @@ const services = [
   // Add more services as needed
 ]
 
+const locations = [
+  { name: "Hartford", href: "/locations/hartford" },
+  { name: "New Haven", href: "/locations/new-haven" },
+  { name: "West Hartford", href: "/locations/west-hartford" },
+  { name: "Stamford", href: "/locations/stamford" },
+  { name: "Glastonbury", href: "/locations/glastonbury" },
+]
+
 // Updated navigation array
 const navigation = [
   { name: "HOME", href: "/" },
@@ -27,6 +35,8 @@ const navigation = [
     submenu: services,
   },
   { name: "PORTFOLIO", href: "/portfolio" }, // Added Portfolio back if needed
+  { name: "MINI SESSIONS", href: "/services/mini-sessions" },
+  { name: "LOCATIONS", href: "/locations", submenu: locations },
   { name: "PRICING", href: "/pricing" }, // Added Pricing link
   { name: "CONTACT", href: "/contact" },
 ]
@@ -34,7 +44,17 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(null)
+  const [hasMounted, setHasMounted] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) {
+    // Avoid potential SSR/CSR mismatches in the header/navigation
+    return null
+  }
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false)
@@ -99,7 +119,7 @@ export default function Header() {
 
           <div className="hidden flex-none items-center space-x-3 md:flex">
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/drenanoellephoto/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 transition-colors hover:text-primary"

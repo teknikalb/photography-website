@@ -58,8 +58,8 @@
   body {
     @apply bg-[#F5F0EA] text-foreground;
     font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.8;
   }
   h1,
   h2,
@@ -75,14 +75,63 @@
     @apply text-4xl font-light tracking-wide sm:text-5xl md:text-6xl lg:text-7xl;
   }
   h2 {
-    @apply text-4xl font-light tracking-wide md:text-5xl lg:text-6xl;
+    @apply text-3xl font-light tracking-wide md:text-4xl lg:text-5xl;
   }
   h3 {
     @apply text-3xl font-light tracking-wide md:text-4xl;
   }
   p {
-    @apply text-base md:text-lg font-light text-muted-foreground;
+    @apply text-[17px] md:text-[18px] font-light text-muted-foreground leading-8;
   }
+}
+/* Reading typography for blog content */
+.prose-reading {
+  @apply prose prose-neutral max-w-none;
+}
+.prose-reading :where(p){
+  @apply my-5 leading-8 text-[17px] md:text-[18px];
+}
+.prose-reading :where(h2){
+  @apply mt-10 mb-4 text-2xl md:text-3xl font-normal text-gray-900 scroll-mt-24;
+}
+.prose-reading :where(h3){
+  @apply mt-8 mb-3 text-xl md:text-2xl font-normal text-gray-900 scroll-mt-24;
+}
+.prose-reading :where(ul){
+  @apply my-5 list-disc pl-6 space-y-2;
+}
+.prose-reading :where(ol){
+  @apply my-6 pl-0; /* custom steps */
+  counter-reset: step;
+}
+.prose-reading :where(ol>li){ @apply relative mb-4 pl-12; counter-increment: step; }
+.prose-reading :where(ol>li)::before{
+  content: counter(step);
+  @apply absolute left-0 top-1.5 flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-medium;
+}
+.prose-reading :where(a){
+  @apply text-primary underline-offset-4 hover:underline;
+}
+.prose-reading :where(blockquote){
+  @apply my-6 border-l-4 border-primary/20 bg-white/70 p-4 italic text-gray-800;
+}
+.prose-reading :where(img){
+  @apply my-6 rounded-lg shadow-sm;
+}
+.prose-reading :where(hr){
+  @apply my-10 border-gray-200;
+}
+.prose-reading :where(table){
+  @apply my-6 w-full table-auto overflow-x-auto text-sm;
+}
+.prose-reading :where(li>ul){
+  @apply mt-2;
+}
+.prose-reading :where(code){
+  @apply rounded bg-gray-100 px-1.5 py-0.5 text-[0.95em];
+}
+.prose-reading :where(pre){
+  @apply my-6 rounded-lg bg-gray-900 p-4 text-gray-100;
 }
 
 /* Custom Fonts */

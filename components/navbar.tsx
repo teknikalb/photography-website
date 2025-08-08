@@ -67,7 +67,7 @@ export default function Navbar() {
             <div className="flex flex-col items-center gap-8 text-xl font-light text-white">
               <Link href="/portfolio" onClick={() => setIsMenuOpen(false)} className="hover:text-white/80">Portfolio</Link>
               <Link href="/services" onClick={() => setIsMenuOpen(false)} className="hover:text-white/80">Services</Link>
-              <Link href="/mini-sessions" onClick={() => setIsMenuOpen(false)} className="hover:text-white/80">Mini Sessions</Link>
+              <Link href="/services/mini-sessions" onClick={() => setIsMenuOpen(false)} className="hover:text-white/80">Mini Sessions</Link>
               <Link href="/about" onClick={() => setIsMenuOpen(false)} className="hover:text-white/80">About</Link>
               <Link href="/blog" onClick={() => setIsMenuOpen(false)} className="hover:text-white/80">Blog</Link>
               <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="hover:text-white/80">Contact</Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
             <div className="flex flex-1 items-center justify-center space-x-16">
               <Link href="/portfolio" className={`text-lg font-light ${isScrolled ? 'text-black' : 'text-white'} hover:opacity-80`}>Portfolio</Link>
               <Link href="/services" className={`text-lg font-light ${isScrolled ? 'text-black' : 'text-white'} hover:opacity-80`}>Services</Link>
-              <Link href="/mini-sessions" className={`text-lg font-light ${isScrolled ? 'text-black' : 'text-white'} hover:opacity-80`}>Mini Sessions</Link>
+              <Link href="/services/mini-sessions" className={`text-lg font-light ${isScrolled ? 'text-black' : 'text-white'} hover:opacity-80`}>Mini Sessions</Link>
               <Link href="/about" className={`text-lg font-light ${isScrolled ? 'text-black' : 'text-white'} hover:opacity-80`}>About</Link>
               <Link href="/blog" className={`text-lg font-light ${isScrolled ? 'text-black' : 'text-white'} hover:opacity-80`}>Blog</Link>
               <Link href="/contact" className={`text-lg font-light ${isScrolled ? 'text-black' : 'text-white'} hover:opacity-80`}>Contact</Link>
@@ -92,7 +92,7 @@ export default function Navbar() {
             <div className="flex items-center gap-8">
               {/* Social Icons */}
               <div className="flex items-center gap-6">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-black' : 'text-white'} opacity-80 transition-opacity hover:opacity-100`}>
+                <a href="https://instagram.com/drenanoellephoto/" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-black' : 'text-white'} opacity-80 transition-opacity hover:opacity-100`}>
                   <Instagram size={24} />
                 </a>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-black' : 'text-white'} opacity-80 transition-opacity hover:opacity-100`}>

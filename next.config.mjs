@@ -16,6 +16,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/mini-sessions/:path*",
+        destination: "/services/mini-sessions",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

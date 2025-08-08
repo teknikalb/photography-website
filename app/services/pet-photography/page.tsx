@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Check, PawPrint, Heart, Camera, Calendar, Gift, Star } from "lucide-react"
 import FAQ, { standardFAQs } from "@/components/faq"
 import Testimonials from "@/components/testimonials"
+import Script from "next/script"
 
 const petPackages = [
   {
@@ -83,6 +84,21 @@ const petFAQs = [
 export default function PetPhotographyPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+      <Script id="schema-service-pet" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Pet Photography",
+          description: "Beautiful portraits of your pets and your bond across Connecticut.",
+          areaServed: ["Hartford", "New Haven", "West Hartford", "Stamford", "Glastonbury", "Connecticut"],
+          provider: {
+            "@type": "Organization",
+            name: "Drena Noelle Photography",
+            url: "https://drenanoellephoto.com"
+          },
+          serviceType: "Photography"
+        })}
+      </Script>
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-[#F5F0EA]">
         <div className="container mx-auto px-4 text-center">

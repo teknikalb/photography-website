@@ -22,7 +22,7 @@ export default function Footer() {
             <h3 className="font-serif text-2xl font-light text-gray-900">Drena Noelle Photography</h3>
             <p className="mt-4 text-gray-600">Capturing life's beautiful moments across Connecticut and beyond.</p>
             <div className="mt-6 flex space-x-4">
-              <SocialLink href="https://instagram.com" icon={<Instagram className="h-5 w-5" />} label="Instagram" />
+              <SocialLink href="https://instagram.com/drenanoellephoto/" icon={<Instagram className="h-5 w-5" />} label="Instagram" />
               <SocialLink href="https://facebook.com" icon={<Facebook className="h-5 w-5" />} label="Facebook" />
               <SocialLink href="https://pinterest.com" icon={<Pinterest className="h-5 w-5" />} label="Pinterest" />
             </div>

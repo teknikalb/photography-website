@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Script from "next/script"
 import Link from "next/link"
 import { Check, Camera, Award, Sparkles, Clock, Heart } from "lucide-react"
 import { motion } from "framer-motion"
@@ -8,6 +9,21 @@ import { motion } from "framer-motion"
 export default function PortraitsServicePage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+      <Script id="schema-service-portraits" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Portrait Photography",
+          description: "Professional portraits for branding, graduation, and keepsakes in CT.",
+          areaServed: ["Hartford", "New Haven", "West Hartford", "Stamford", "Glastonbury", "Connecticut"],
+          provider: {
+            "@type": "Organization",
+            name: "Drena Noelle Photography",
+            url: "https://drenanoellephoto.com"
+          },
+          serviceType: "Photography"
+        })}
+      </Script>
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-[#F5F0EA]">
         <div className="container mx-auto px-4 text-center">

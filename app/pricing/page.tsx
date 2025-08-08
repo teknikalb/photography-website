@@ -167,7 +167,7 @@ export default function PricingPage() {
               <h3 className="font-serif text-xl font-medium mb-2">Fall Mini</h3>
               <div className="text-2xl font-bold text-primary mb-4">$200</div>
               <p className="text-gray-600 mb-4">30 minutes • 15 images • Outdoor foliage</p>
-              <Link href="/mini-sessions" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
+              <Link href="/services/mini-sessions" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
                 Learn More
               </Link>
             </div>
@@ -177,7 +177,7 @@ export default function PricingPage() {
               <h3 className="font-serif text-xl font-medium mb-2">Christmas Mini</h3>
               <div className="text-2xl font-bold text-primary mb-4">$200</div>
               <p className="text-gray-600 mb-4">30 minutes • 15 images • Cozy set or tree farm</p>
-              <Link href="/mini-sessions" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
+              <Link href="/services/mini-sessions" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
                 Learn More
               </Link>
             </div>
@@ -187,7 +187,7 @@ export default function PricingPage() {
               <h3 className="font-serif text-xl font-medium mb-2">Valentine's Mini</h3>
               <div className="text-2xl font-bold text-primary mb-4">$200</div>
               <p className="text-gray-600 mb-4">30 minutes • 15 images • Romantic or playful</p>
-              <Link href="/mini-sessions" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
+              <Link href="/services/mini-sessions" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
                 Learn More
               </Link>
             </div>

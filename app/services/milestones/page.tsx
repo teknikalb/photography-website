@@ -1,9 +1,25 @@
 import Image from "next/image";
+import Script from "next/script";
 import Link from "next/link";
 
 export default function MilestoneServicePage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <Script id="schema-service-milestones" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Milestone Photography",
+          description: "Milestone and celebration photography across Connecticut.",
+          areaServed: ["Hartford", "New Haven", "West Hartford", "Stamford", "Glastonbury", "Connecticut"],
+          provider: {
+            "@type": "Organization",
+            name: "Drena Noelle Photography",
+            url: "https://drenanoellephoto.com"
+          },
+          serviceType: "Photography"
+        })}
+      </Script>
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full overflow-hidden bg-gray-100">
         <Image
