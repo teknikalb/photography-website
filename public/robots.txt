@@ -1,4 +1,33 @@
+# Robots.txt for Drena Noelle Photography
+# https://drenanoellephoto.com
+
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://drenanoellephoto.com/sitemap.xml 
+# Crawl delay to be respectful to servers
+Crawl-delay: 1
+
+# Disallow admin and private areas (if they exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow important directories
+Allow: /portfolio/
+Allow: /services/
+Allow: /blog/
+Allow: /locations/
+Allow: /mini-sessions/
+
+# Main sitemap
+Sitemap: https://drenanoellephoto.com/sitemap.xml
+
+# Specialized sitemaps for better content organization
+Sitemap: https://drenanoellephoto.com/sitemap-blog.xml
+Sitemap: https://drenanoellephoto.com/sitemap-portfolio.xml
+
+# Host directive for canonical domain
+Host: https://drenanoellephoto.com 

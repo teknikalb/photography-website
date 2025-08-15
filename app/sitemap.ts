@@ -4,7 +4,7 @@ import { MetadataRoute } from 'next'
 const baseUrl = "https://drenanoellephoto.com"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Main pages
+  // Main pages - Core business pages with highest priority
   const routes = [
     "",
     "/portfolio",
@@ -12,18 +12,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/blog",
     "/contact",
+    "/pricing",
     "/privacy-policy",
     "/terms-of-service",
     "/cookies",
-    // removed standalone mini-sessions
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency: route === "" || route === "/blog" ? "weekly" : "monthly" as const,
+    priority: route === "" ? 1.0 : route === "/portfolio" || route === "/services" ? 0.9 : 0.8,
   }))
 
-  // Portfolio pages
+  // Portfolio pages - High priority for showcasing work
   const portfolioCategories = [
     "events",
     "couples",
@@ -34,11 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((category) => ({
     url: `${baseUrl}/portfolio/${category}`,
     lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
+    changeFrequency: "weekly" as const, // Portfolio updates frequently
+    priority: 0.85,
   }))
 
-  // Service pages
+  // Service pages - Core business offerings
   const servicePages = [
     "events",
     "family",
@@ -47,15 +47,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "milestones",
     "mothers-day-minis",
     "mini-sessions",
-    "pet-photography"
+    "pet-photography",
+    "weddings"
   ].map((service) => ({
     url: `${baseUrl}/services/${service}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.8,
   }))
 
-  // Mini-session landing pages now under services
+  // Mini-session landing pages - Seasonal content with higher frequency
   const miniSessionSlugs = [
     "fall",
     "spring",
@@ -64,12 +65,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "mothers-day",
     "back-to-school",
   ].map((slug) => ({
-    url: `${baseUrl}/services/mini-sessions/${slug}`,
+    url: `${baseUrl}/mini-sessions/${slug}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.65,
+    changeFrequency: "weekly" as const, // Seasonal content changes frequently
+    priority: 0.75,
   }))
 
+  // Location pages - Local SEO important
   const locations = [
     "hartford",
     "new-haven",
@@ -80,10 +82,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/locations/${city}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.8, // Higher priority for local SEO
   }))
 
-  // Blog posts
+  // Blog posts - Content marketing with regular updates
   const blogSlugs = [
     "family-photo-outfit-guide-connecticut",
     "best-locations-hartford-family-photos",
@@ -96,9 +98,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.6,
+    changeFrequency: "monthly" as const, // Blog content can be updated
+    priority: 0.7,
   }))
 
-  return [...routes, ...portfolioCategories, ...servicePages, ...miniSessionSlugs, ...locations, ...blogSlugs]
+  // Add structured data hints for better SEO
+  const enhancedRoutes = routes.map(route => ({
+    ...route,
+    // Add additional metadata hints
+    alternates: {
+      canonical: route.url,
+    },
+  }))
+
+  return [
+    ...enhancedRoutes, 
+    ...portfolioCategories, 
+    ...servicePages, 
+    ...miniSessionSlugs, 
+    ...locations, 
+    ...blogSlugs
+  ]
 }
