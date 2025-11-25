@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Hartford CT Photographer | Family, Maternity, Portraits",
   description: "Hartford, Connecticut photographer for families, maternity, portraits, and milestones. Natural, heartfelt images across parks and city spots.",
-  alternates: { canonical: "https://drenanoellephoto.com/locations/hartford" },
+  alternates: { canonical: "https://gretanoellephoto.com/locations/hartford" },
 }
 
 export default function HartfordLocationPage() {

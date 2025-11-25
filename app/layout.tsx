@@ -22,11 +22,11 @@ const cormorant = Cormorant({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drenanoellephoto.com"),
+  metadataBase: new URL("https://gretanoellephoto.com"),
   robots: { index: true, follow: true },
   title: {
-    default: "Connecticut Family, Maternity & Portrait Photographer | Drena Noelle Photography",
-    template: `%s | Drena Noelle Photography`,
+    default: "Connecticut Family, Maternity & Portrait Photographer | Greta Noelle Photography",
+    template: `%s | Greta Noelle Photography`,
   },
   description:
     "Connecticut photographer specializing in family, maternity, milestone, and portrait sessions. Serving Hartford, New Haven, and all of New England.",
@@ -40,31 +40,35 @@ export const metadata: Metadata = {
     "New England photographer",
     "professional portraits Connecticut"
   ],
-  authors: [{ name: "Drena Noelle Photography" }],
-  creator: "Drena Noelle Photography",
-  publisher: "Drena Noelle Photography",
+  authors: [{ name: "Greta Noelle Photography" }],
+  creator: "Greta Noelle Photography",
+  publisher: "Greta Noelle Photography",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://drenanoellephoto.com",
-    title: "Connecticut Family, Maternity & Portrait Photographer | Drena Noelle Photography",
+    url: "https://gretanoellephoto.com",
+    title: "Connecticut Family, Maternity & Portrait Photographer | Greta Noelle Photography",
     description:
       "Authentic and heartfelt family, maternity, milestone, and portrait photography based in Hartford, Connecticut. Serving New Haven and all of New England.",
-    siteName: "Drena Noelle Photography",
+    siteName: "Greta Noelle Photography",
     images: [
-      { url: "/hero-optimized.jpg", width: 1200, height: 630, alt: "Drena Noelle Photography" },
+      { url: "/hero-optimized.jpg", width: 1200, height: 630, alt: "Greta Noelle Photography" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Connecticut Family, Maternity & Portrait Photographer | Drena Noelle Photography",
+    title: "Connecticut Family, Maternity & Portrait Photographer | Greta Noelle Photography",
     description:
       "Authentic and heartfelt family, maternity, milestone, and portrait photography based in Hartford, Connecticut. Serving New Haven and all of New England.",
     creator: "@drenanoelle",
     images: ["/hero-optimized.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16" },
+    ],
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
@@ -101,9 +105,9 @@ export default function RootLayout({
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "Drena Noelle Photography",
-              image: "https://drenanoellephoto.com/hero-optimized.jpg",
-              url: "https://drenanoellephoto.com",
+              name: "Greta Noelle Photography",
+              image: "https://gretanoellephoto.com/hero-optimized.jpg",
+              url: "https://gretanoellephoto.com",
               address: { "@type": "PostalAddress", addressRegion: "CT", addressCountry: "US" },
               areaServed: ["Hartford", "New Haven", "Connecticut", "New England"],
               sameAs: []

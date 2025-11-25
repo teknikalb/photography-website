@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Blog",
   description: "Photography tips, client stories, and behind-the-scenes insights.",
-  alternates: { canonical: "https://drenanoellephoto.com/blog" },
+  alternates: { canonical: "https://gretanoellephoto.com/blog" },
 }
 
 export default function BlogLayout({

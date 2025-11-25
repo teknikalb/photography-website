@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Glastonbury CT Photographer | Family & Maternity",
   description: "Glastonbury photographer for families and maternity sessions at orchards, farms, and riverfront parks.",
-  alternates: { canonical: "https://drenanoellephoto.com/locations/glastonbury" },
+  alternates: { canonical: "https://gretanoellephoto.com/locations/glastonbury" },
 }
 
 export default function GlastonburyLocationPage() {

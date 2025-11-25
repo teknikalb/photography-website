@@ -1,7 +1,7 @@
 export const metadata = {
   title: "New Haven CT Photographer | Family, Maternity, Portraits",
   description: "New Haven photographer for family, maternity, and portraits. Sessions at Yale campus, parks, and coastal spots.",
-  alternates: { canonical: "https://drenanoellephoto.com/locations/new-haven" },
+  alternates: { canonical: "https://gretanoellephoto.com/locations/new-haven" },
 }
 
 export default function NewHavenLocationPage() {

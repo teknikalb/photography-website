@@ -18,8 +18,8 @@ export default function MaternityServicePage() {
           areaServed: ["Hartford", "New Haven", "West Hartford", "Stamford", "Glastonbury", "Connecticut"],
           provider: {
             "@type": "Organization",
-            name: "Drena Noelle Photography",
-            url: "https://drenanoellephoto.com"
+            name: "Greta Noelle Photography",
+            url: "https://gretanoellephoto.com"
           },
           serviceType: "Photography"
         })}

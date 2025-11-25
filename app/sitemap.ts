@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 // Update this with your actual domain
-const baseUrl = "https://drenanoellephoto.com"
+const baseUrl = "https://gretanoellephoto.com"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Main pages - Core business pages with highest priority

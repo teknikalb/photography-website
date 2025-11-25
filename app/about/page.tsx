@@ -37,7 +37,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
           <h1 className="font-serif text-4xl font-bold tracking-wide sm:text-5xl md:text-6xl">About Me</h1>
           <p className="mt-6 max-w-md text-lg font-light md:max-w-lg md:text-xl">
-            The story behind Drena Noelle Photography
+            The story behind Greta Noelle Photography
           </p>
         </div>
       </section>
@@ -150,7 +150,7 @@ export default function AboutPage() {
             />
             <TimelineItem
               year="2016"
-              title="Launched Drena Noelle Photography"
+              title="Launched Greta Noelle Photography"
               description="Officially established my photography business after assisting and second shooting for established photographers."
             />
             <TimelineItem

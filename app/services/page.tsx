@@ -149,7 +149,7 @@ export default function ServicesPage() {
             Services & Investment
           </h1>
           <p className="text-xl font-light text-gray-700 max-w-3xl mx-auto">
-            At Drena Noelle Photography, we believe every season of life deserves to be captured with care, creativity, and connection. Our sessions are designed to give you time to breathe, relax, and fully enjoy the experience.
+            At Greta Noelle Photography, we believe every season of life deserves to be captured with care, creativity, and connection. Our sessions are designed to give you time to breathe, relax, and fully enjoy the experience.
           </p>
         </div>
       </section>

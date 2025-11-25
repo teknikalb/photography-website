@@ -193,9 +193,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const { slug } = await params
   const post = blogPosts[slug]
   if (!post) return {}
-  const title = `${post.title} | Drena Noelle Photography`
+  const title = `${post.title} | Greta Noelle Photography`
   const description = `${post.title} — ${post.category} in Connecticut`
-  const url = `https://drenanoellephoto.com/blog/${slug}`
+  const url = `https://gretanoellephoto.com/blog/${slug}`
   return {
     title,
     description,

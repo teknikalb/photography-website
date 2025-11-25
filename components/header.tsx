@@ -73,7 +73,7 @@ export default function Header() {
           <div className="flex flex-none items-center space-x-4">
             <Link href="/" className="flex items-center">
               <span className="font-serif text-2xl font-light tracking-wide text-gray-800">
-                Drena Noelle
+                Greta Noelle
               </span>
             </Link>
             <span className="hidden md:block border-l border-gray-300 pl-4 text-sm text-gray-500 font-serif">

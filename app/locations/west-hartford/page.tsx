@@ -1,7 +1,7 @@
 export const metadata = {
   title: "West Hartford CT Photographer | Family & Portraits",
   description: "West Hartford photographer for family and portrait sessions around Blue Back Square and local parks.",
-  alternates: { canonical: "https://drenanoellephoto.com/locations/west-hartford" },
+  alternates: { canonical: "https://gretanoellephoto.com/locations/west-hartford" },
 }
 
 export default function WestHartfordLocationPage() {

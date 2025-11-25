@@ -59,7 +59,7 @@ export default function ContactForm() {
       <div className="text-center p-6 rounded-xl border border-yellow-200 bg-yellow-50 text-yellow-800">
         Contact form is temporarily unavailable. Please email me directly at
         {" "}
-        <a href="mailto:hello@drenanoelle.com" className="underline">hello@drenanoelle.com</a>.
+        <a href="mailto:greta@gretanoellephoto.com" className="underline">greta@gretanoellephoto.com</a>.
       </div>
     );
   }
@@ -281,7 +281,7 @@ export default function ContactForm() {
       {formStatus === 'error' && (
         <div className="flex items-center gap-3 p-6 bg-red-50 border-2 border-red-200 rounded-2xl">
           <AlertCircle className="h-6 w-6 text-red-600 flex-shrink-0" />
-          <p className="text-red-700 font-medium">Something went wrong. Please try again or email me directly at hello@drenanoelle.com</p>
+          <p className="text-red-700 font-medium">Something went wrong. Please try again or email me directly at greta@gretanoellephoto.com</p>
         </div>
       )}
 

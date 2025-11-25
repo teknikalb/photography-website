@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Stamford CT Photographer | Family & Portraits",
   description: "Stamford photographer for family and portrait sessions downtown and at local parks.",
-  alternates: { canonical: "https://drenanoellephoto.com/locations/stamford" },
+  alternates: { canonical: "https://gretanoellephoto.com/locations/stamford" },
 }
 
 export default function StamfordLocationPage() {

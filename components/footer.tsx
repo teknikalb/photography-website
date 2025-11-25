@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <h3 className="font-serif text-2xl font-light text-gray-900">Drena Noelle Photography</h3>
+            <h3 className="font-serif text-2xl font-light text-gray-900">Greta Noelle Photography</h3>
             <p className="mt-4 text-gray-600">Capturing life's beautiful moments across Connecticut and beyond.</p>
             <div className="mt-6 flex space-x-4">
               <SocialLink href="https://instagram.com/drenanoellephoto/" icon={<Instagram className="h-5 w-5" />} label="Instagram" />
@@ -62,8 +62,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-primary" />
-                <a href="mailto:hello@drenanoellephoto.com" className="transition-colors hover:text-primary">
-                  hello@drenanoellephoto.com
+                <a href="mailto:greta@gretanoellephoto.com" className="transition-colors hover:text-primary">
+                  greta@gretanoellephoto.com
                 </a>
               </li>
             </ul>
@@ -73,7 +73,7 @@ export default function Footer() {
         <div className="mt-12 border-t border-gray-200 pt-8">
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             <p className="text-sm text-gray-500">
-              &copy; {new Date().getFullYear()} Drena Noelle Photography. All rights reserved.
+              &copy; {new Date().getFullYear()} Greta Noelle Photography. All rights reserved.
             </p>
             <div className="flex items-center space-x-1 text-sm text-gray-500">
               <span>Made with</span>

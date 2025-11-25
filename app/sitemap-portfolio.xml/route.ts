@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
-  const baseUrl = "https://drenanoellephoto.com"
+  const baseUrl = "https://gretanoellephoto.com"
   
   // Portfolio categories with enhanced metadata
   const portfolioCategories = [

@@ -1,5 +1,5 @@
-# Robots.txt for Drena Noelle Photography
-# https://drenanoellephoto.com
+# Robots.txt for Greta Noelle Photography
+# https://gretanoellephoto.com
 
 # Allow all crawlers
 User-agent: *
@@ -23,11 +23,11 @@ Allow: /locations/
 Allow: /mini-sessions/
 
 # Main sitemap
-Sitemap: https://drenanoellephoto.com/sitemap.xml
+Sitemap: https://gretanoellephoto.com/sitemap.xml
 
 # Specialized sitemaps for better content organization
-Sitemap: https://drenanoellephoto.com/sitemap-blog.xml
-Sitemap: https://drenanoellephoto.com/sitemap-portfolio.xml
+Sitemap: https://gretanoellephoto.com/sitemap-blog.xml
+Sitemap: https://gretanoellephoto.com/sitemap-portfolio.xml
 
 # Host directive for canonical domain
-Host: https://drenanoellephoto.com 
+Host: https://gretanoellephoto.com 

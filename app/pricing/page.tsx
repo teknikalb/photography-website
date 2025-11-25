@@ -16,7 +16,7 @@ export default function PricingPage() {
             Investment & Pricing
           </h1>
           <p className="text-xl font-light text-gray-700 max-w-2xl mx-auto">
-            At Drena Noelle Photography, we believe every season of life deserves to be captured with care, creativity, and connection.
+            At Greta Noelle Photography, we believe every season of life deserves to be captured with care, creativity, and connection.
           </p>
         </div>
       </section>

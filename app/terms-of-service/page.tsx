@@ -12,7 +12,7 @@ export default function TermsOfServicePage() {
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">2. Use of Website</h2>
       <p className="mb-4">You may use this website for personal, non-commercial purposes only. You may not use this site for any unlawful or prohibited purpose.</p>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">3. Intellectual Property</h2>
-      <p className="mb-4">All content on this website, including images, text, and branding, is the property of Drena Noelle Photography (or respective copyright holders) and may not be used without permission.</p>
+      <p className="mb-4">All content on this website, including images, text, and branding, is the property of Greta Noelle Photography (or respective copyright holders) and may not be used without permission.</p>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">4. Booking & Payment</h2>
       <p className="mb-4">Booking a session requires a signed contract and a non-refundable retainer. Full payment details and cancellation policies will be provided in your contract.</p>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">5. Limitation of Liability</h2>

@@ -90,7 +90,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium text-gray-900">Email</p>
-                        <a href="mailto:hello@drenanoellephoto.com" className="text-primary hover:underline font-medium">hello@drenanoellephoto.com</a>
+                        <a href="mailto:greta@gretanoellephoto.com" className="text-primary hover:underline font-medium">greta@gretanoellephoto.com</a>
                       </div>
                     </div>
                     
