@@ -187,7 +187,7 @@ export default function AboutPage() {
 
 function PhilosophyCard({ icon, title, description }: PhilosophyCardProps) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+    <div className="rounded-lg border border-gray-200 bg-page p-6 shadow-sm">
       <div className="mb-4 text-primary">{icon}</div>
       <h3 className="mb-2 font-serif text-xl font-semibold">{title}</h3>
       <p className="text-muted-foreground">{description}</p>

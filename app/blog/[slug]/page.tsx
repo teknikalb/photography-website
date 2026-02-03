@@ -50,7 +50,7 @@ const blogPosts: Record<string, BlogPost> = {
     category: "Family Photography",
     image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=1200&auto=format&fit=crop",
     content: `
-      <p>These Hartford spots offer variety, easy access, and beautiful light.</p>
+      <p>These Hartford-area spots—including nearby Newington, Wethersfield, Rocky Hill, and West Hartford—offer variety, easy access, and beautiful light.</p>
       <h2>Elizabeth Park</h2>
       <p>Roses in summer, arches and paths year-round. Best at golden hour.</p>
       <h2>West Hartford Reservoir</h2>
@@ -79,7 +79,7 @@ const blogPosts: Record<string, BlogPost> = {
       <h2>Outfits</h2>
       <p>Solid, flowing dresses photograph beautifully. Bring a fitted option for variety.</p>
       <h2>Locations</h2>
-      <p>Reservoir trails, Elizabeth Park, or at-home lifestyle for intimate images.</p>
+      <p>From West Hartford and Glastonbury to Greenwich and Darien—reservoir trails, Elizabeth Park, orchards, or at-home lifestyle for intimate images.</p>
       <h2>Partner & Siblings</h2>
       <p>Coordinate outfits; keep hands busy (hats, jackets) for natural posing.</p>
     `,
@@ -140,7 +140,7 @@ const blogPosts: Record<string, BlogPost> = {
       <h2>Colors</h2>
       <p>Neutrals (cream, tan) + warm accents (rust, olive) work best.</p>
       <h2>Locations</h2>
-      <p>Reservoir trails, orchards, riverfront parks in Glastonbury + Hartford.</p>
+      <p>Reservoir trails, orchards, and riverfront parks in Glastonbury, Southington, Litchfield, Hartford, and across central Connecticut.</p>
     `,
     relatedPosts: [
       { id: "best-locations-hartford-family-photos", title: "Best Hartford Locations", image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=600&auto=format&fit=crop" },
@@ -259,16 +259,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header (no hero image) */}
-      <section className="bg-[#F5F0EA]">
+      <section className="bg-page">
         <div className="container mx-auto px-4 pt-10 pb-6">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-800">
+          <span className="inline-flex items-center gap-2 rounded-full bg-page px-3 py-1 text-xs font-medium text-gray-800">
             <Tag className="h-3.5 w-3.5" /> {post.category}
           </span>
           <h1 className="mt-4 max-w-4xl font-serif text-3xl font-light tracking-wide text-gray-900 sm:text-4xl md:text-5xl">
             {post.title}
           </h1>
         </div>
-        <div className="w-full bg-gray-100/80">
+        <div className="w-full bg-page">
           <div className="container mx-auto px-4">
             <nav aria-label="Breadcrumb" className="py-3 text-sm text-gray-800">
               <ol className="flex flex-wrap items-center gap-2">
@@ -300,11 +300,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <article className="prose-reading">
                 <div dangerouslySetInnerHTML={{ __html: processedHtml }} />
                 <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <Link href="/services/family" className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+                  <Link href="/services/family" className="rounded-xl border border-gray-200 bg-page p-4 shadow-sm transition hover:shadow-md">
                     <h4 className="font-medium text-gray-900">Book a Family Session</h4>
-                    <p className="text-sm text-gray-600">Hartford • New Haven • West Hartford • Stamford • Glastonbury</p>
+                    <p className="text-sm text-gray-600">Newington • Wethersfield • Glastonbury • West Hartford • Rocky Hill • Southington • Litchfield • Greenwich • Darien</p>
                   </Link>
-                  <Link href="/services/mini-sessions" className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+                  <Link href="/services/mini-sessions" className="rounded-xl border border-gray-200 bg-page p-4 shadow-sm transition hover:shadow-md">
                     <h4 className="font-medium text-gray-900">See Mini Sessions</h4>
                     <p className="text-sm text-gray-600">Seasonal offers with limited spots</p>
                   </Link>
@@ -321,7 +321,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {/* Sidebar */}
             <aside className="lg:col-span-4">
               <div className="lg:sticky lg:top-24 space-y-6">
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div className="rounded-xl border border-gray-200 bg-page p-5 shadow-sm">
                   <h3 className="mb-3 font-serif text-lg text-gray-900">On this page</h3>
                   {toc.length === 0 ? (
                     <p className="text-sm text-gray-600">Overview</p>
@@ -338,7 +338,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   )}
                 </div>
 
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div className="rounded-xl border border-gray-200 bg-page p-5 shadow-sm">
                   <h3 className="mb-3 font-serif text-lg text-gray-900">Quick links</h3>
                   <div className="flex flex-col gap-3">
                     <Link href="/services/family" className="text-sm text-primary hover:underline">Family Sessions</Link>

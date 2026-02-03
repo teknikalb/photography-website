@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Camera, Heart, Users, Calendar, Award, Sparkles } from "lucide-react"
-import Testimonials from "@/components/testimonials"
 import DualPortfolioSliders from "@/components/dual-portfolio-sliders"
 
 const categories = [
@@ -51,9 +50,9 @@ const categories = [
 
 export default function PortfolioPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
-      <section className="pt-16 pb-12 bg-[#F5F0EA] sm:pt-20 md:pt-24 md:pb-16">
+      <section className="pt-16 pb-12 bg-page sm:pt-20 md:pt-24 md:pb-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-serif text-3xl font-light tracking-wide sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-4 sm:mb-6">
             Portfolio
@@ -64,15 +63,12 @@ export default function PortfolioPage() {
       {/* Dual Portfolio Sliders */}
       <DualPortfolioSliders />
 
-      {/* Testimonials Section */}
-      <Testimonials />
-
       {/* Call to Action */}
-      <section className="py-12 bg-gray-900 sm:py-16">
+      <section className="py-12 bg-page sm:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-2xl font-light mb-4 text-white sm:text-3xl">Ready to Capture Your Story?</h2>
-            <p className="text-base mb-6 text-gray-300 sm:text-lg sm:mb-8">
+            <h2 className="font-serif text-2xl font-light mb-4 text-gray-900 sm:text-3xl">Ready to Capture Your Story?</h2>
+            <p className="text-base mb-6 text-gray-600 sm:text-lg sm:mb-8">
               Let's create something beautiful together. Book your session or reach out to discuss your vision.
             </p>
             <Link 

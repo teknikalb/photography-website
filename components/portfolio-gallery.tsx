@@ -92,7 +92,7 @@ export default function PortfolioGallery() {
           {categories.map((category) => (
             <button
               key={category.id}
-              className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 md:px-6 md:py-2"
+              className="rounded-full border border-gray-200 bg-page px-4 py-2 text-sm font-medium text-gray-700 md:px-6 md:py-2"
             >
               {category.name}
             </button>

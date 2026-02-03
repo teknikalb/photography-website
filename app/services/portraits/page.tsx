@@ -8,14 +8,14 @@ import { motion } from "framer-motion"
 
 export default function PortraitsServicePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       <Script id="schema-service-portraits" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           name: "Portrait Photography",
           description: "Professional portraits for branding, graduation, and keepsakes in CT.",
-          areaServed: ["Hartford", "New Haven", "West Hartford", "Stamford", "Glastonbury", "Connecticut"],
+          areaServed: ["Newington", "Wethersfield", "Glastonbury", "West Hartford", "Rocky Hill", "Southington", "Litchfield", "Greenwich", "Darien", "Connecticut"],
           provider: {
             "@type": "Organization",
             name: "Greta Noelle Photography",
@@ -25,7 +25,7 @@ export default function PortraitsServicePage() {
         })}
       </Script>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-[#F5F0EA]">
+      <section className="pt-24 pb-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -70,17 +70,17 @@ export default function PortraitsServicePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
             >
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Camera className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">Professional Quality</h3>
                 <p className="text-gray-600">High-quality portraits perfect for professional use and personal keepsakes.</p>
               </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">Authentic Style</h3>
                 <p className="text-gray-600">Natural, relaxed approach that captures your true personality and essence.</p>
               </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Award className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">Versatile Use</h3>
                 <p className="text-gray-600">Perfect for LinkedIn, business cards, graduation, or personal branding.</p>
@@ -93,7 +93,7 @@ export default function PortraitsServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16"
+              className="bg-page rounded-2xl shadow-lg p-8 mb-16"
             >
               <h3 className="font-serif text-2xl font-light text-gray-800 mb-8 text-center">
                 What's Included in Your Portrait Session
@@ -144,7 +144,7 @@ export default function PortraitsServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16"
+              className="bg-page rounded-2xl shadow-lg p-8 mb-16"
             >
               <h3 className="font-serif text-2xl font-light text-gray-800 mb-8 text-center">
                 Investment

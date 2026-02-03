@@ -72,9 +72,9 @@ export default function BlogPage() {
   const paginatedPosts = blogPosts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
-      <section className="w-full py-20 bg-[#F5F0EA] text-center">
+      <section className="w-full py-20 bg-page text-center">
         <div className="container mx-auto px-4">
           <div className="inline-block rounded-xl shadow-lg px-8 py-10">
             <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900">Blog</h1>
@@ -86,7 +86,7 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Posts */}
-      <section className="py-20 bg-[#F5F0EA]">
+      <section className="py-20 bg-page">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {paginatedPosts.map((post) => (
@@ -116,7 +116,7 @@ export default function BlogPage() {
                 <button
                   key={i + 1}
                   onClick={() => setPage(i + 1)}
-                  className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-colors ${page === i + 1 ? 'bg-primary text-primary-foreground' : 'bg-white text-gray-700 hover:bg-primary/10'}`}
+                  className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-colors ${page === i + 1 ? 'bg-primary text-primary-foreground' : 'bg-page text-gray-700 hover:bg-primary/10'}`}
                   aria-current={page === i + 1 ? 'page' : undefined}
                 >
                   {i + 1}
@@ -136,7 +136,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="bg-white py-16">
+      <section className="bg-page py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-3xl font-light">Join the Newsletter</h2>
@@ -174,7 +174,7 @@ interface BlogPostCardProps {
 
 function BlogPostCard({ id, title, excerpt, category, image }: BlogPostCardProps) {
   return (
-    <article className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+    <article className="overflow-hidden rounded-lg border border-gray-200 bg-page shadow-sm transition-shadow hover:shadow-md">
       <Link href={`/blog/${id}`} className="block">
         <div className="aspect-video w-full overflow-hidden">
           <Image
@@ -187,7 +187,7 @@ function BlogPostCard({ id, title, excerpt, category, image }: BlogPostCardProps
         </div>
       </Link>
       <div className="p-6">
-        <span className="inline-flex items-center rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-700 mb-2">{category}</span>
+        <span className="inline-flex items-center rounded-full bg-page px-2 py-0.5 text-xs font-medium text-gray-700 mb-2">{category}</span>
         <Link href={`/blog/${id}`} className="block">
           <h3 className="mb-2 font-serif text-xl font-medium hover:text-primary">{title}</h3>
         </Link>

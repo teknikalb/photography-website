@@ -249,7 +249,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section - Now solid background, dark text, no image */}
-      <section className="w-full bg-[#F5F0EA] text-center py-10 md:py-14 mt-8">
+      <section className="w-full bg-page text-center py-10 md:py-14 mt-8">
         <div className="w-full flex flex-col items-center justify-center">
           <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900">{title}</h1>
           <p className="mt-4 max-w-md text-lg font-light md:max-w-lg md:text-xl text-gray-700">{description}</p>
@@ -264,7 +264,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <h2 className="text-center font-serif text-3xl font-light">Specializing In</h2>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 {featured.map((item: string, index: number) => (
-                  <span key={index} className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm">
+                  <span key={index} className="rounded-full border border-gray-200 bg-page px-4 py-2 text-sm">
                     {item}
                   </span>
                 ))}

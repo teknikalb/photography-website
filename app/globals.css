@@ -56,7 +56,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#F5F0EA] text-foreground;
+    @apply bg-page text-foreground;
     font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     font-size: 18px;
     line-height: 1.8;
@@ -113,7 +113,7 @@
   @apply text-primary underline-offset-4 hover:underline;
 }
 .prose-reading :where(blockquote){
-  @apply my-6 border-l-4 border-primary/20 bg-white/70 p-4 italic text-gray-800;
+  @apply my-6 border-l-4 border-primary/20 bg-page p-4 italic text-gray-800;
 }
 .prose-reading :where(img){
   @apply my-6 rounded-lg shadow-sm;
@@ -128,7 +128,7 @@
   @apply mt-2;
 }
 .prose-reading :where(code){
-  @apply rounded bg-gray-100 px-1.5 py-0.5 text-[0.95em];
+  @apply rounded bg-page border border-gray-200 px-1.5 py-0.5 text-[0.95em];
 }
 .prose-reading :where(pre){
   @apply my-6 rounded-lg bg-gray-900 p-4 text-gray-100;
@@ -146,9 +146,9 @@ html {
 
 /* Glass Morphism */
 .glass {
-  @apply bg-white/60 backdrop-blur-lg;
+  @apply bg-page backdrop-blur-lg;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid hsl(var(--border));
 }
 
 .glass-dark {
@@ -158,9 +158,9 @@ html {
 }
 
 .glass-card {
-  @apply bg-white/80 backdrop-blur-md;
+  @apply bg-page backdrop-blur-md;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid hsl(var(--border));
 }
 
 /* Custom Animations */
@@ -216,7 +216,7 @@ html {
 
 /* Service Card */
 .service-card {
-  @apply relative overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300;
+  @apply relative overflow-hidden rounded-2xl border border-border bg-page p-6 shadow-sm transition-all duration-300;
 }
 
 .service-card:hover {
@@ -234,7 +234,7 @@ html {
 }
 
 .service-tab:not(.active):hover {
-  @apply bg-gray-100;
+  @apply bg-page;
 }
 
 .service-tab::after {
@@ -268,7 +268,7 @@ html {
 
 /* Navbar Styles */
 .navbar-glass {
-  @apply bg-white/80 backdrop-blur-md;
+  @apply bg-page backdrop-blur-md;
 }
 
 /* Divider */
@@ -359,7 +359,7 @@ html {
 
 /* Testimonial Card */
 .testimonial-card {
-  @apply relative rounded-2xl bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl;
+  @apply relative rounded-2xl bg-page border border-gray-200 p-6 shadow-md transition-all duration-300 hover:shadow-xl;
 }
 
 .testimonial-card::before {
@@ -411,7 +411,7 @@ html {
 
 /* Polaroid Effect */
 .polaroid {
-  @apply bg-white p-2 shadow-md;
+  @apply bg-page p-2 shadow-md border border-gray-200;
   transform: rotate(var(--rotate, 0deg));
 }
 
@@ -448,13 +448,13 @@ html {
     @apply fixed top-0 left-0 right-0 z-50 flex h-24 items-center justify-between px-6 transition-all duration-300 lg:px-12;
   }
 
-  .navbar-glass {
-    @apply bg-black/10 backdrop-blur-md;
-  }
+.navbar-glass {
+  @apply bg-page/95 backdrop-blur-md;
+}
 
-  .navbar-scrolled {
-    @apply bg-white shadow-md;
-  }
+.navbar-scrolled {
+  @apply bg-page shadow-md;
+}
 
   .navbar-logo {
     @apply relative h-16 w-auto;

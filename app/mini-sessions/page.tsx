@@ -13,7 +13,7 @@ const bundles = [
     price: "$525",
     originalPrice: "$600",
     savings: "$75",
-    sessions: ["Fall", "Christmas", "Valentine's"],
+    sessions: ["Fall", "Mother's Day", "Valentine's"],
     features: [
       "30 mins each session",
       "15 edited images per session",
@@ -24,32 +24,32 @@ const bundles = [
     popular: true
   },
   {
-    id: "fall-christmas",
-    title: "Fall + Christmas Bundle",
-    subtitle: "🍁 + 🎄",
+    id: "fall-mothers-day",
+    title: "Fall + Mother's Day Bundle",
+    subtitle: "🍁 + 🌸",
     price: "$350",
     originalPrice: "$400",
     savings: "$50",
-    sessions: ["Fall", "Christmas"],
+    sessions: ["Fall", "Mother's Day"],
     features: [
       "30 mins each session",
       "15 edited images per session",
-      "Perfect for family photos & holiday cards"
+      "Perfect for family photos & celebrating mom"
     ],
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop"
   },
   {
-    id: "christmas-valentines",
-    title: "Christmas + Valentine's Bundle",
-    subtitle: "🎄 + 💘",
+    id: "mothers-day-valentines",
+    title: "Mother's Day + Valentine's Bundle",
+    subtitle: "🌸 + 💘",
     price: "$350",
     originalPrice: "$400",
     savings: "$50",
-    sessions: ["Christmas", "Valentine's"],
+    sessions: ["Mother's Day", "Valentine's"],
     features: [
       "30 mins each session",
       "15 edited images per session",
-      "Cozy winter & romantic Valentine's themes"
+      "Celebrate mom & romantic Valentine's themes"
     ],
     image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=600&auto=format&fit=crop"
   }
@@ -65,12 +65,12 @@ const individualSessions = [
     emoji: "🍂"
   },
   {
-    id: "christmas",
-    title: "Christmas Mini",
+    id: "mothers-day",
+    title: "Mother's Day Minis",
     price: "$200",
-    features: ["30 mins", "15 images", "Cozy set or tree farm"],
+    features: ["30 mins", "15 images", "Celebrate mom—florals, outdoor or studio"],
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
-    emoji: "🎄"
+    emoji: "🌸"
   },
   {
     id: "valentines",
@@ -102,15 +102,15 @@ export default function MiniSessionsPage() {
   const [activeIndividual, setActiveIndividual] = useState<string | null>(null)
 
   return (
-    <div className="min-h-screen bg-[#F5F0EA]">
+    <div className="min-h-screen bg-page">
              {/* Hero Section */}
-       <section className="pt-24 pb-16 bg-[#F5F0EA]">
+       <section className="pt-24 pb-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-6">
             Seasonal Mini Session Bundles
           </h1>
           <p className="text-xl font-light text-gray-700">
-            🍂🎄❤🐾 FALL • CHRISTMAS • VALENTINE'S • HOLIDAY PET
+            🍂🌸❤🐾 FALL • MOTHER'S DAY • VALENTINE'S • HOLIDAY PET
           </p>
         </div>
       </section>
@@ -130,7 +130,7 @@ export default function MiniSessionsPage() {
             {bundles.map((bundle) => (
               <div
                 key={bundle.id}
-                className={`relative rounded-2xl border-2 bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+                className={`relative rounded-2xl border-2 bg-page p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
                   bundle.popular ? 'border-primary ring-4 ring-primary/20' : 'border-gray-200'
                 } ${activeBundle === bundle.id ? 'ring-4 ring-primary/40' : ''}`}
                 onMouseEnter={() => setActiveBundle(bundle.id)}
@@ -192,7 +192,7 @@ export default function MiniSessionsPage() {
       </section>
 
       {/* Individual Sessions */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-page">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Individual Mini Sessions</h2>
@@ -205,7 +205,7 @@ export default function MiniSessionsPage() {
             {individualSessions.map((session) => (
               <div
                 key={session.id}
-                className={`rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+                className={`rounded-2xl border border-gray-200 bg-page p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
                   activeIndividual === session.id ? 'ring-4 ring-primary/40' : ''
                 }`}
                 onMouseEnter={() => setActiveIndividual(session.id)}
@@ -260,7 +260,7 @@ export default function MiniSessionsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {addOns.map((addon, index) => (
-              <div key={index} className="rounded-lg border border-gray-200 bg-white p-6 text-center shadow-sm">
+              <div key={index} className="rounded-lg border border-gray-200 bg-page p-6 text-center shadow-sm">
                 <ImageIcon className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-medium text-gray-900 mb-2">{addon.name}</h3>
                 <p className="text-sm text-gray-600">{addon.description}</p>
@@ -271,7 +271,7 @@ export default function MiniSessionsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Limited Spots Available</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-700">

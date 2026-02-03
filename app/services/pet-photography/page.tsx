@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Check, PawPrint, Heart, Camera, Calendar, Gift, Star } from "lucide-react"
 import FAQ, { standardFAQs } from "@/components/faq"
-import Testimonials from "@/components/testimonials"
 import Script from "next/script"
 
 const petPackages = [
@@ -83,14 +82,14 @@ const petFAQs = [
 
 export default function PetPhotographyPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       <Script id="schema-service-pet" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           name: "Pet Photography",
           description: "Beautiful portraits of your pets and your bond across Connecticut.",
-          areaServed: ["Hartford", "New Haven", "West Hartford", "Stamford", "Glastonbury", "Connecticut"],
+          areaServed: ["Newington", "Wethersfield", "Glastonbury", "West Hartford", "Rocky Hill", "Southington", "Litchfield", "Greenwich", "Darien", "Connecticut"],
           provider: {
             "@type": "Organization",
             name: "Greta Noelle Photography",
@@ -100,7 +99,7 @@ export default function PetPhotographyPage() {
         })}
       </Script>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-[#F5F0EA]">
+      <section className="pt-24 pb-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
@@ -143,7 +142,7 @@ export default function PetPhotographyPage() {
             
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               {petPackages.map((pkg, index) => (
-                <div key={pkg.name} className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <div key={pkg.name} className="bg-page rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border border-gray-200">
                   <div className="p-6">
                     <div className="text-center mb-6">
                       <h3 className="font-serif text-2xl font-medium text-gray-900 mb-2">{pkg.name}</h3>
@@ -198,7 +197,7 @@ export default function PetPhotographyPage() {
       </section>
 
       {/* Why Choose Pet Photography Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-page">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -253,18 +252,15 @@ export default function PetPhotographyPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <Testimonials />
-
       {/* FAQ Section */}
       <FAQ faqs={petFAQs} />
 
       {/* Final CTA */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16 bg-page">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-3xl font-light mb-4 text-white">Ready to Capture Your Pet's Personality?</h2>
-            <p className="text-lg mb-8 text-gray-300">
+            <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Ready to Capture Your Pet's Personality?</h2>
+            <p className="text-lg mb-8 text-gray-600">
               Let's create beautiful memories of your furry family member. Book your pet photography session today!
             </p>
             <Link 

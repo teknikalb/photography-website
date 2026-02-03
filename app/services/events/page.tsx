@@ -7,9 +7,9 @@ import { motion } from "framer-motion"
 
 export default function EventsServicePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-[#F5F0EA]">
+      <section className="pt-24 pb-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -54,17 +54,17 @@ export default function EventsServicePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
             >
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Calendar className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">Event Coverage</h3>
                 <p className="text-gray-600">Comprehensive coverage of your entire event from start to finish.</p>
               </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">Candid Moments</h3>
                 <p className="text-gray-600">Natural, unposed photography that captures genuine emotions and interactions.</p>
               </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">All Event Types</h3>
                 <p className="text-gray-600">Birthdays, anniversaries, corporate events, and special celebrations.</p>
@@ -77,7 +77,7 @@ export default function EventsServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16"
+              className="bg-page rounded-2xl shadow-lg p-8 mb-16"
             >
               <h3 className="font-serif text-2xl font-light text-gray-800 mb-8 text-center">
                 What's Included in Your Event Coverage
@@ -128,7 +128,7 @@ export default function EventsServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16"
+              className="bg-page rounded-2xl shadow-lg p-8 mb-16"
             >
               <h3 className="font-serif text-2xl font-light text-gray-800 mb-8 text-center">
                 Investment

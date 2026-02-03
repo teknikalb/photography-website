@@ -93,7 +93,7 @@ export default function ServiceSelector() {
               className={`flex items-center rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 ${
                 activeCategory.id === category.id
                   ? "border-primary bg-primary text-white"
-                  : "border-gray-200 bg-white text-gray-700 hover:border-primary/50 hover:text-primary"
+                  : "border-gray-200 bg-page text-gray-700 hover:border-primary/50 hover:text-primary"
               }`}
             >
               <span className="mr-2">{category.icon}</span>

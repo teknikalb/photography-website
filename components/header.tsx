@@ -66,7 +66,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-t border-gray-200 bg-white">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-t border-gray-200 bg-page">
       <div className="container mx-auto px-4">
         <nav className="flex h-[70px] items-center justify-between">
           
@@ -100,12 +100,12 @@ export default function Header() {
                   </div>
 
                   {item.submenu && (
-                    <div className="absolute left-1/2 top-full z-10 mt-2 w-56 -translate-x-1/2 transform rounded-md border border-gray-100 bg-white p-2 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="absolute left-1/2 top-full z-10 mt-2 w-56 -translate-x-1/2 transform rounded-md border border-gray-200 bg-page p-2 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                       {item.submenu.map((subitem) => (
                         <Link
                           key={subitem.name}
                           href={subitem.href}
-                          className="block rounded px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-50 hover:text-primary"
+                          className="block rounded px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-page hover:text-primary"
                         >
                           {subitem.name}
                         </Link>
@@ -167,7 +167,7 @@ export default function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="md:hidden absolute left-0 top-full w-full bg-white shadow-lg border-b border-gray-200"
+            className="md:hidden absolute left-0 top-full w-full bg-page shadow-lg border-b border-gray-200"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

@@ -1,320 +1,209 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
-import { Check, Camera, Heart, Users, Calendar, Award, Sparkles, ArrowRight, PawPrint } from "lucide-react"
+import { Camera, Heart, Users, Calendar, Sparkles, ArrowRight, PawPrint } from "lucide-react"
 import FAQ, { standardFAQs } from "@/components/faq"
-import Testimonials from "@/components/testimonials"
 
 const services = [
   {
     id: "family",
     title: "Family Sessions",
-    description: "Beautiful, natural family portraits that showcase your connections and create lasting memories.",
-    image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=1054&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tagline: "Natural portraits of the people you love—together.",
     icon: Users,
-    packages: [
-      {
-        name: "Full Family Session",
-        price: "$350",
-        features: [
-          "Up to 60 minutes of shooting time",
-          "1-2 thoughtfully chosen locations",
-          "2 outfit changes (optional)",
-          "25 edited images",
-          "Online gallery with digital downloads",
-          "Print release",
-          "Perfect for families & motherhood sessions",
-        ],
-      },
-    ],
-  },
-  {
-    id: "events",
-    title: "Events & Celebrations",
-    description: "Capturing your special moments and celebrations with authentic, candid photography.",
-    image: "https://images.unsplash.com/photo-1719004347698-5fc3de27c6a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    icon: Calendar,
-    packages: [
-      {
-        name: "Event Coverage",
-        price: "$350",
-        features: [
-          "Up to 60 minutes of shooting time",
-          "1-2 thoughtfully chosen locations",
-          "2 outfit changes (optional)",
-          "25 edited images",
-          "Online gallery with digital downloads",
-          "Print release",
-          "Perfect for events & celebrations",
-        ],
-      },
-    ],
+    price: "$350",
   },
   {
     id: "maternity",
     title: "Maternity",
-    description: "Capturing the special bond between mothers and their children in intimate, meaningful sessions.",
-    image: "https://images.unsplash.com/photo-1555961064-4bc7ec634bbc?q=80&w=1199&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tagline: "Honor this chapter with gentle, timeless images.",
     icon: Heart,
-    packages: [
-      {
-        name: "Maternity Session",
-        price: "$350",
-        features: [
-          "Up to 60 minutes of shooting time",
-          "1-2 thoughtfully chosen locations",
-          "2 outfit changes (optional)",
-          "25 edited images",
-          "Online gallery with digital downloads",
-          "Print release",
-          "Perfect for maternity & motherhood",
-        ],
-      },
-    ],
+    price: "$350",
   },
   {
     id: "portraits",
     title: "Portraits",
-    description: "Professional portraits that capture your authentic self and tell your unique story.",
-    image: "https://images.unsplash.com/photo-1649219025763-bb4a23fdf256?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tagline: "You, as you are—graduation, branding, or just because.",
     icon: Camera,
-    packages: [
-      {
-        name: "Portrait Session",
-        price: "$350",
-        features: [
-          "Up to 60 minutes of shooting time",
-          "1-2 thoughtfully chosen locations",
-          "2 outfit changes (optional)",
-          "25 edited images",
-          "Online gallery with digital downloads",
-          "Print release",
-          "Perfect for graduation & branding",
-        ],
-      },
-    ],
+    price: "$350",
   },
   {
     id: "mini-sessions",
     title: "Mini Sessions",
-    description: "Quick, affordable sessions perfect for capturing special moments and seasonal themes.",
-    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop",
+    tagline: "Short, sweet sessions for seasonal themes and quick updates.",
     icon: Sparkles,
-    packages: [
-      {
-        name: "Mini Session",
-        price: "$200",
-        features: [
-          "30 minutes of shooting time",
-          "1 location",
-          "15 edited images",
-          "Online gallery with digital downloads",
-          "Print release",
-          "Perfect for quick portraits & seasonal themes",
-        ],
-      },
-    ],
+    price: "$200",
   },
   {
     id: "pet-photography",
     title: "Pet Photography",
-    description: "Beautiful portraits of your furry family members.",
-    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop",
+    tagline: "Your furry family members—personality and soul captured.",
     icon: PawPrint,
-    packages: [
-      {
-        name: "Pet Photography Session",
-        price: "$250",
-        features: [
-          "45 minutes of shooting time",
-          "20 edited images",
-          "Owner + pet or pet-only",
-          "2 looks or locations",
-          "Perfect for holiday cards or framed prints!",
-        ],
-      },
-    ],
+    price: "$250",
+  },
+  {
+    id: "events",
+    title: "Events & Celebrations",
+    tagline: "Milestones and celebrations—joy, tears, and love preserved.",
+    icon: Calendar,
+    price: "$350",
   },
 ]
 
 export default function ServicesPage() {
-  
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-[#F5F0EA]">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-6">
-            Services & Investment
+    <div className="flex min-h-screen flex-col bg-page">
+      {/* Hero: what this page is + where you are */}
+      <header className="border-b border-gray-200/80 bg-page px-4 pt-14 pb-8 sm:px-6 sm:pt-20 sm:pb-10 md:px-8 lg:px-12">
+        <div className="mx-auto max-w-2xl text-center">
+          <h1 className="font-serif text-3xl font-light tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+            Services & Sessions
           </h1>
-          <p className="text-xl font-light text-gray-700 max-w-3xl mx-auto">
-            At Greta Noelle Photography, we believe every season of life deserves to be captured with care, creativity, and connection. Our sessions are designed to give you time to breathe, relax, and fully enjoy the experience.
+          <p className="mt-4 text-base text-gray-600 sm:text-lg">
+            Choose a session below, or reach out and we’ll find the right fit. Based in <strong>Newington, CT</strong>—serving Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, Darien & all of Connecticut.
+          </p>
+        </div>
+      </header>
+
+      {/* Service cards: scannable, one clear action per card */}
+      <section
+        className="px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 lg:px-12"
+        aria-labelledby="sessions-heading"
+      >
+        <h2 id="sessions-heading" className="sr-only">
+          Choose your session
+        </h2>
+        <div className="mx-auto max-w-5xl">
+          <ul className="grid list-none gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </ul>
+          <p className="mt-8 text-center text-sm text-gray-500 sm:mt-10">
+            Not sure which session is right for you?{" "}
+            <Link href="/contact" className="font-medium text-gray-900 underline underline-offset-2 hover:no-underline">
+              Tell me what you’re thinking
+            </Link>
+            —I’ll help you choose.
           </p>
         </div>
       </section>
 
-      {/* Services Categories */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {services.map((service) => (
-                <ServiceCard
-                  key={service.id}
-                  service={service}
-                />
-              ))}
-            </div>
-          </div>
+      {/* How it works: simple 3-step reassurance */}
+      <section
+        className="border-t border-gray-200/80 bg-page px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 lg:px-12"
+        aria-labelledby="how-it-works-heading"
+      >
+        <div className="mx-auto max-w-4xl">
+          <h2 id="how-it-works-heading" className="font-serif text-2xl font-light text-gray-900 sm:text-3xl">
+            How it works
+          </h2>
+          <p className="mt-2 text-gray-600 sm:text-lg">
+            Simple, personal, and stress-free.
+          </p>
+          <ol className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-6 md:mt-10">
+            <ProcessStep step={1} title="We connect" body="You share your vision; we pick a date. I’ll send a short style guide and prep tips." />
+            <ProcessStep step={2} title="We shoot" body="You relax. I guide gently and capture real moments—no stiff posing." />
+            <ProcessStep step={3} title="You get your gallery" body="Within 2–3 weeks, your edited images land in a private gallery—yours to keep and share." />
+          </ol>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 bg-[#F5F0EA]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">How It Works</h2>
-            <p className="text-lg text-gray-700 mb-12">
-              From our first conversation to your final gallery, I'm here to make the process easy and enjoyable.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">1</span>
-                </div>
-                <h3 className="font-serif text-xl font-medium mb-3 text-gray-900">Book Your Session</h3>
-                <p className="text-gray-700">Contact me to discuss your vision and schedule your session. I'll send you a style guide and help you prepare.</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">2</span>
-                </div>
-                <h3 className="font-serif text-xl font-medium mb-3 text-gray-900">Capture Memories</h3>
-                <p className="text-gray-700">Relax and enjoy our time together. I'll guide you through poses while capturing natural, authentic moments.</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">3</span>
-                </div>
-                <h3 className="font-serif text-xl font-medium mb-3 text-gray-900">Receive Your Gallery</h3>
-                <p className="text-gray-700">Within 2-3 weeks, you'll receive your beautiful, edited images in a private online gallery.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <Testimonials />
-
-      {/* FAQ Section */}
       <FAQ faqs={standardFAQs} />
 
-      {/* Final CTA */}
-      <section className="py-16 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-3xl font-light mb-4 text-white">Ready to Get Started?</h2>
-            <p className="text-lg mb-8 text-gray-300">
-              Let's create something beautiful together. Book your session or reach out to discuss your vision.
-            </p>
-            <Link 
-              href="/contact" 
-              className="inline-block rounded-full bg-primary px-8 py-3 text-lg font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow-lg"
-            >
-              Book Your Session
-            </Link>
-          </div>
+      {/* CTA: one clear next step */}
+      <section className="bg-page px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16" aria-labelledby="cta-heading">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 id="cta-heading" className="font-serif text-2xl font-light text-gray-900 sm:text-3xl">
+            Ready to book or have questions?
+          </h2>
+          <p className="mt-3 text-gray-600 sm:text-lg">
+            Get in touch—I’d love to hear from you.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-2 rounded-full bg-gray-900 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-page"
+          >
+            Get in touch
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
         </div>
       </section>
     </div>
   )
 }
 
-// Service Card Component
 interface ServiceCardProps {
   service: {
-    id: string;
-    title: string;
-    description: string;
-    image: string;
-    icon: React.ComponentType<{ className?: string }>;
-    packages: Array<{
-      name: string;
-      price: string;
-      features: string[];
-    }>;
-  };
+    id: string
+    title: string
+    tagline: string
+    icon: React.ComponentType<{ className?: string }>
+    price: string
+  }
 }
 
 function ServiceCard({ service }: ServiceCardProps) {
-  const Icon = service.icon;
-  
+  const Icon = service.icon
+
   return (
-    <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-      <div className="relative h-64 w-full overflow-hidden">
-        <Image
-          src={service.image}
-          alt={service.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-        
-        {/* Icon overlay */}
-        <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-          <Icon className="h-6 w-6 text-primary" />
-        </div>
-        
-        {/* Title overlay */}
-        <div className="absolute bottom-4 left-4">
-          <h3 className="font-serif text-2xl font-light text-white drop-shadow-lg">{service.title}</h3>
-        </div>
-      </div>
-      
-      <div className="p-6">
-        <p className="text-gray-700 mb-4">{service.description}</p>
-        
-        {/* Package Info */}
-        {service.packages.map((pkg) => (
-          <div key={pkg.name} className="mb-4">
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-serif text-lg font-medium text-gray-900">{pkg.name}</span>
-              <span className="text-2xl font-bold text-primary">{pkg.price}</span>
-            </div>
-            <ul className="space-y-1 text-sm text-gray-600 mb-4">
-              {pkg.features.slice(0, 3).map((feature, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-              {pkg.features.length > 3 && (
-                <li className="text-gray-500 italic">+ {pkg.features.length - 3} more...</li>
-              )}
-            </ul>
+    <li>
+      <article className="flex h-full flex-col rounded-2xl border border-gray-200/90 bg-page p-6 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 sm:p-7">
+        <div className="flex items-start gap-4">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gray-900 text-white" aria-hidden>
+            <Icon className="h-6 w-6" />
+          </span>
+          <div className="min-w-0 flex-1">
+            <h3 className="font-serif text-xl font-medium text-gray-900">
+              {service.title}
+            </h3>
+            <p className="mt-1 text-sm text-gray-600">
+              {service.tagline}
+            </p>
           </div>
-        ))}
-        
-        <div className="flex gap-3">
+        </div>
+        <p className="mt-4 text-sm text-gray-500">
+          Starting from <span className="font-semibold text-gray-900">{service.price}</span>
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href={`/services/${service.id}`}
-            className="flex-1 rounded-full border border-primary bg-white text-primary hover:bg-primary hover:text-white px-4 py-2 text-center text-sm font-semibold transition-colors"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-1.5 rounded-full border border-gray-900 bg-transparent px-5 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
           >
-            Learn More
+            Learn more
+            <ArrowRight className="h-3.5 w-3.5" aria-hidden />
           </Link>
           <Link
             href="/contact"
-            className="flex-1 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 text-center text-sm font-semibold transition-colors"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
           >
-            Book Now
+            Book
           </Link>
         </div>
-      </div>
-    </div>
-  );
+      </article>
+    </li>
+  )
+}
+
+function ProcessStep({
+  step,
+  title,
+  body,
+}: {
+  step: number
+  title: string
+  body: string
+}) {
+  return (
+    <li className="relative pl-10 sm:pl-0">
+      <span className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-page font-serif text-base font-medium text-gray-700 sm:static sm:mb-4" aria-hidden>
+        {step}
+      </span>
+      <h3 className="font-serif text-lg font-medium text-gray-900 sm:text-xl">
+        {title}
+      </h3>
+      <p className="mt-1.5 text-sm text-gray-600 sm:text-base">
+        {body}
+      </p>
+    </li>
+  )
 }

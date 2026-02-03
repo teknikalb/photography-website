@@ -8,14 +8,14 @@ import { motion } from "framer-motion"
 
 export default function FamilyServicePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       <Script id="schema-service-family" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
           name: "Family Photography",
           description: "Beautiful, natural family portraits across Connecticut.",
-          areaServed: ["Hartford", "New Haven", "West Hartford", "Stamford", "Glastonbury", "Connecticut"],
+          areaServed: ["Newington", "Wethersfield", "Glastonbury", "West Hartford", "Rocky Hill", "Southington", "Litchfield", "Greenwich", "Darien", "Connecticut"],
           provider: {
             "@type": "Organization",
             name: "Greta Noelle Photography",
@@ -25,7 +25,7 @@ export default function FamilyServicePage() {
         })}
       </Script>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-[#F5F0EA]">
+      <section className="pt-24 pb-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -70,17 +70,17 @@ export default function FamilyServicePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
             >
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">All Ages Welcome</h3>
                 <p className="text-gray-600">From newborns to grandparents, I capture families of all sizes and ages.</p>
               </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Camera className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">Natural & Relaxed</h3>
                 <p className="text-gray-600">My approach is fun and stress-free, letting your family's personality shine.</p>
               </div>
-              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-center p-6 bg-page rounded-lg shadow-sm">
                 <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-medium text-gray-800 mb-3">Meaningful Locations</h3>
                 <p className="text-gray-600">Outdoor, in-home, or studio sessions that reflect your family's story.</p>
@@ -93,7 +93,7 @@ export default function FamilyServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16"
+              className="bg-page rounded-2xl shadow-lg p-8 mb-16"
             >
               <h3 className="font-serif text-2xl font-light text-gray-800 mb-8 text-center">
                 What's Included in Your Family Session
@@ -144,7 +144,7 @@ export default function FamilyServicePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-white rounded-2xl shadow-lg p-8 mb-16"
+              className="bg-page rounded-2xl shadow-lg p-8 mb-16"
             >
               <h3 className="font-serif text-2xl font-light text-gray-800 mb-8 text-center">
                 Investment

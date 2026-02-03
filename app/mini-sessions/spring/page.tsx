@@ -8,7 +8,7 @@ export default function SpringMiniSessionsPage() {
     <div className="container mx-auto px-4 py-16 max-w-2xl">
       <h1 className="font-serif text-4xl font-light mb-6 text-center mt-12">Spring Mini Sessions in Connecticut</h1>
       <Image src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=800&auto=format&fit=crop" alt="Spring Mini Session" width={600} height={400} className="rounded-lg object-cover mb-6 mx-auto" />
-      <p className="mb-4 text-lg text-gray-700 text-center">Celebrate the season of renewal with vibrant spring mini sessions! Perfect for families, maternity, and portraits among blooming flowers and fresh greenery. Limited spots available—book your spring mini session in Hartford or New Haven today!</p>
+      <p className="mb-4 text-lg text-gray-700 text-center">Celebrate the season of renewal with vibrant spring mini sessions! Perfect for families, maternity, and portraits among blooming flowers and fresh greenery. Limited spots available—book your spring mini session in Newington, Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, or across Connecticut today!</p>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">What to Expect</h2>
       <ul className="list-disc ml-6 mb-4 text-gray-700">
         <li>20-minute guided session</li>
@@ -19,8 +19,8 @@ export default function SpringMiniSessionsPage() {
       </ul>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">Ideal Locations</h2>
       <ul className="list-disc ml-6 mb-4 text-gray-700">
-        <li>Elizabeth Park, Hartford</li>
-        <li>Yale University Campus, New Haven</li>
+        <li>Elizabeth Park (Hartford), Wethersfield & Glastonbury gardens</li>
+        <li>Parks in Newington, Rocky Hill, Southington, West Hartford</li>
         <li>Local gardens and parks across Connecticut</li>
       </ul>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">Sample Session Flow</h2>

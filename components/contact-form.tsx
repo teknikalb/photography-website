@@ -126,7 +126,7 @@ export default function ContactForm() {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm"
+              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page"
               placeholder="Your beautiful name"
             />
             <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
@@ -147,7 +147,7 @@ export default function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm"
+              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page"
               placeholder="your@email.com"
             />
             <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
@@ -170,7 +170,7 @@ export default function ContactForm() {
               id="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm"
+              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page"
               placeholder="(123) 456-7890"
             />
             <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
@@ -190,12 +190,12 @@ export default function ContactForm() {
               value={formData.interest}
               onChange={handleChange}
               required
-              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm appearance-none"
+              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page appearance-none"
             >
               <option value="" disabled>Select your perfect session...</option>
               <option value="Full Photography Session ($350)">Full Photography Session ($350)</option>
               <option value="Fall Mini Session ($200)">Fall Mini Session ($200)</option>
-              <option value="Christmas Mini Session ($200)">Christmas Mini Session ($200)</option>
+              <option value="Mother's Day Minis ($200)">Mother's Day Minis ($200)</option>
               <option value="Valentine's Mini Session ($200)">Valentine's Mini Session ($200)</option>
               <option value="Pet Photography Session ($250)">Pet Photography Session ($250)</option>
               <option value="Family Session">Family Session</option>
@@ -225,7 +225,7 @@ export default function ContactForm() {
             id="preferredDate"
             value={formData.preferredDate}
             onChange={handleChange}
-            className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm"
+            className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page"
           />
           <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
             <Sparkles className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
@@ -247,7 +247,7 @@ export default function ContactForm() {
             required
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-white/80 backdrop-blur-sm resize-none"
+            className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page resize-none"
             placeholder="Tell me about what you're looking for, any specific ideas you have, location preferences, or questions you might have. I'd love to hear your story and help bring your vision to life! ✨"
           ></textarea>
           <div className="absolute top-4 right-4 flex items-center pointer-events-none">

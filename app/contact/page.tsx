@@ -11,9 +11,9 @@ export default function ContactPage() {
   const [activeSection, setActiveSection] = useState('form')
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section with Artistic Elements */}
-      <section className="relative pt-24 pb-16 bg-[#F5F0EA] overflow-hidden">
+      <section className="relative pt-24 pb-16 bg-page overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
@@ -36,7 +36,7 @@ export default function ContactPage() {
           
           {/* Quick Action Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-page rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="h-6 w-6 text-primary" />
               </div>
@@ -44,7 +44,7 @@ export default function ContactPage() {
               <p className="text-gray-600 text-sm">Tell me about your vision</p>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="bg-page rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Calendar className="h-6 w-6 text-primary" />
               </div>
@@ -73,7 +73,7 @@ export default function ContactPage() {
               
               {/* Left Column - Artistic Info Cards */}
               <div className="lg:col-span-1 space-y-8">
-                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20">
+                <div className="bg-page rounded-3xl p-8 shadow-xl border border-white/20">
                   <h2 className="font-serif text-2xl font-light mb-6 text-gray-900 flex items-center">
                     <Star className="h-6 w-6 text-primary mr-3" />
                     Let's Connect
@@ -100,7 +100,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium text-gray-900">Location</p>
-                        <p className="text-gray-700 font-medium">Connecticut & New England</p>
+                        <p className="text-gray-700 font-medium">Newington, Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, Darien & all of Connecticut</p>
                       </div>
                     </div>
                     
@@ -117,7 +117,7 @@ export default function ContactPage() {
                 </div>
                 
                 {/* Social Media */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20">
+                <div className="bg-page rounded-3xl p-8 shadow-xl border border-white/20">
                   <h3 className="font-serif text-xl font-medium mb-6 text-gray-900">Follow My Journey</h3>
                   <div className="flex gap-4">
                     <a 
@@ -138,7 +138,7 @@ export default function ContactPage() {
               
               {/* Right Column - Contact Form */}
               <div className="lg:col-span-2">
-                <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-8 lg:p-12">
+                <div className="bg-page rounded-3xl shadow-2xl border border-white/20 p-8 lg:p-12">
                   <div className="text-center mb-8">
                     <h3 className="font-serif text-3xl font-light mb-4 text-gray-900">Send Me a Message</h3>
                     <p className="text-gray-600">Tell me about your vision and I'll get back to you within 24 hours</p>
@@ -152,7 +152,7 @@ export default function ContactPage() {
       </section>
 
       {/* Artistic CTA Section */}
-      <section className="py-16 bg-gray-900 relative overflow-hidden">
+      <section className="py-16 bg-page relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
@@ -162,8 +162,8 @@ export default function ContactPage() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-serif text-4xl font-light mb-6 text-white">Ready to Begin Your Story?</h2>
-            <p className="text-xl mb-8 text-gray-300 leading-relaxed">
+            <h2 className="font-serif text-4xl font-light mb-6 text-gray-900">Ready to Begin Your Story?</h2>
+            <p className="text-xl mb-8 text-gray-600 leading-relaxed">
               Don't wait to capture your special moments. Every day is an opportunity to create something beautiful.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

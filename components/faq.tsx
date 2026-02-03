@@ -22,7 +22,7 @@ export default function FAQ({ faqs, title = "Frequently Asked Questions", descri
   };
 
   return (
-    <section className="py-16 bg-[#F5F0EA]">
+    <section className="py-16 bg-page">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -36,7 +36,7 @@ export default function FAQ({ faqs, title = "Frequently Asked Questions", descri
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+                className="bg-page rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-200"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -97,6 +97,6 @@ export const standardFAQs: FAQItem[] = [
   },
   {
     question: "Do you travel for sessions?",
-    answer: "Yes! I serve all of Connecticut and travel throughout New England. For destinations beyond, travel fees may apply. Contact me for a custom quote.",
+    answer: "Yes! I serve all of Connecticut including Newington, Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, and Darien. I also travel throughout New England. For destinations beyond, travel fees may apply—contact me for a custom quote.",
   },
 ];

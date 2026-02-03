@@ -58,7 +58,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-4 text-gray-600">
               <li className="flex items-start">
                 <MapPin className="mr-3 h-5 w-5 text-primary" />
-                <span>Serving all of Connecticut and surrounding areas</span>
+                <span>Serving Newington, Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, Darien & all of Connecticut</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-primary" />

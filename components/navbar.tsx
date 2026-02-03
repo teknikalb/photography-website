@@ -24,7 +24,7 @@ export default function Navbar() {
         fixed top-0 left-0 right-0 z-50 
         h-[96px]
         transition-all duration-300
-        ${isScrolled ? "bg-white shadow-md" : "bg-black/50"}
+        ${isScrolled ? "bg-page shadow-md" : "bg-black/50"}
       `}
     >
       <div className="mx-auto h-full max-w-[2000px] px-6 lg:px-12">
@@ -111,7 +111,7 @@ export default function Navbar() {
                   backdrop-blur-sm transition-all 
                   ${isScrolled 
                     ? 'border-black bg-black text-white hover:bg-black/80'
-                    : 'border-white bg-white/10 text-white hover:bg-white hover:text-black'
+                    : 'border-white bg-white/10 text-white hover:bg-page hover:text-black'
                   }
                 `}
               >

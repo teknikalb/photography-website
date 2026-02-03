@@ -4,7 +4,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Check, Sparkles, Heart, Camera, Calendar, Gift, Star, Clock } from "lucide-react"
 import FAQ, { standardFAQs } from "@/components/faq"
-import Testimonials from "@/components/testimonials"
 
 const miniSessionPackages = [
   {
@@ -59,9 +58,9 @@ const miniSessionPackages = [
 
 export default function MiniSessionsPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-[#F5F0EA]">
+      <section className="pt-24 pb-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
@@ -104,7 +103,7 @@ export default function MiniSessionsPage() {
             
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               {miniSessionPackages.map((pkg, index) => (
-                <div key={pkg.name} className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <div key={pkg.name} className="bg-page rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border border-gray-200">
                   <div className="p-8">
                     <div className="text-center mb-6">
                       <h3 className="font-serif text-2xl font-medium text-gray-900 mb-2">{pkg.name}</h3>
@@ -147,7 +146,7 @@ export default function MiniSessionsPage() {
       </section>
 
       {/* Why Choose Mini Sessions */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-page">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Why Choose Mini Sessions?</h2>
@@ -184,18 +183,15 @@ export default function MiniSessionsPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <Testimonials />
-
       {/* FAQ Section */}
       <FAQ faqs={standardFAQs} />
 
       {/* Final CTA */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16 bg-page">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-3xl font-light mb-4 text-white">Ready to Book Your Mini Session?</h2>
-            <p className="text-lg mb-8 text-gray-300">
+            <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Ready to Book Your Mini Session?</h2>
+            <p className="text-lg mb-8 text-gray-600">
               Limited spots available! Book your mini session today and capture beautiful memories in just 30 minutes.
             </p>
             <Link 

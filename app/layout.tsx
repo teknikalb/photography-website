@@ -25,20 +25,26 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://gretanoellephoto.com"),
   robots: { index: true, follow: true },
   title: {
-    default: "Connecticut Family, Maternity & Portrait Photographer | Greta Noelle Photography",
+    default: "Family & Maternity Photographer Newington CT | West Hartford, Glastonbury, Greenwich",
     template: `%s | Greta Noelle Photography`,
   },
   description:
-    "Connecticut photographer specializing in family, maternity, milestone, and portrait sessions. Serving Hartford, New Haven, and all of New England.",
+    "Book a family or maternity photographer in Newington, CT. Best-rated for family photos & maternity sessions in West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich & Darien. Limited spots.",
   keywords: [
-    "connecticut photographer",
-    "family photographer",
-    "maternity photographer",
-    "Hartford CT photographer",
+    "family photographer Newington CT",
+    "maternity photographer West Hartford",
+    "best family photographer Glastonbury",
+    "family photographer Greenwich CT",
+    "photographer Darien CT",
+    "maternity photographer near me",
+    "family photos West Hartford",
+    "family photographer Wethersfield CT",
+    "maternity photographer Newington",
+    "photographer Rocky Hill CT",
+    "family photographer Southington",
+    "Litchfield CT photographer",
     "Mother's Day mini sessions Connecticut",
-    "milestone photography Connecticut",
-    "New England photographer",
-    "professional portraits Connecticut"
+    "professional portraits Connecticut",
   ],
   authors: [{ name: "Greta Noelle Photography" }],
   creator: "Greta Noelle Photography",
@@ -47,9 +53,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://gretanoellephoto.com",
-    title: "Connecticut Family, Maternity & Portrait Photographer | Greta Noelle Photography",
+    title: "Family & Maternity Photographer Newington CT | West Hartford, Glastonbury, Greenwich",
     description:
-      "Authentic and heartfelt family, maternity, milestone, and portrait photography based in Hartford, Connecticut. Serving New Haven and all of New England.",
+      "Book a family or maternity photographer in Newington, CT. Family photos & maternity sessions in West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich & Darien.",
     siteName: "Greta Noelle Photography",
     images: [
       { url: "/hero-optimized.jpg", width: 1200, height: 630, alt: "Greta Noelle Photography" },
@@ -57,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Connecticut Family, Maternity & Portrait Photographer | Greta Noelle Photography",
+    title: "Family & Maternity Photographer Newington CT | West Hartford, Glastonbury, Greenwich",
     description:
-      "Authentic and heartfelt family, maternity, milestone, and portrait photography based in Hartford, Connecticut. Serving New Haven and all of New England.",
+      "Book a family or maternity photographer in Newington, CT. Family photos & maternity sessions in West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich & Darien.",
     creator: "@drenanoelle",
     images: ["/hero-optimized.jpg"],
   },
@@ -104,12 +110,20 @@ export default function RootLayout({
           <Script id="ld-photographer" type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": "ProfessionalService",
+              "@id": "https://gretanoellephoto.com/#photographer",
               name: "Greta Noelle Photography",
+              description: "Family and maternity photographer in Newington, CT. Natural, heartfelt family photos and maternity sessions. Serving West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich, Darien and all of Connecticut.",
               image: "https://gretanoellephoto.com/hero-optimized.jpg",
               url: "https://gretanoellephoto.com",
-              address: { "@type": "PostalAddress", addressRegion: "CT", addressCountry: "US" },
-              areaServed: ["Hartford", "New Haven", "Connecticut", "New England"],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Newington",
+                addressRegion: "CT",
+                addressCountry: "US"
+              },
+              areaServed: ["Newington", "Wethersfield", "Glastonbury", "West Hartford", "Rocky Hill", "Southington", "Litchfield", "Greenwich", "Darien", "Connecticut", "New England"],
+              priceRange: "$$",
               sameAs: []
             })}
           </Script>

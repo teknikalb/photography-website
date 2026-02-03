@@ -6,14 +6,14 @@ export const metadata = {
 
 export default function GlastonburyLocationPage() {
   return (
-    <div className="min-h-screen bg-[#F5F0EA]">
+    <div className="min-h-screen bg-page">
       <section className="pt-24 pb-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-4">
             Glastonbury Photographer
           </h1>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Natural, heartfelt sessions in orchards, farms, and scenic riverfront parks around Glastonbury.
+            Natural, heartfelt sessions in orchards, farms, and scenic riverfront parks around Glastonbury, Southington, Wethersfield, and the Connecticut River valley.
           </p>
         </div>
       </section>

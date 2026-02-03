@@ -11,7 +11,7 @@ export default function MilestoneServicePage() {
           "@type": "Service",
           name: "Milestone Photography",
           description: "Milestone and celebration photography across Connecticut.",
-          areaServed: ["Hartford", "New Haven", "West Hartford", "Stamford", "Glastonbury", "Connecticut"],
+          areaServed: ["Newington", "Wethersfield", "Glastonbury", "West Hartford", "Rocky Hill", "Southington", "Litchfield", "Greenwich", "Darien", "Connecticut"],
           provider: {
             "@type": "Organization",
             name: "Greta Noelle Photography",
@@ -21,7 +21,7 @@ export default function MilestoneServicePage() {
         })}
       </Script>
       {/* Hero Section */}
-      <section className="relative h-[50vh] w-full overflow-hidden bg-gray-100">
+      <section className="relative h-[50vh] w-full overflow-hidden bg-page">
         <Image
           src="https://images.unsplash.com/photo-1484665754804-74b091211472?q=80&w=1920&auto=format&fit=crop" // Placeholder milestone image
           alt="Milestone celebration"

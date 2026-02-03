@@ -8,9 +8,9 @@ import FAQ, { standardFAQs } from "@/components/faq"
 
 export default function PricingPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F0EA]">
+    <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-[#F5F0EA]">
+      <section className="pt-24 pb-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-6">
             Investment & Pricing
@@ -25,7 +25,7 @@ export default function PricingPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="bg-page rounded-2xl shadow-xl overflow-hidden">
               {/* Header */}
               <div className="bg-gradient-to-r from-primary to-primary/80 text-white p-8 text-center">
                 <h2 className="font-serif text-3xl font-light mb-4 text-white">Full Photography Session</h2>
@@ -83,27 +83,27 @@ export default function PricingPage() {
                       Perfect For
                     </h3>
                     <div className="grid grid-cols-1 gap-3">
-                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center gap-3 p-3 bg-page rounded-lg">
                         <Users className="h-5 w-5 text-primary" />
                         <span className="font-medium text-gray-900">Families & motherhood sessions</span>
                       </div>
-                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center gap-3 p-3 bg-page rounded-lg">
                         <Heart className="h-5 w-5 text-primary" />
                         <span className="font-medium text-gray-900">Couples & engagements</span>
                       </div>
-                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center gap-3 p-3 bg-page rounded-lg">
                         <Baby className="h-5 w-5 text-primary" />
                         <span className="font-medium text-gray-900">Maternity</span>
                       </div>
-                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center gap-3 p-3 bg-page rounded-lg">
                         <Star className="h-5 w-5 text-primary" />
                         <span className="font-medium text-gray-900">Graduation</span>
                       </div>
-                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center gap-3 p-3 bg-page rounded-lg">
                         <Camera className="h-5 w-5 text-primary" />
                         <span className="font-medium text-gray-900">Branding & lifestyle portraits</span>
                       </div>
-                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <div className="flex items-center gap-3 p-3 bg-page rounded-lg">
                         <PawPrint className="h-5 w-5 text-primary" />
                         <span className="font-medium text-gray-900">Pet photography</span>
                       </div>
@@ -116,7 +116,7 @@ export default function PricingPage() {
                       <Gift className="h-6 w-6 text-primary" />
                       Optional Add-On
                     </h3>
-                    <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                    <div className="bg-page rounded-xl p-6 border border-gray-200">
                       <h4 className="font-serif text-xl font-medium text-gray-900 mb-2">Rush Delivery</h4>
                       <div className="text-2xl font-bold text-primary mb-3">+ $40</div>
                       <p className="text-gray-700 mb-4 text-sm">
@@ -131,7 +131,7 @@ export default function PricingPage() {
                 </div>
 
                 {/* Session Description */}
-                <div className="mt-8 p-6 bg-gray-50 rounded-xl">
+                <div className="mt-8 p-6 bg-page rounded-xl">
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
                     This session allows time for guided posing and natural moments—whether it's chasing golden hour, 
                     snuggling close, or just being your authentic self.
@@ -152,7 +152,7 @@ export default function PricingPage() {
       </section>
 
       {/* Mini Sessions CTA */}
-      <section className="py-16 bg-[#F5F0EA]">
+      <section className="py-16 bg-page">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Looking for Something Shorter?</h2>
@@ -162,7 +162,7 @@ export default function PricingPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-6 shadow-lg text-center border border-gray-200">
+            <div className="bg-page rounded-2xl p-6 shadow-lg text-center border border-gray-200">
               <div className="text-4xl mb-4">🍂</div>
               <h3 className="font-serif text-xl font-medium mb-2">Fall Mini</h3>
               <div className="text-2xl font-bold text-primary mb-4">$200</div>
@@ -172,17 +172,17 @@ export default function PricingPage() {
               </Link>
             </div>
             
-            <div className="bg-white rounded-2xl p-6 shadow-lg text-center border border-gray-200">
-              <div className="text-4xl mb-4">🎄</div>
-              <h3 className="font-serif text-xl font-medium mb-2">Christmas Mini</h3>
+            <div className="bg-page rounded-2xl p-6 shadow-lg text-center border border-gray-200">
+              <div className="text-4xl mb-4">🌸</div>
+              <h3 className="font-serif text-xl font-medium mb-2">Mother's Day Minis</h3>
               <div className="text-2xl font-bold text-primary mb-4">$200</div>
-              <p className="text-gray-600 mb-4">30 minutes • 15 images • Cozy set or tree farm</p>
+              <p className="text-gray-600 mb-4">30 minutes • 15 images • Celebrate mom—florals, outdoor or studio</p>
               <Link href="/services/mini-sessions" className="inline-block rounded-full bg-primary px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90">
                 Learn More
               </Link>
             </div>
             
-            <div className="bg-white rounded-2xl p-6 shadow-lg text-center border border-gray-200">
+            <div className="bg-page rounded-2xl p-6 shadow-lg text-center border border-gray-200">
               <div className="text-4xl mb-4">💌</div>
               <h3 className="font-serif text-xl font-medium mb-2">Valentine's Mini</h3>
               <div className="text-2xl font-bold text-primary mb-4">$200</div>
@@ -192,7 +192,7 @@ export default function PricingPage() {
               </Link>
             </div>
             
-            <div className="bg-white rounded-2xl p-6 shadow-lg text-center border border-gray-200">
+            <div className="bg-page rounded-2xl p-6 shadow-lg text-center border border-gray-200">
               <div className="text-4xl mb-4">🐾</div>
               <h3 className="font-serif text-xl font-medium mb-2">Holiday Pet Mini</h3>
               <div className="text-2xl font-bold text-primary mb-4">$150</div>
@@ -209,7 +209,7 @@ export default function PricingPage() {
       <FAQ faqs={standardFAQs} />
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#F5F0EA]">
+      <section className="py-16 bg-page">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Ready to Create Something Beautiful?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-700">
