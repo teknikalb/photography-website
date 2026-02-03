@@ -25,7 +25,7 @@ export default function PortraitsServicePage() {
         })}
       </Script>
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-page">
+      <section className="pt-24 pb-8 sm:pb-10 bg-page">
         <div className="container mx-auto section-x text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function PortraitsServicePage() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-10 sm:py-12 md:py-16">
         <div className="container mx-auto section-x">
           <div className="max-w-4xl mx-auto">
             <motion.div

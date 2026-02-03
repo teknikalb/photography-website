@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section with Artistic Elements */}
-      <section className="relative pt-24 pb-16 bg-page overflow-hidden section-x">
+      <section className="relative pt-24 pb-8 sm:pb-10 bg-page overflow-hidden section-x">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
@@ -66,7 +66,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-16 section-x">
+      <section className="py-10 sm:py-12 section-x">
         <div className="container mx-auto">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -155,7 +155,7 @@ export default function ContactPage() {
       </section>
 
       {/* Artistic CTA Section */}
-      <section className="py-16 bg-page relative overflow-hidden section-x">
+      <section className="py-10 sm:py-12 bg-page relative overflow-hidden section-x">
         {/* Decorative Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>

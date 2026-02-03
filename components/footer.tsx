@@ -45,8 +45,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-medium text-gray-800">Services</h3>
             <ul className="mt-4 space-y-2">
+              <FooterLink href="/services/family">Family Session</FooterLink>
+              <FooterLink href="/services/couple-sessions">Couple Sessions</FooterLink>
+              <FooterLink href="/services/elopements">Elopements</FooterLink>
               <FooterLink href="/services/events">Events</FooterLink>
-              <FooterLink href="/services/family">Family Portraits</FooterLink>
               <FooterLink href="/services/maternity">Maternity</FooterLink>
               <FooterLink href="/services/portraits">Portraits</FooterLink>
               <FooterLink href="/services/milestones">Milestone Sessions</FooterLink>

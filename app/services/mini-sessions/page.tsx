@@ -60,7 +60,7 @@ export default function MiniSessionsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-page">
+      <section className="pt-24 pb-8 sm:pb-10 bg-page">
         <div className="container mx-auto section-x text-center">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
@@ -91,7 +91,7 @@ export default function MiniSessionsPage() {
       </section>
 
       {/* Packages Section */}
-      <section className="py-16">
+      <section className="py-10 sm:py-12">
         <div className="container mx-auto section-x">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">

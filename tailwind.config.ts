@@ -20,6 +20,9 @@ const config = {
     },
     extend: {
       colors: {
+        gray: {
+          900: "#50090c",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -53,7 +56,8 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        page: "#FCFBF9",
+        page: "#e7e3d8",
+        "page-light": "#ebe8e0",
       },
       borderRadius: {
         lg: "var(--radius)",

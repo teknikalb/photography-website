@@ -10,7 +10,7 @@ export default function PricingPage() {
   return (
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-page">
+      <section className="pt-24 pb-8 sm:pb-10 bg-page">
         <div className="container mx-auto section-x text-center">
           <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-6">
             Investment & Pricing
@@ -22,7 +22,7 @@ export default function PricingPage() {
       </section>
 
       {/* Main Session Package */}
-      <section className="py-16">
+      <section className="py-10 sm:py-12">
         <div className="container mx-auto section-x">
           <div className="max-w-6xl mx-auto">
             <div className="bg-page rounded-2xl shadow-xl overflow-hidden">

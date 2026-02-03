@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero — typography-led, minimal */}
-      <section className="relative overflow-hidden bg-page section-x pt-12 pb-8 sm:pt-14 sm:pb-10 md:pt-16 md:pb-12 lg:pt-20 lg:pb-14">
+      <section className="relative overflow-hidden bg-page section-x pt-8 pb-6 sm:pt-10 sm:pb-8 md:pt-12 md:pb-10">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.span
             className="pill-badge"
@@ -30,7 +30,7 @@ export default function AboutPage() {
             About
           </motion.span>
           <motion.h1
-            className="mt-3 font-serif text-4xl font-light tracking-wide text-foreground sm:text-5xl md:text-6xl lg:text-6xl"
+            className="mt-2 font-serif text-3xl font-light tracking-wide text-foreground sm:text-4xl md:text-5xl"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -38,7 +38,7 @@ export default function AboutPage() {
             Hi, I&apos;m Greta
           </motion.h1>
           <motion.p
-            className="mx-auto mt-3 max-w-lg text-base font-light tracking-wide text-muted-foreground sm:text-lg md:mt-4"
+            className="mx-auto mt-2 max-w-lg text-sm font-light tracking-wide text-muted-foreground sm:text-base md:mt-3"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -46,7 +46,7 @@ export default function AboutPage() {
             Lifestyle photographer · Connecticut
           </motion.p>
           <motion.div
-            className="divider mx-auto mt-4"
+            className="divider mx-auto mt-3"
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.5, delay: 0.35 }}
@@ -56,7 +56,7 @@ export default function AboutPage() {
 
       {/* Main story — portrait + full bio */}
       <section ref={storyRef} className="border-t border-border/60 bg-background section-x">
-        <div className="container mx-auto py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto py-8 sm:py-10 md:py-12 lg:py-16">
           <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-12 lg:gap-16">
             {/* Portrait — responsive order and sizing */}
             <motion.div
@@ -118,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* Pull quote */}
-      <section ref={quoteRef} className="border-t border-border/60 bg-page/50 section-x py-14 sm:py-16 md:py-20">
+      <section ref={quoteRef} className="border-t border-border/60 bg-page/50 section-x py-10 sm:py-12 md:py-14">
         <div className="container mx-auto">
           <motion.blockquote
             className="mx-auto max-w-2xl text-center"
@@ -134,7 +134,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values — minimal, three pillars */}
-      <section ref={valuesRef} className="border-t border-border/60 bg-background section-x py-14 sm:py-16 md:py-20">
+      <section ref={valuesRef} className="border-t border-border/60 bg-background section-x py-10 sm:py-12 md:py-14">
         <div className="container mx-auto">
           <div className="mx-auto max-w-4xl">
             <motion.h2
@@ -181,7 +181,7 @@ export default function AboutPage() {
       </section>
 
       {/* Contact */}
-      <section ref={contactRef} className="relative border-t border-border/60 bg-page section-x py-16 md:py-24">
+      <section ref={contactRef} className="relative border-t border-border/60 bg-page section-x py-10 sm:py-12 md:py-16">
         <div className="container relative z-10 mx-auto">
           <motion.div
             className="mx-auto max-w-2xl"

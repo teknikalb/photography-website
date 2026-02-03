@@ -95,6 +95,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.variable} ${cormorant.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <div className="relative z-10">
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-681WPRJZLL"
             strategy="afterInteractive"
@@ -128,8 +129,9 @@ export default function RootLayout({
             })}
           </Script>
           <Header />
-          <main>{children}</main>
+          <main className="relative z-10">{children}</main>
           <Footer />
+          </div>
           {/* Proactively unregister any existing service workers to avoid 404s from stale caches */}
           <Script id="sw-unregister" strategy="afterInteractive">
             {`

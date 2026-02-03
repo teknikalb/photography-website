@@ -20,7 +20,7 @@ export default function PortfolioPage() {
   return (
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
-      <section className="pt-20 pb-8 bg-page sm:pt-24 sm:pb-10 md:pt-28 md:pb-12">
+      <section className="pt-20 pb-6 bg-page sm:pt-24 sm:pb-8 md:pt-28 md:pb-10">
         <div className="container mx-auto section-x text-center">
           <h1 className="font-serif text-3xl font-light tracking-wide sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-3 sm:mb-4">
             Portfolio
@@ -32,7 +32,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Photo Grid — mobile: 2 cols, tablet: 3, desktop: smaller max-width */}
-      <section className="py-6 sm:py-10 section-x border-t border-border/60">
+      <section className="py-4 sm:py-6 section-x border-t border-border/60">
         <div className="container mx-auto max-w-4xl lg:max-w-5xl">
           <div className="grid grid-cols-2 gap-0 sm:grid-cols-3 lg:grid-cols-4">
             {photos.map((photo, i) => (
@@ -52,7 +52,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-10 sm:py-14 section-x border-t border-border/60 bg-page">
+      <section className="py-8 sm:py-10 section-x border-t border-border/60 bg-page">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-serif text-xl font-light mb-3 text-gray-900 sm:text-2xl md:text-3xl">Ready to Capture Your Story?</h2>

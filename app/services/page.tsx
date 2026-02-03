@@ -7,10 +7,24 @@ import FAQ, { standardFAQs } from "@/components/faq"
 const services = [
   {
     id: "family",
-    title: "Family Sessions",
-    tagline: "Natural portraits of the people you love—together.",
+    title: "Family Session",
+    tagline: "In-home or outdoors—up to an hour, 50+ images, style guidance included.",
     icon: Users,
-    price: "$350",
+    price: "$450 + tax",
+  },
+  {
+    id: "couple-sessions",
+    title: "Couple Sessions",
+    tagline: "Relaxed sessions for couples & engagements—authentic, laid-back photos.",
+    icon: Heart,
+    price: "$450 + tax",
+  },
+  {
+    id: "elopements",
+    title: "Elopements",
+    tagline: "1–5 hours for New England celebrations of 20 guests or fewer.",
+    icon: MapPin,
+    price: "From $500/hr + tax",
   },
   {
     id: "maternity",
@@ -53,7 +67,7 @@ export default function ServicesPage() {
   return (
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero: what this page is + where you are */}
-      <header className="border-b border-gray-200/80 bg-page section-x pt-14 pb-8 sm:pt-20 sm:pb-10">
+      <header className="border-b border-gray-200/80 bg-page section-x pt-14 pb-6 sm:pt-20 sm:pb-8">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="font-serif text-3xl font-light tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
             Services & Sessions
@@ -66,7 +80,7 @@ export default function ServicesPage() {
 
       {/* Service cards: scannable, one clear action per card */}
       <section
-        className="section-x py-10 sm:py-12 md:py-14"
+        className="section-x py-6 sm:py-8 md:py-10"
         aria-labelledby="sessions-heading"
       >
         <h2 id="sessions-heading" className="sr-only">
@@ -90,7 +104,7 @@ export default function ServicesPage() {
 
       {/* How it works: simple 3-step reassurance */}
       <section
-        className="border-t border-gray-200/80 bg-page section-x py-10 sm:py-12 md:py-14"
+        className="border-t border-gray-200/80 bg-page section-x py-8 sm:py-10 md:py-12"
         aria-labelledby="how-it-works-heading"
       >
         <div className="mx-auto max-w-4xl">

@@ -42,6 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages = [
     "events",
     "family",
+    "couple-sessions",
+    "elopements",
     "maternity",
     "portraits",
     "milestones",

@@ -107,7 +107,7 @@ export default function LocationsPage() {
   return (
     <div className="min-h-screen bg-page">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border/60 bg-background section-x pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24">
+      <section className="relative overflow-hidden border-b border-border/60 bg-background section-x pt-24 pb-10 sm:pt-28 sm:pb-12 md:pt-32 md:pb-14">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/[0.03] via-transparent to-transparent" />
         <div className="container relative mx-auto max-w-4xl text-center">
           <h1 className="font-serif text-4xl font-light tracking-wide text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
@@ -120,7 +120,7 @@ export default function LocationsPage() {
       </section>
 
       {/* Intro — expansive, no limits */}
-      <section className="border-b border-border/60 bg-page section-x py-14 sm:py-16 md:py-20">
+      <section className="border-b border-border/60 bg-page section-x py-8 sm:py-10 md:py-12">
         <div className="container mx-auto max-w-3xl text-center">
           <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
             I&apos;m based in Newington and I travel — across Connecticut, into New York, or wherever your vision leads. Family sessions, maternity, newborns, portraits, milestones, events, pets, couples, and more. In-home, on the shore, in the woods, downtown, or at a place that&apos;s special to you. If you can imagine it, we can make it happen. The pages below are a few of the areas I love; if you don&apos;t see your town, that&apos;s fine — we go there too.
@@ -129,7 +129,7 @@ export default function LocationsPage() {
       </section>
 
       {/* Types of settings — creative grid */}
-      <section className="border-b border-border/60 bg-background section-x py-14 sm:py-16 md:py-20" aria-labelledby="settings-heading">
+      <section className="border-b border-border/60 bg-background section-x py-8 sm:py-10 md:py-12" aria-labelledby="settings-heading">
         <div className="container mx-auto max-w-5xl">
           <h2 id="settings-heading" className="font-serif text-2xl font-light tracking-wide text-foreground sm:text-3xl text-center mb-12">
             The kinds of places we shoot
@@ -162,7 +162,7 @@ export default function LocationsPage() {
       </section>
 
       {/* What we capture — no limits */}
-      <section className="border-b border-border/60 bg-page section-x py-14 sm:py-16 md:py-20" aria-labelledby="sessions-heading">
+      <section className="border-b border-border/60 bg-page section-x py-8 sm:py-10 md:py-12" aria-labelledby="sessions-heading">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 id="sessions-heading" className="font-serif text-2xl font-light tracking-wide text-foreground sm:text-3xl flex items-center justify-center gap-3">
             <Sparkles className="h-7 w-7 text-primary/80" aria-hidden />
@@ -184,7 +184,7 @@ export default function LocationsPage() {
       </section>
 
       {/* Towns we love — with "and everywhere else" */}
-      <section className="border-b border-border/60 bg-background section-x py-14 sm:py-16 md:py-20" aria-labelledby="locations-heading">
+      <section className="border-b border-border/60 bg-background section-x py-8 sm:py-10 md:py-12" aria-labelledby="locations-heading">
         <div className="container mx-auto max-w-5xl">
           <h2 id="locations-heading" className="font-serif text-2xl font-light tracking-wide text-foreground sm:text-3xl text-center">
             Some of the places we love
@@ -225,7 +225,7 @@ export default function LocationsPage() {
       </section>
 
       {/* Mood & light — creative angle */}
-      <section className="border-b border-border/60 bg-page section-x py-14 sm:py-16 md:py-20" aria-labelledby="mood-heading">
+      <section className="border-b border-border/60 bg-page section-x py-8 sm:py-10 md:py-12" aria-labelledby="mood-heading">
         <div className="container mx-auto max-w-3xl">
           <h2 id="mood-heading" className="font-serif text-2xl font-light tracking-wide text-foreground sm:text-3xl flex items-center gap-3">
             <Sun className="h-7 w-7 text-primary/80" aria-hidden />
@@ -243,7 +243,7 @@ export default function LocationsPage() {
       </section>
 
       {/* Why location matters — reframed as expansive */}
-      <section className="border-b border-border/60 bg-background section-x py-14 sm:py-16 md:py-20">
+      <section className="border-b border-border/60 bg-background section-x py-8 sm:py-10 md:py-12">
         <div className="container mx-auto max-w-3xl space-y-8">
           <h2 className="font-serif text-2xl font-light tracking-wide text-foreground sm:text-3xl flex items-center gap-3">
             <Heart className="h-7 w-7 text-primary/80" aria-hidden />

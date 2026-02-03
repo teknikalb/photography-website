@@ -6,25 +6,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 30 10% 15%;
-    --card: 0 0% 100%;
-    --card-foreground: 30 10% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 30 10% 15%;
-    --primary: 30 15% 25%;
-    --primary-foreground: 30 15% 95%;
-    --secondary: 30 10% 95%;
-    --secondary-foreground: 30 15% 25%;
-    --muted: 30 10% 95%;
-    --muted-foreground: 30 10% 50%;
-    --accent: 30 15% 90%;
-    --accent-foreground: 30 15% 25%;
+    --background: 40 22% 88%;
+    --foreground: 357 80% 17%;
+    --card: 40 22% 92%;
+    --card-foreground: 357 80% 17%;
+    --popover: 40 22% 92%;
+    --popover-foreground: 357 80% 17%;
+    --primary: 357 80% 17%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 40 15% 82%;
+    --secondary-foreground: 357 80% 17%;
+    --muted: 40 15% 85%;
+    --muted-foreground: 357 30% 30%;
+    --accent: 40 15% 82%;
+    --accent-foreground: 357 80% 17%;
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 10% 85%;
-    --input: 30 10% 85%;
-    --ring: 30 15% 25%;
+    --border: 40 15% 78%;
+    --input: 40 15% 78%;
+    --ring: 357 80% 17%;
     --radius: 0.5rem;
   }
 
@@ -60,6 +60,16 @@
     font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     font-size: 18px;
     line-height: 1.8;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
   }
   h1,
   h2,
@@ -495,15 +505,15 @@ html {
 
   /* Scrolled state styles */
   .navbar-scrolled .nav-link {
-    @apply text-gray-800;
+    @apply text-foreground;
   }
 
   .navbar-scrolled .nav-link::after {
-    @apply bg-gray-800;
+    @apply bg-foreground;
   }
 
   .navbar-scrolled .social-icon {
-    @apply text-gray-800;
+    @apply text-foreground;
   }
 
   .navbar-scrolled .nav-button {

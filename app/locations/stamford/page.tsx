@@ -15,7 +15,7 @@ export const metadata = {
 export default function StamfordLocationPage() {
   return (
     <div className="min-h-screen bg-page">
-      <section className="pt-24 pb-12 section-x">
+      <section className="pt-24 pb-8 section-x">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-4">
             Stamford Photographer
@@ -26,7 +26,7 @@ export default function StamfordLocationPage() {
         </div>
       </section>
 
-      <section className="py-12 border-t border-border/60 section-x">
+      <section className="py-8 border-t border-border/60 section-x">
         <div className="container mx-auto max-w-4xl space-y-8 text-gray-700">
           <h2 className="font-serif text-2xl font-light text-gray-900">Sessions in Stamford & Fairfield County</h2>
           <p className="leading-relaxed">
@@ -44,7 +44,7 @@ export default function StamfordLocationPage() {
         </div>
       </section>
 
-      <section className="py-12 border-t border-border/60 section-x">
+      <section className="py-8 border-t border-border/60 section-x">
         <div className="container mx-auto max-w-4xl">
           <h2 className="font-serif text-2xl font-light text-gray-900 mb-4">Popular Services in Stamford</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

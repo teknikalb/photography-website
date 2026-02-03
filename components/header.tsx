@@ -8,13 +8,14 @@ import { motion, AnimatePresence } from "framer-motion"
 
 // Define service categories
 const services = [
+  { name: "Family Session", href: "/services/family" },
+  { name: "Couple Sessions", href: "/services/couple-sessions" },
+  { name: "Elopements", href: "/services/elopements" },
   { name: "Events", href: "/services/events" },
-  { name: "Family Portraits", href: "/services/family" },
   { name: "Maternity", href: "/services/maternity" },
   { name: "Portraits", href: "/services/portraits" },
   { name: "Milestone Sessions", href: "/services/milestones" },
   { name: "Pet Photography", href: "/services/pet-photography" },
-  // Add more services as needed
 ]
 
 const locations = [
