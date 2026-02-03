@@ -75,7 +75,7 @@ export default function BlogPage() {
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
       <section className="w-full py-20 bg-page text-center">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="inline-block rounded-xl shadow-lg px-8 py-10">
             <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900">Blog</h1>
             <p className="mt-6 max-w-xl text-lg font-light md:max-w-2xl md:text-xl text-gray-700 mx-auto">
@@ -87,7 +87,7 @@ export default function BlogPage() {
 
       {/* Blog Posts */}
       <section className="py-20 bg-page">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {paginatedPosts.map((post) => (
               <BlogPostCard
@@ -137,7 +137,7 @@ export default function BlogPage() {
 
       {/* Newsletter Section */}
       <section className="bg-page py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-3xl font-light">Join the Newsletter</h2>
             <p className="mt-4 text-muted-foreground">

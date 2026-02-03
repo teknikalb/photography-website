@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-3xl">
+    <div className="container mx-auto section-x py-16 max-w-3xl">
       <h1 className="font-serif text-4xl font-light mb-8">Privacy Policy</h1>
       <p className="mb-6">Last updated: {new Date().getFullYear()}</p>
       <p className="mb-4">Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our website and services.</p>

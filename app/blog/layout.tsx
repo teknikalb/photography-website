@@ -11,7 +11,7 @@ export default function BlogLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
-      <nav aria-label="Breadcrumb" className="container mx-auto px-4 pt-6 text-sm text-gray-500">
+      <nav aria-label="Breadcrumb" className="container mx-auto section-x pt-6 text-sm text-gray-500">
         <ol className="flex items-center gap-2">
           <li><a href="/">Home</a></li>
           <li>/</li>

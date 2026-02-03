@@ -79,7 +79,7 @@ export default function PortfolioGallery() {
 
   return (
     <section className="py-0">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto section-x">
         <div className="text-center">
           <span className="pill-badge">Portfolio</span>
           <h2 className="mt-4 font-serif text-3xl font-light tracking-wide md:text-4xl lg:text-5xl">Explore My Work</h2>

@@ -50,7 +50,7 @@ export default function EnhancedHome() {
 
         <motion.div
           style={{ opacity }}
-          className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white"
+          className="absolute inset-0 flex flex-col items-center justify-center section-x text-center text-white"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -89,8 +89,8 @@ export default function EnhancedHome() {
       </section>
 
       {/* Mini Session Highlight Banner */}
-      <section className="w-full bg-page/10 py-8 flex justify-center items-center border-0 border-transparent">
-        <div className="max-w-2xl text-center">
+      <section className="w-full bg-page/10 py-8 flex justify-center items-center border-0 border-transparent section-x">
+        <div className="max-w-2xl text-center mx-auto">
           <h2 className="font-serif text-3xl font-bold text-primary mb-2">Mini Sessions Now Booking!</h2>
           <p className="text-lg text-gray-700 mb-4">Celebrate the beauty of Connecticut with quick, affordable mini sessions for families, maternity, and portraits. Limited spots in Newington, Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, Darien and across Connecticut. Book your mini session today!</p>
           <Link href="/services/mini-sessions" className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow">
@@ -113,8 +113,8 @@ export default function EnhancedHome() {
       <AboutMe />
 
       {/* CTA / Contact Form Section */}
-      <section ref={ctaRef} className="relative py-16 bg-page">
-        <div className="container relative z-10 mx-auto px-4">
+      <section ref={ctaRef} className="relative py-16 bg-page section-x">
+        <div className="container relative z-10 mx-auto">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-serif text-3xl font-light text-center mb-8 text-gray-900">Get In Touch</h2>
             <ContactForm />
@@ -124,7 +124,7 @@ export default function EnhancedHome() {
 
       {/* Blog Highlights Section */}
       <section className="py-12 bg-page">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <h2 className="font-serif text-3xl font-light text-gray-900 text-center mb-8">From the Blog</h2>
 
           {(() => {

@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function SummerMiniSessionsPage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-2xl">
+    <div className="container mx-auto section-x py-16 max-w-2xl">
       <h1 className="font-serif text-4xl font-light mb-6 text-center mt-12">Summer Mini Sessions in Connecticut</h1>
       <Image src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop" alt="Summer Mini Session" width={600} height={400} className="rounded-lg object-cover mb-6 mx-auto" />
       <p className="mb-4 text-lg text-gray-700 text-center">Enjoy the golden light and warm evenings with summer mini sessions. Ideal for families, couples, and milestone moments at your favorite park or beach. Book your summer mini session in Greenwich, Darien, West Hartford, Glastonbury, Rocky Hill, or across Connecticut now!</p>

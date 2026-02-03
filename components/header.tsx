@@ -18,11 +18,21 @@ const services = [
 ]
 
 const locations = [
+  { name: "Newington", href: "/locations/newington" },
   { name: "Hartford", href: "/locations/hartford" },
-  { name: "New Haven", href: "/locations/new-haven" },
   { name: "West Hartford", href: "/locations/west-hartford" },
-  { name: "Stamford", href: "/locations/stamford" },
   { name: "Glastonbury", href: "/locations/glastonbury" },
+  { name: "Wethersfield", href: "/locations/wethersfield" },
+  { name: "Rocky Hill", href: "/locations/rocky-hill" },
+  { name: "Southington", href: "/locations/southington" },
+  { name: "Middletown", href: "/locations/middletown" },
+  { name: "Litchfield", href: "/locations/litchfield" },
+  { name: "New Haven", href: "/locations/new-haven" },
+  { name: "Stamford", href: "/locations/stamford" },
+  { name: "Greenwich", href: "/locations/greenwich" },
+  { name: "Darien", href: "/locations/darien" },
+  { name: "Norwalk", href: "/locations/norwalk" },
+  { name: "Westport", href: "/locations/westport" },
 ]
 
 // Updated navigation array
@@ -67,7 +77,7 @@ export default function Header() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-t border-gray-200 bg-page">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto section-x">
         <nav className="flex h-[70px] items-center justify-between">
           
           <div className="flex flex-none items-center space-x-4">
@@ -100,16 +110,18 @@ export default function Header() {
                   </div>
 
                   {item.submenu && (
-                    <div className="absolute left-1/2 top-full z-10 mt-2 w-56 -translate-x-1/2 transform rounded-md border border-gray-200 bg-page p-2 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                      {item.submenu.map((subitem) => (
-                        <Link
-                          key={subitem.name}
-                          href={subitem.href}
-                          className="block rounded px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-page hover:text-primary"
-                        >
-                          {subitem.name}
-                        </Link>
-                      ))}
+                    <div className="absolute left-1/2 top-full z-10 mt-2 w-[22rem] -translate-x-1/2 transform rounded-md border border-gray-200 bg-page p-3 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                        {item.submenu.map((subitem) => (
+                          <Link
+                            key={subitem.name}
+                            href={subitem.href}
+                            className="block rounded px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-50 hover:text-primary"
+                          >
+                            {subitem.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -119,7 +131,7 @@ export default function Header() {
 
           <div className="hidden flex-none items-center space-x-3 md:flex">
             <a
-              href="https://instagram.com/drenanoellephoto/"
+              href="https://instagram.com/gretanoellephoto"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 transition-colors hover:text-primary"
@@ -223,7 +235,7 @@ export default function Header() {
               ))}
               <div className="flex justify-center space-x-4 pt-4 border-t border-gray-100">
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/gretanoellephoto"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 transition-colors hover:text-primary"

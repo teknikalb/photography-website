@@ -23,7 +23,7 @@ export default function FAQ({ faqs, title = "Frequently Asked Questions", descri
 
   return (
     <section className="py-16 bg-page">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto section-x">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">{title}</h2>

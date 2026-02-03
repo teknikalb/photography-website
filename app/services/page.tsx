@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Camera, Heart, Users, Calendar, Sparkles, ArrowRight, PawPrint } from "lucide-react"
+import { Camera, Heart, Users, Calendar, Sparkles, ArrowRight, PawPrint, MapPin } from "lucide-react"
 import FAQ, { standardFAQs } from "@/components/faq"
 
 const services = [
@@ -53,7 +53,7 @@ export default function ServicesPage() {
   return (
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero: what this page is + where you are */}
-      <header className="border-b border-gray-200/80 bg-page px-4 pt-14 pb-8 sm:px-6 sm:pt-20 sm:pb-10 md:px-8 lg:px-12">
+      <header className="border-b border-gray-200/80 bg-page section-x pt-14 pb-8 sm:pt-20 sm:pb-10">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="font-serif text-3xl font-light tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
             Services & Sessions
@@ -66,7 +66,7 @@ export default function ServicesPage() {
 
       {/* Service cards: scannable, one clear action per card */}
       <section
-        className="px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 lg:px-12"
+        className="section-x py-10 sm:py-12 md:py-14"
         aria-labelledby="sessions-heading"
       >
         <h2 id="sessions-heading" className="sr-only">
@@ -90,7 +90,7 @@ export default function ServicesPage() {
 
       {/* How it works: simple 3-step reassurance */}
       <section
-        className="border-t border-gray-200/80 bg-page px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 lg:px-12"
+        className="border-t border-gray-200/80 bg-page section-x py-10 sm:py-12 md:py-14"
         aria-labelledby="how-it-works-heading"
       >
         <div className="mx-auto max-w-4xl">
@@ -108,10 +108,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* SEO + creative: where we shoot */}
+      <section
+        className="border-t border-gray-200/80 bg-page section-x py-10 sm:py-12 md:py-14"
+        aria-labelledby="where-we-shoot-heading"
+      >
+        <div className="mx-auto max-w-4xl">
+          <h2 id="where-we-shoot-heading" className="font-serif text-2xl font-light text-gray-900 sm:text-3xl flex items-center gap-3">
+            <MapPin className="h-7 w-7 text-gray-700" aria-hidden />
+            Where we create
+          </h2>
+          <p className="mt-4 text-gray-600 sm:text-lg leading-relaxed">
+            Every family session, maternity session, and portrait session is shaped by light and place. I&apos;m a Connecticut family photographer and maternity photographer based in Newington, and I travel across the state—from Hartford and West Hartford to Glastonbury, Greenwich, Stamford, New Haven, and the Litchfield Hills. Whether you want golden-hour meadows, blooming gardens, autumn leaves, or soft in-home light, we&apos;ll find the right backdrop for your story.{" "}
+            <Link href="/locations" className="font-medium text-gray-900 underline underline-offset-2 hover:no-underline">
+              See all locations
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       <FAQ faqs={standardFAQs} />
 
       {/* CTA: one clear next step */}
-      <section className="bg-page px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16" aria-labelledby="cta-heading">
+      <section className="bg-page section-x py-12 sm:py-14 md:py-16" aria-labelledby="cta-heading">
         <div className="mx-auto max-w-xl text-center">
           <h2 id="cta-heading" className="font-serif text-2xl font-light text-gray-900 sm:text-3xl">
             Ready to book or have questions?

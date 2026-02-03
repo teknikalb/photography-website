@@ -260,7 +260,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="flex min-h-screen flex-col">
       {/* Header (no hero image) */}
       <section className="bg-page">
-        <div className="container mx-auto px-4 pt-10 pb-6">
+        <div className="container mx-auto section-x pt-10 pb-6">
           <span className="inline-flex items-center gap-2 rounded-full bg-page px-3 py-1 text-xs font-medium text-gray-800">
             <Tag className="h-3.5 w-3.5" /> {post.category}
           </span>
@@ -269,7 +269,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </h1>
         </div>
         <div className="w-full bg-page">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto section-x">
             <nav aria-label="Breadcrumb" className="py-3 text-sm text-gray-800">
               <ol className="flex flex-wrap items-center gap-2">
                 <li><Link href="/">Home</Link></li>
@@ -285,7 +285,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Blog Content with sidebar */}
       <section className="py-12">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             {/* Main content */}
             <div className="lg:col-span-8">

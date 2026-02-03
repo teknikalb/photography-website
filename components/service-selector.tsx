@@ -64,7 +64,7 @@ export default function ServiceSelector() {
 
   return (
     <section ref={ref} className="py-0">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto section-x">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}

@@ -105,7 +105,7 @@ export default function MiniSessionsPage() {
     <div className="min-h-screen bg-page">
              {/* Hero Section */}
        <section className="pt-24 pb-16 bg-page">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto section-x text-center">
           <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-6">
             Seasonal Mini Session Bundles
           </h1>
@@ -117,7 +117,7 @@ export default function MiniSessionsPage() {
 
       {/* Bundle Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Bundle & Save!</h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -193,7 +193,7 @@ export default function MiniSessionsPage() {
 
       {/* Individual Sessions */}
       <section className="py-16 bg-page">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Individual Mini Sessions</h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -250,7 +250,7 @@ export default function MiniSessionsPage() {
 
       {/* Add-ons Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Add-ons Available!</h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -272,7 +272,7 @@ export default function MiniSessionsPage() {
 
       {/* CTA Section */}
       <section className="py-16 bg-page">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto section-x text-center">
           <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Limited Spots Available</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-700">
             Don't miss out on these seasonal mini sessions! Book early to secure your preferred date and time.

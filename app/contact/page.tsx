@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section with Artistic Elements */}
-      <section className="relative pt-24 pb-16 bg-page overflow-hidden">
+      <section className="relative pt-24 pb-16 bg-page overflow-hidden section-x">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
@@ -21,7 +21,7 @@ export default function ContactPage() {
           <div className="absolute bottom-10 right-20 w-24 h-24 bg-primary/5 rounded-full blur-xl"></div>
         </div>
         
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="container mx-auto text-center relative z-10">
           <div className="flex items-center justify-center mb-6">
             <Sparkles className="h-8 w-8 text-primary mr-3" />
             <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900">
@@ -66,8 +66,8 @@ export default function ContactPage() {
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-16 section-x">
+        <div className="container mx-auto">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               
@@ -78,8 +78,11 @@ export default function ContactPage() {
                     <Star className="h-6 w-6 text-primary mr-3" />
                     Let's Connect
                   </h2>
-                  <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-                    Fill out the form or reach out directly. I typically respond within 24 hours and can't wait to hear about your vision!
+                  <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                    Fill out the form or reach out directly. I typically respond within 24 hours and can&apos;t wait to hear about your vision!
+                  </p>
+                  <p className="text-gray-600 mb-8 text-base leading-relaxed">
+                    I&apos;m a family photographer and maternity photographer in Connecticut, serving Newington, Hartford, West Hartford, Glastonbury, Greenwich, Stamford, New Haven, and all of Connecticut. Whether you&apos;re looking for a family session, maternity session, or portrait session—in a park, at the beach, or at home—I&apos;d love to help you create something beautiful.
                   </p>
                   
                   {/* Contact Methods with Icons */}
@@ -121,7 +124,7 @@ export default function ContactPage() {
                   <h3 className="font-serif text-xl font-medium mb-6 text-gray-900">Follow My Journey</h3>
                   <div className="flex gap-4">
                     <a 
-                      href="https://instagram.com" 
+                      href="https://instagram.com/gretanoellephoto" 
                       className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
                     >
                       <Instagram className="h-6 w-6" />
@@ -152,7 +155,7 @@ export default function ContactPage() {
       </section>
 
       {/* Artistic CTA Section */}
-      <section className="py-16 bg-page relative overflow-hidden">
+      <section className="py-16 bg-page relative overflow-hidden section-x">
         {/* Decorative Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
@@ -160,7 +163,7 @@ export default function ContactPage() {
           <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-primary/15 rounded-full blur-md"></div>
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-serif text-4xl font-light mb-6 text-gray-900">Ready to Begin Your Story?</h2>
             <p className="text-xl mb-8 text-gray-600 leading-relaxed">

@@ -2,7 +2,7 @@
 
 export default function CookiesPage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-3xl">
+    <div className="container mx-auto section-x py-16 max-w-3xl">
       <h1 className="font-serif text-4xl font-light mb-8">Cookies Notice</h1>
       <p className="mb-4">This website uses cookies and similar technologies to enhance your experience, analyze site usage, and help us improve our services.</p>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">What Are Cookies?</h2>

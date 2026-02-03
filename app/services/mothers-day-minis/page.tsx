@@ -28,7 +28,7 @@ export default function MothersDayMinisPage() {
 
       {/* Details Section */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-4 max-w-2xl">
+        <div className="container mx-auto section-x max-w-2xl">
           <div className="rounded-2xl border border-primary bg-primary/5 shadow-xl p-10 text-center mx-auto">
             <h2 className="font-serif text-2xl font-light text-gray-900 mb-4">Mother's Day Mini Session</h2>
             <div className="text-3xl font-bold text-primary mb-6">$300</div>

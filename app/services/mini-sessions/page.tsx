@@ -61,7 +61,7 @@ export default function MiniSessionsPage() {
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-page">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto section-x text-center">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
               <Sparkles className="h-8 w-8 text-primary" />
@@ -92,7 +92,7 @@ export default function MiniSessionsPage() {
 
       {/* Packages Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Mini Session Packages</h2>
@@ -147,7 +147,7 @@ export default function MiniSessionsPage() {
 
       {/* Why Choose Mini Sessions */}
       <section className="py-16 bg-page">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Why Choose Mini Sessions?</h2>
             <p className="text-lg text-gray-700 mb-12">
@@ -188,7 +188,7 @@ export default function MiniSessionsPage() {
 
       {/* Final CTA */}
       <section className="py-16 bg-page">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Ready to Book Your Mini Session?</h2>
             <p className="text-lg mb-8 text-gray-600">

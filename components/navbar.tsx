@@ -92,7 +92,7 @@ export default function Navbar() {
             <div className="flex items-center gap-8">
               {/* Social Icons */}
               <div className="flex items-center gap-6">
-                <a href="https://instagram.com/drenanoellephoto/" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-black' : 'text-white'} opacity-80 transition-opacity hover:opacity-100`}>
+                <a href="https://instagram.com/gretanoellephoto" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-black' : 'text-white'} opacity-80 transition-opacity hover:opacity-100`}>
                   <Instagram size={24} />
                 </a>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={`${isScrolled ? 'text-black' : 'text-white'} opacity-80 transition-opacity hover:opacity-100`}>

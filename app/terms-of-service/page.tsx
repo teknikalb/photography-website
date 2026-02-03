@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function TermsOfServicePage() {
   return (
-    <div className="container mx-auto px-4 py-16 max-w-3xl">
+    <div className="container mx-auto section-x py-16 max-w-3xl">
       <h1 className="font-serif text-4xl font-light mb-8">Terms of Service</h1>
       <p className="mb-6">Last updated: {new Date().getFullYear()}</p>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">1. Acceptance of Terms</h2>

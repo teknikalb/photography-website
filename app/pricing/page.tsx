@@ -11,7 +11,7 @@ export default function PricingPage() {
     <div className="flex min-h-screen flex-col bg-page">
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-page">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto section-x text-center">
           <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-6">
             Investment & Pricing
           </h1>
@@ -23,7 +23,7 @@ export default function PricingPage() {
 
       {/* Main Session Package */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="max-w-6xl mx-auto">
             <div className="bg-page rounded-2xl shadow-xl overflow-hidden">
               {/* Header */}
@@ -153,7 +153,7 @@ export default function PricingPage() {
 
       {/* Mini Sessions CTA */}
       <section className="py-16 bg-page">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Looking for Something Shorter?</h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -210,7 +210,7 @@ export default function PricingPage() {
 
       {/* CTA Section */}
       <section className="py-16 bg-page">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto section-x text-center">
           <h2 className="font-serif text-3xl font-light mb-4 text-gray-900">Ready to Create Something Beautiful?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-700">
             Let's grab some coffee (or bring it to the shoot—I won't judge), and create something beautiful together.

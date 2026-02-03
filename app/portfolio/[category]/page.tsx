@@ -258,7 +258,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       {/* Portfolio Gallery */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           {featured && (
             <div className="mb-16">
               <h2 className="text-center font-serif text-3xl font-light">Specializing In</h2>

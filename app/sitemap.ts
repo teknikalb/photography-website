@@ -73,16 +73,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Location pages - Local SEO important
   const locations = [
+    "",
+    "newington",
     "hartford",
-    "new-haven",
     "west-hartford",
-    "stamford",
     "glastonbury",
+    "wethersfield",
+    "rocky-hill",
+    "southington",
+    "middletown",
+    "litchfield",
+    "new-haven",
+    "stamford",
+    "greenwich",
+    "darien",
+    "norwalk",
+    "westport",
   ].map((city) => ({
-    url: `${baseUrl}/locations/${city}`,
+    url: `${baseUrl}/locations${city ? `/${city}` : ""}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.8, // Higher priority for local SEO
+    priority: city === "" ? 0.85 : 0.8,
   }))
 
   // Blog posts - Content marketing with regular updates

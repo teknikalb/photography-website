@@ -15,14 +15,14 @@ interface FooterLinkProps {
 export default function Footer() {
   return (
     <footer className="">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto section-x py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl font-light text-gray-900">Greta Noelle Photography</h3>
             <p className="mt-4 text-gray-600">Capturing life's beautiful moments across Connecticut and beyond.</p>
             <div className="mt-6 flex space-x-4">
-              <SocialLink href="https://instagram.com/drenanoellephoto/" icon={<Instagram className="h-5 w-5" />} label="Instagram" />
+              <SocialLink href="https://instagram.com/gretanoellephoto" icon={<Instagram className="h-5 w-5" />} label="Instagram" />
               <SocialLink href="https://facebook.com" icon={<Facebook className="h-5 w-5" />} label="Facebook" />
               <SocialLink href="https://pinterest.com" icon={<Pinterest className="h-5 w-5" />} label="Pinterest" />
             </div>
@@ -34,6 +34,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2">
               <FooterLink href="/portfolio">Portfolio</FooterLink>
               <FooterLink href="/services">Services & Pricing</FooterLink>
+              <FooterLink href="/locations">Locations</FooterLink>
               <FooterLink href="/about">About</FooterLink>
               <FooterLink href="/blog">Blog</FooterLink>
               <FooterLink href="/contact">Contact</FooterLink>

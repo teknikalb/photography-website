@@ -1,0 +1,60 @@
+export const metadata = {
+  title: "Rocky Hill CT Photographer | Family & Maternity Photography",
+  description:
+    "Family photographer and maternity photographer in Rocky Hill, CT. Parks, river views, and natural light. Book family and maternity sessions in Rocky Hill and central Connecticut.",
+  alternates: { canonical: "https://gretanoellephoto.com/locations/rocky-hill" },
+}
+
+export default function RockyHillLocationPage() {
+  return (
+    <div className="min-h-screen bg-page">
+      <section className="pt-24 pb-12 section-x">
+        <div className="container mx-auto text-center">
+          <h1 className="font-serif text-4xl font-light tracking-wide sm:text-5xl md:text-6xl text-gray-900 mb-4">
+            Rocky Hill, Connecticut Photographer
+          </h1>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Wide skies, river light, and room to breathe — family and maternity photography in Rocky Hill, where the Connecticut River and open parks give every session space and softness.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12 border-t border-border/60 section-x">
+        <div className="container mx-auto max-w-4xl space-y-8 text-gray-700">
+          <h2 className="font-serif text-2xl font-light text-gray-900">Sessions in Rocky Hill</h2>
+          <p className="leading-relaxed">
+            Rocky Hill is one of central Connecticut&apos;s best-kept secrets for photographers: river views, meadows, and parks that catch the light without feeling crowded. As a Rocky Hill family photographer and maternity photographer, I use these spaces to create images that feel both expansive and intimate — golden hour by the water, autumn color along the trails, or soft overcast light for even, flattering skin tones. We&apos;ll choose the spot that fits your style and the season.
+          </p>
+          <h3 className="font-serif text-xl font-light text-gray-900">Where We Shoot</h3>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Connecticut River access — water, sky, and golden light</li>
+            <li>Local parks and green spaces — seasonal color and open air</li>
+            <li>Quiet trails — natural backdrops for family and maternity</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="py-12 border-t border-border/60 section-x">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="font-serif text-2xl font-light text-gray-900 mb-4">Popular Services in Rocky Hill</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <a href="/services/family" className="rounded-xl border border-gray-200 bg-page p-6 shadow-sm hover:shadow-md transition">
+              <h3 className="font-serif text-xl text-gray-900 mb-2">Family Sessions</h3>
+              <p className="text-gray-700">Spacious, natural family photos in Rocky Hill.</p>
+            </a>
+            <a href="/services/maternity" className="rounded-xl border border-gray-200 bg-page p-6 shadow-sm hover:shadow-md transition">
+              <h3 className="font-serif text-xl text-gray-900 mb-2">Maternity</h3>
+              <p className="text-gray-700">Elegant maternity sessions with river and park backdrops.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 text-center section-x">
+        <a href="/contact" className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition shadow">
+          Book in Rocky Hill
+        </a>
+      </section>
+    </div>
+  )
+}

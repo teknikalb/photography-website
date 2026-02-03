@@ -2,210 +2,205 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Camera, Heart, Clock, Award, Users, MessageSquare } from "lucide-react"
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import ContactForm from "@/components/contact-form"
 
-interface PhilosophyCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-interface TimelineItemProps {
-  year: string;
-  title: string;
-  description: string;
-}
-
 export default function AboutPage() {
-  const contactRef = useRef(null)
+  const contactRef = useRef<HTMLElement>(null)
   const contactInView = useInView(contactRef, { once: true, amount: 0.2 })
-  
+  const storyRef = useRef<HTMLElement>(null)
+  const storyInView = useInView(storyRef, { once: true, amount: 0.15 })
+  const quoteRef = useRef<HTMLElement>(null)
+  const quoteInView = useInView(quoteRef, { once: true, amount: 0.3 })
+  const valuesRef = useRef<HTMLElement>(null)
+  const valuesInView = useInView(valuesRef, { once: true, amount: 0.2 })
+
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <section className="relative h-[30vh] w-full overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1515944472329-d74a614b20c7?q=80&w=1920&auto=format&fit=crop"
-          alt="Film camera details"
-          fill
-          priority
-          className="object-cover brightness-[0.85]"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="font-serif text-4xl font-bold tracking-wide sm:text-5xl md:text-6xl">About Me</h1>
-          <p className="mt-6 max-w-md text-lg font-light md:max-w-lg md:text-xl">
-            The story behind Greta Noelle Photography
-          </p>
+      {/* Hero — typography-led, minimal */}
+      <section className="relative overflow-hidden bg-page section-x pt-12 pb-8 sm:pt-14 sm:pb-10 md:pt-16 md:pb-12 lg:pt-20 lg:pb-14">
+        <div className="container mx-auto max-w-4xl text-center">
+          <motion.span
+            className="pill-badge"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            About
+          </motion.span>
+          <motion.h1
+            className="mt-3 font-serif text-4xl font-light tracking-wide text-foreground sm:text-5xl md:text-6xl lg:text-6xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Hi, I&apos;m Greta
+          </motion.h1>
+          <motion.p
+            className="mx-auto mt-3 max-w-lg text-base font-light tracking-wide text-muted-foreground sm:text-lg md:mt-4"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Lifestyle photographer · Connecticut
+          </motion.p>
+          <motion.div
+            className="divider mx-auto mt-4"
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+          />
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-8 md:py-10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
-            <div className="overflow-hidden rounded-lg">
-              <Image
-                src="/about-greta.webp"
-                alt="Photographer portrait - Greta"
-                width={600}
-                height={800}
-                
-              />
-            </div>
-            <div className="space-y-6">
-              <h2 className="font-serif text-3xl font-semibold">Hello, I'm Greta</h2>
-              <p className="text-muted-foreground">
-                Hey, I'm Greta —a coffee-loving, moment-chasing photographer who's all about capturing the real stuff: belly laughs, quiet glances, messy hugs, and everything in between. I believe the best photos happen in those spontaneous, unscripted moments—the kind that make you feel something every time you look at them.
-              </p>
-              <p className="text-muted-foreground">
-                As a big family person myself, I know how fast time flies and how important it is to freeze those little chapters of life. Whether we're running barefoot through a field or snuggling up at home, I'm here to make the experience easy, relaxed, and totally you.
-              </p>
-              <p className="text-muted-foreground">
-                Let's grab some coffee (or bring it to the shoot—I won't judge), and create something beautiful together.
-              </p>
-              <div className="pt-4">
-                <Link 
-                  href="/contact" 
-                  className="inline-block text-sm font-medium tracking-[0.2em] text-gray-700 group"
+      {/* Main story — portrait + full bio */}
+      <section ref={storyRef} className="border-t border-border/60 bg-background section-x">
+        <div className="container mx-auto py-12 sm:py-16 md:py-20 lg:py-24">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-12 lg:gap-16">
+            {/* Portrait — responsive order and sizing */}
+            <motion.div
+              className="relative mx-auto w-full max-w-md md:col-span-5 md:max-w-none lg:col-span-5"
+              initial={{ opacity: 0, y: 24 }}
+              animate={storyInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg shadow-elegant md:aspect-[4/5]">
+                <Image
+                  src="/about-greta.webp"
+                  alt="Greta Noelle — lifestyle photographer in Connecticut"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+              {/* Subtle accent */}
+              <div className="absolute -bottom-3 -right-3 h-24 w-24 rounded-lg border-2 border-primary/20 bg-page/80 md:-right-4 md:-bottom-4 md:h-28 md:w-28" aria-hidden />
+            </motion.div>
+
+            {/* Bio copy */}
+            <motion.div
+              className="md:col-span-7 lg:col-span-7 md:pt-4"
+              initial={{ opacity: 0, x: 20 }}
+              animate={storyInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="prose-reading max-w-none space-y-6">
+                <p className="text-[17px] leading-8 text-muted-foreground md:text-[18px]">
+                  I&apos;m a lifestyle photographer based in beautiful Connecticut, where every season offers its own kind of magic. I&apos;ve been married for six years and am a proud mom to an amazing six-year-old girl, who has been my greatest inspiration since day one. When I&apos;m not photographing or chasing after my daughter, you&apos;ll find me with a coffee in hand watching Friends or Everybody Loves Raymond, whilst unwinding with my cats.
+                </p>
+                <p className="text-[17px] leading-8 text-muted-foreground md:text-[18px]">
+                  I love capturing natural, heartfelt photos of families and couples because life&apos;s best moments deserve to be remembered. I believe photos should feel like memories, not just pictures.
+                </p>
+                <p className="text-[17px] leading-8 text-muted-foreground md:text-[18px]">
+                  My goal is for you to feel like you&apos;re just hanging out with a friend who happens to have a camera. So let&apos;s grab a coffee (or bring one to the shoot!) and create something beautiful together!
+                </p>
+              </div>
+              <motion.div
+                className="mt-8 sm:mt-10"
+                initial={{ opacity: 0 }}
+                animate={storyInView ? { opacity: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center gap-2 text-sm font-medium tracking-[0.15em] text-foreground transition-colors hover:text-primary"
                 >
-                  <span className="block border-t border-gray-400 pt-2 pb-1 group-hover:border-gray-900 transition-colors">
+                  <span className="border-b border-current pb-0.5 transition-colors group-hover:border-primary">
                     GET IN TOUCH
                   </span>
-                  <span className="block border-b border-gray-400 group-hover:border-gray-900 transition-colors"></span>
                 </Link>
-              </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pull quote */}
+      <section ref={quoteRef} className="border-t border-border/60 bg-page/50 section-x py-14 sm:py-16 md:py-20">
+        <div className="container mx-auto">
+          <motion.blockquote
+            className="mx-auto max-w-2xl text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={quoteInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="font-serif text-2xl font-light italic leading-relaxed text-foreground sm:text-3xl md:text-[2rem]">
+              Photos should feel like memories, not just pictures.
+            </p>
+          </motion.blockquote>
+        </div>
+      </section>
+
+      {/* Values — minimal, three pillars */}
+      <section ref={valuesRef} className="border-t border-border/60 bg-background section-x py-14 sm:py-16 md:py-20">
+        <div className="container mx-auto">
+          <div className="mx-auto max-w-4xl">
+            <motion.h2
+              className="text-center font-serif text-2xl font-light tracking-wide text-foreground sm:text-3xl"
+              initial={{ opacity: 0, y: 12 }}
+              animate={valuesInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5 }}
+            >
+              What you can expect
+            </motion.h2>
+            <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6 md:mt-12 md:gap-8">
+              {[
+                {
+                  title: "Natural & heartfelt",
+                  desc: "Real moments and genuine emotion, not stiff poses.",
+                },
+                {
+                  title: "Like a friend",
+                  desc: "Relaxed, easy — you’ll feel like you’re hanging out with someone who gets you.",
+                },
+                {
+                  title: "Create together",
+                  desc: "We’ll make something beautiful — coffee optional but encouraged.",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  className="rounded-xl border border-border/70 bg-page/60 p-6 text-center shadow-sm transition-shadow hover:shadow-md sm:p-6 md:p-7"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={valuesInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.1 * i }}
+                >
+                  <h3 className="font-serif text-lg font-medium tracking-wide text-foreground sm:text-xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground sm:text-base">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="py-14 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-semibold">My Philosophy</h2>
-            <p className="mt-6 text-muted-foreground">
-              I believe that photography is about more than just taking pretty pictures. It's about preserving moments,
-              emotions, and connections that tell your unique story. My approach combines documentary-style capture with
-              gentle direction to create images that are both authentic and beautiful.
+      {/* Contact */}
+      <section ref={contactRef} className="relative border-t border-border/60 bg-page section-x py-16 md:py-24">
+        <div className="container relative z-10 mx-auto">
+          <motion.div
+            className="mx-auto max-w-2xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={contactInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-serif text-3xl font-light tracking-wide text-center text-foreground md:text-4xl">
+              Let&apos;s create something beautiful
+            </h2>
+            <p className="mt-3 text-center text-muted-foreground">
+              Say hello — I&apos;d love to hear from you.
             </p>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <PhilosophyCard
-              icon={<Heart className="h-8 w-8" />}
-              title="Connection Over Perfection"
-              description="I prioritize genuine emotion and authentic moments over perfectly posed images. The real magic happens in the unscripted moments."
-            />
-            <PhilosophyCard
-              icon={<Camera className="h-8 w-8" />}
-              title="Artistry & Technique"
-              description="I blend technical expertise with creative vision to create images that are both emotionally resonant and visually stunning."
-            />
-            <PhilosophyCard
-              icon={<Clock className="h-8 w-8" />}
-              title="Present & Patient"
-              description="I take time to observe and anticipate moments, allowing your session to unfold naturally without rushing the process."
-            />
-            <PhilosophyCard
-              icon={<Award className="h-8 w-8" />}
-              title="Quality Over Quantity"
-              description="I focus on creating a curated collection of exceptional images rather than overwhelming you with hundreds of mediocre ones."
-            />
-            <PhilosophyCard
-              icon={<Users className="h-8 w-8" />}
-              title="Inclusive & Welcoming"
-              description="I celebrate diversity and am committed to creating a comfortable experience for everyone, regardless of background."
-            />
-            <PhilosophyCard
-              icon={<MessageSquare className="h-8 w-8" />}
-              title="Communication & Trust"
-              description="I believe in clear communication and building trust with my clients to ensure your vision comes to life."
-            />
-          </div>
+            <div className="mt-10">
+              <ContactForm />
+            </div>
+          </motion.div>
         </div>
       </section>
-
-      {/* Experience Section */}
-      <section className="py-14 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-semibold">Experience & Education</h2>
-            <p className="mt-4 text-muted-foreground">My journey and credentials in photography</p>
-          </div>
-
-          <div className="mt-8 space-y-8">
-            <TimelineItem
-              year="2013"
-              title="Started Photography Journey"
-              description="Began exploring photography as a creative outlet while studying Fine Arts at the University of Connecticut."
-            />
-            <TimelineItem
-              year="2015"
-              title="Professional Training"
-              description="Completed intensive workshop training and earned certification in portrait photography."
-            />
-            <TimelineItem
-              year="2016"
-              title="Launched Greta Noelle Photography"
-              description="Officially established my photography business after assisting and second shooting for established photographers."
-            />
-            <TimelineItem
-              year="2018"
-              title="Expanded to Full-Time"
-              description="Transitioned from part-time to full-time photographer, focusing on portrait work throughout Connecticut."
-            />
-            <TimelineItem
-              year="2020"
-              title="Studio Establishment"
-              description="Opened a boutique photography studio space in downtown Hartford for client consultations and indoor sessions."
-            />
-            <TimelineItem
-              year="2022"
-              title="Industry Recognition"
-              description="Received multiple awards for portrait photography from industry associations and publications."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section ref={contactRef} className="relative py-16 md:py-24">
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif text-3xl font-bold text-center mb-8">Get In Touch</h2>
-            <ContactForm />
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
-
-function PhilosophyCard({ icon, title, description }: PhilosophyCardProps) {
-  return (
-    <div className="rounded-lg border border-gray-200 bg-page p-6 shadow-sm">
-      <div className="mb-4 text-primary">{icon}</div>
-      <h3 className="mb-2 font-serif text-xl font-semibold">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
-    </div>
-  )
-}
-
-function TimelineItem({ year, title, description }: TimelineItemProps) {
-  return (
-    <div className="flex">
-      <div className="mr-8 flex flex-col items-center">
-        <div className="rounded-full bg-primary px-4 py-1 text-sm font-medium text-primary-foreground">{year}</div>
-        <div className="mt-2 h-full w-px bg-gray-200"></div>
-      </div>
-      <div className="pb-8">
-        <h3 className="font-serif text-xl font-semibold">{title}</h3>
-        <p className="mt-2 text-muted-foreground">{description}</p>
-      </div>
     </div>
   )
 }

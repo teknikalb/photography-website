@@ -41,7 +41,7 @@ export default function MilestoneServicePage() {
 
       {/* Content Section */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto section-x">
           <div className="mx-auto max-w-3xl space-y-8 text-lg text-gray-700">
             <h2 className="text-center font-serif text-3xl font-light text-gray-800 mb-12">Commemorate Every Milestone</h2>
             <p>
