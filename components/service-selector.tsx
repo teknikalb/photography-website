@@ -60,7 +60,7 @@ const categories = [
 export default function ServiceSelector() {
   const [activeCategory, setActiveCategory] = useState(categories[0])
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, amount: 0.05, rootMargin: "150px 0px" })
 
   return (
     <section ref={ref} className="py-0">

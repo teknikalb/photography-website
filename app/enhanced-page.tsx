@@ -3,24 +3,15 @@
 import { useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion, useScroll, useTransform, useInView } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { motion, useScroll, useTransform } from "framer-motion"
 import ServiceSelector from "@/components/service-selector"
 import PortfolioGallery from "@/components/portfolio-gallery"
-// import DynamicHome from "@/components/dynamic-home" // Removed as component doesn't exist
-import { GlassCard } from "@/components/glass-card"
 import AboutMe from "@/components/about-me"
 import ContactForm from "@/components/contact-form"
 import { Leaf, Users, Baby, User, MapPin, Calendar } from "lucide-react"
 
 export default function EnhancedHome() {
   const heroRef = useRef(null)
-  const servicesRef = useRef(null)
-  const portfolioRef = useRef(null)
-  const ctaRef = useRef(null)
-  const servicesInView = useInView(servicesRef, { once: true, amount: 0.2 })
-  const portfolioInView = useInView(portfolioRef, { once: true, amount: 0.2 })
-  const ctaInView = useInView(ctaRef, { once: true, amount: 0.3 })
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -50,14 +41,9 @@ export default function EnhancedHome() {
 
         <motion.div
           style={{ opacity }}
-          className="absolute inset-0 flex flex-col items-center justify-center section-x text-center text-white"
+          className="absolute inset-0 flex flex-col items-center justify-center section-x text-center text-white opacity-100"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl"
-          >
+          <div className="max-w-4xl">
             <h1 className="font-serif text-4xl font-bold tracking-wide text-white/95 sm:text-5xl md:text-6xl lg:text-7xl">
               Greta Noelle Photography
             </h1>
@@ -84,7 +70,7 @@ export default function EnhancedHome() {
                 <span className="block border-b border-white/50 group-hover:border-white transition-colors"></span>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </section>
 
@@ -100,12 +86,12 @@ export default function EnhancedHome() {
       </section>
 
       {/* Services Section - 15px padding */}
-      <section ref={servicesRef} className="py-[15px]">
+      <section className="py-[15px]">
         <ServiceSelector />
       </section>
       
       {/* Portfolio Gallery - 15px padding */}
-      <section ref={portfolioRef} className="py-[15px]">
+      <section className="py-[15px]">
         <PortfolioGallery />
       </section>
 
@@ -113,7 +99,7 @@ export default function EnhancedHome() {
       <AboutMe />
 
       {/* CTA / Contact Form Section */}
-      <section ref={ctaRef} className="relative py-16 bg-page section-x">
+      <section className="relative py-16 bg-page section-x">
         <div className="container relative z-10 mx-auto">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-serif text-3xl font-light text-center mb-8 text-gray-900">Get In Touch</h2>

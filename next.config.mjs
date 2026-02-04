@@ -73,10 +73,6 @@ const nextConfig = {
     ]
   },
   
-  // Sitemap generation optimization
-  experimental: {
-    optimizePackageImports: ['@/components', '@/lib'],
-  },
 }
 
 export default nextConfig

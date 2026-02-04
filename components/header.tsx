@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 import { Menu, X, Instagram, Facebook, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -52,20 +53,9 @@ const navigation = [
   { name: "CONTACT", href: "/contact" },
 ]
 
-export default function Header() {
+function HeaderNav({ pathname }: { pathname: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState<string | null>(null)
-  const [hasMounted, setHasMounted] = useState(false)
-  const pathname = usePathname()
-
-  useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  if (!hasMounted) {
-    // Avoid potential SSR/CSR mismatches in the header/navigation
-    return null
-  }
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false)
@@ -81,15 +71,17 @@ export default function Header() {
       <div className="container mx-auto section-x">
         <nav className="flex h-[70px] items-center justify-between">
           
-          <div className="flex flex-none items-center space-x-4">
+          <div className="flex flex-none items-center">
             <Link href="/" className="flex items-center">
-              <span className="font-serif text-2xl font-light tracking-wide text-gray-800">
-                Greta Noelle
-              </span>
+              <Image
+                src="/horizonatal-logo.svg"
+                alt="Greta Noelle Photography - Newington, Connecticut"
+                width={220}
+                height={44}
+                className="h-9 w-auto md:h-11"
+                priority
+              />
             </Link>
-            <span className="hidden md:block border-l border-gray-300 pl-4 text-sm text-gray-500 font-serif">
-              Newington, Connecticut
-            </span>
           </div>
 
           <div className="hidden flex-1 items-center justify-center md:flex">
@@ -272,4 +264,17 @@ export default function Header() {
       </AnimatePresence>
     </header>
   )
+}
+
+function HeaderWithPathname() {
+  const pathname = usePathname() ?? "/"
+  return <HeaderNav pathname={pathname} />
+}
+
+export default function Header() {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  return mounted ? <HeaderWithPathname /> : <HeaderNav pathname="/" />
 }

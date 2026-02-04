@@ -12,7 +12,7 @@ export default function AboutMe() {
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05, rootMargin: "100px 0px" }}
           transition={{ duration: 0.6 }}
         >
           <span className="pill-badge">About</span>
@@ -27,7 +27,7 @@ export default function AboutMe() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.05, rootMargin: "100px 0px" }}
             transition={{ duration: 0.8 }}
             className="text-center md:text-left"
           >
@@ -62,7 +62,7 @@ export default function AboutMe() {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.05, rootMargin: "100px 0px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative mx-auto w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full shadow-lg md:order-last"
           >

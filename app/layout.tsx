@@ -12,6 +12,8 @@ const outfit = Outfit({
   weight: ["300", "400", "500", "600"],
   variable: "--font-sans",
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 })
 
 const cormorant = Cormorant({
@@ -19,6 +21,8 @@ const cormorant = Cormorant({
   weight: ["400", "500", "600", "700"],
   variable: "--font-serif",
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 })
 
 export const metadata: Metadata = {
@@ -94,7 +98,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.variable} ${cormorant.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange storageKey="greta-theme">
           <div className="relative z-10">
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-681WPRJZLL"
