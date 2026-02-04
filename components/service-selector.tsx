@@ -11,7 +11,7 @@ const categories = [
     id: "family",
     icon: <Users className="h-6 w-6" />,
     title: "Family",
-    description: "Beautiful, natural family portraits that showcase your connections in Connecticut.",
+    description: "Natural, heartfelt family portraits that celebrate your connections—golden light and authentic moments throughout Connecticut.",
     image: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=1054&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/portfolio/family",
   },
@@ -19,7 +19,7 @@ const categories = [
     id: "maternity",
     icon: <Baby className="h-6 w-6" />,
     title: "Maternity",
-    description: "Celebrating the beauty and anticipation of motherhood in Connecticut.",
+    description: "Gentle, timeless imagery celebrating the beauty and anticipation of motherhood—artistic maternity sessions across Connecticut.",
     image: "https://images.unsplash.com/photo-1555961064-4bc7ec634bbc?q=80&w=1199&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/portfolio/maternity",
   },
@@ -27,7 +27,7 @@ const categories = [
     id: "portraits",
     icon: <Camera className="h-6 w-6" />,
     title: "Portraits",
-    description: "Professional portraits that capture your authentic self in Hartford, New Haven, and all of New England.",
+    description: "Professional portraits that capture your authentic self—natural light and genuine moments across Connecticut.",
     image: "https://images.unsplash.com/photo-1649219025763-bb4a23fdf256?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/portfolio/portraits",
   },
@@ -35,7 +35,7 @@ const categories = [
     id: "milestones",
     icon: <Calendar className="h-6 w-6" />,
     title: "Milestones",
-    description: "Commemorating life's special moments and achievements in Connecticut.",
+    description: "Commemorating life's special moments—first steps, graduations, and milestones—with warm, artistic portraits.",
     image: "https://images.unsplash.com/photo-1719004347698-5fc3de27c6a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/portfolio/milestones",
   },
@@ -43,7 +43,7 @@ const categories = [
     id: "mothers-day-minis",
     icon: <Heart className="h-6 w-6" />,
     title: "Mother's Day Minis",
-    description: "Special mini sessions to celebrate the beautiful bond between you and your little ones in Connecticut.",
+    description: "Quick, heartfelt mini sessions celebrating the beautiful bond between you and your little ones—limited spots each season.",
     image: "https://images.unsplash.com/photo-1601388577503-64a04c24c7f7?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/services/mothers-day-minis",
   },
@@ -51,7 +51,7 @@ const categories = [
     id: "pet-photography",
     icon: <PawPrint className="h-6 w-6" />,
     title: "Pet Photography",
-    description: "Because pets are family too! Capture your furry friends in beautiful, natural portraits in Connecticut.",
+    description: "Because pets are family too—capture your furry friends in beautiful, natural portraits full of personality.",
     image: "https://images.unsplash.com/flagged/photo-1583958211970-af3e1596ef32?q=80&w=768&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/services/pet-photography",
   },
@@ -77,7 +77,7 @@ export default function ServiceSelector() {
           </h2>
           <div className="divider"></div>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700">
-            Select a category to discover the perfect photography experience for your special moments
+            From family portraits to maternity sessions—each one shaped by light, place, and the story we create together
           </p>
         </motion.div>
 

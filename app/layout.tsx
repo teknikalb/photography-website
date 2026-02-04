@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://gretanoellephoto.com"),
   robots: { index: true, follow: true },
   title: {
-    default: "Family & Maternity Photographer Newington CT | West Hartford, Glastonbury, Greenwich",
+    default: "Family & Maternity Photographer in Connecticut | Greta Noelle Photography",
     template: `%s | Greta Noelle Photography`,
   },
   description:
-    "Book a family or maternity photographer in Newington, CT. Best-rated for family photos & maternity sessions in West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich & Darien. Limited spots.",
+    "Natural light family and maternity photography throughout Connecticut. Heartfelt, artistic sessions for families and couples—limited spots.",
   keywords: [
     "family photographer Newington CT",
     "maternity photographer West Hartford",
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://gretanoellephoto.com",
-    title: "Family & Maternity Photographer Newington CT | West Hartford, Glastonbury, Greenwich",
+    title: "Family & Maternity Photographer in Connecticut | Greta Noelle Photography",
     description:
-      "Book a family or maternity photographer in Newington, CT. Family photos & maternity sessions in West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich & Darien.",
+      "Natural light family and maternity photography throughout Connecticut. Heartfelt sessions for families and couples.",
     siteName: "Greta Noelle Photography",
     images: [
       { url: "/hero-optimized.jpg", width: 1200, height: 630, alt: "Greta Noelle Photography" },
@@ -67,9 +67,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Family & Maternity Photographer Newington CT | West Hartford, Glastonbury, Greenwich",
+    title: "Family & Maternity Photographer in Connecticut | Greta Noelle Photography",
     description:
-      "Book a family or maternity photographer in Newington, CT. Family photos & maternity sessions in West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich & Darien.",
+      "Natural light family and maternity photography throughout Connecticut. Heartfelt sessions for families and couples.",
     creator: "@drenanoelle",
     images: ["/hero-optimized.jpg"],
   },
@@ -118,7 +118,7 @@ export default function RootLayout({
               "@type": "ProfessionalService",
               "@id": "https://gretanoellephoto.com/#photographer",
               name: "Greta Noelle Photography",
-              description: "Family and maternity photographer in Newington, CT. Natural, heartfelt family photos and maternity sessions. Serving West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich, Darien and all of Connecticut.",
+              description: "Family and maternity photographer in Connecticut. Natural light, heartfelt family photos and maternity sessions throughout the state.",
               image: "https://gretanoellephoto.com/hero-optimized.jpg",
               url: "https://gretanoellephoto.com",
               address: {

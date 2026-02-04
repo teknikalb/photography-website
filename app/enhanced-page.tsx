@@ -48,7 +48,7 @@ export default function EnhancedHome() {
               Greta Noelle Photography
             </h1>
             <p className="mt-6 text-lg font-medium text-white/90 md:text-xl">
-              Family & Maternity Photographer in Newington, CT — West Hartford, Glastonbury, Greenwich & Darien
+              Natural light family & maternity photography throughout Connecticut
             </p>
             <div className="mt-10 flex flex-col space-y-6 sm:flex-row sm:justify-center sm:space-x-8 sm:space-y-0">
               <Link 
@@ -78,7 +78,7 @@ export default function EnhancedHome() {
       <section className="w-full bg-page/10 py-8 flex justify-center items-center border-0 border-transparent section-x">
         <div className="max-w-2xl text-center mx-auto">
           <h2 className="font-serif text-3xl font-bold text-primary mb-2">Mini Sessions Now Booking!</h2>
-          <p className="text-lg text-gray-700 mb-4">Celebrate the beauty of Connecticut with quick, affordable mini sessions for families, maternity, and portraits. Limited spots in Newington, Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, Darien and across Connecticut. Book your mini session today!</p>
+          <p className="text-lg text-gray-700 mb-4">Celebrate the beauty of Connecticut with quick, affordable mini sessions for families, maternity, and portraits. Limited spots—book your mini session today!</p>
           <Link href="/services/mini-sessions" className="inline-block rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 shadow">
             View All Mini Sessions
           </Link>

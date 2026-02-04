@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Photography Services & Investment | Newington, CT",
   description:
-    "Family, maternity, portrait, mini sessions & pet photography in Newington, CT. Serving Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, Darien & all of Connecticut.",
+    "Family, maternity, portrait, mini sessions & pet photography in Connecticut. Natural light, heartfelt sessions. Serving families across the state.",
   keywords: [
     "photography services Newington CT",
     "family photographer Wethersfield",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Photography Services & Investment | Newington, CT | Greta Noelle Photography",
     description:
-      "Family, maternity, portrait & mini sessions in Newington, CT. Serving Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, Darien & Connecticut.",
+      "Family, maternity, portrait & mini sessions throughout Connecticut. Natural light photography for families and couples.",
   },
 }
 

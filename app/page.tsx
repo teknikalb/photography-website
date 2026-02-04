@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import EnhancedHome from "./enhanced-page"
 
 export const metadata: Metadata = {
-  title: "Family & Maternity Photographer in Newington, CT | West Hartford, Glastonbury, Greenwich",
+  title: "Family & Maternity Photographer in Connecticut | Greta Noelle Photography",
   description:
-    "Book a family or maternity photographer in Newington, CT. Serving West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich & Darien. Natural, heartfelt sessions—limited spots.",
+    "Natural light family and maternity photography throughout Connecticut. Heartfelt, artistic sessions for families and couples—limited spots.",
   keywords: [
     "family photographer Newington CT",
     "maternity photographer West Hartford",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     "Litchfield CT photographer",
   ],
   openGraph: {
-    title: "Family & Maternity Photographer | Newington, West Hartford, Glastonbury, Greenwich CT",
+    title: "Family & Maternity Photographer in Connecticut | Greta Noelle Photography",
     description:
-      "Book your family or maternity session in Newington, CT. Serving West Hartford, Glastonbury, Wethersfield, Rocky Hill, Southington, Litchfield, Greenwich & Darien.",
+      "Natural light family and maternity photography throughout Connecticut. Heartfelt sessions for families and couples.",
     url: "https://gretanoellephoto.com",
   },
 }

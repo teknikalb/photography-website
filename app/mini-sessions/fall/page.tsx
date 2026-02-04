@@ -8,7 +8,7 @@ export default function FallMiniSessionsPage() {
     <div className="container mx-auto section-x py-16 max-w-2xl">
       <h1 className="font-serif text-4xl font-light mb-6 text-center mt-12">Fall Mini Sessions in Connecticut</h1>
       <Image src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=800&auto=format&fit=crop" alt="Fall Mini Session" width={600} height={400} className="rounded-lg object-cover mb-6 mx-auto" />
-      <p className="mb-4 text-lg text-gray-700 text-center">Capture the magic of autumn with fall mini sessions among Connecticut's colorful leaves. These quick sessions are perfect for updating your family photos or celebrating a milestone. Book your fall mini session in Litchfield, Southington, Glastonbury, West Hartford, Rocky Hill, or across Connecticut today!</p>
+      <p className="mb-4 text-lg text-gray-700 text-center">Capture the magic of autumn with fall mini sessions among Connecticut's colorful leaves. Perfect for updating your family photos or celebrating a milestone—limited spots available.</p>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">What to Expect</h2>
       <ul className="list-disc ml-6 mb-4 text-gray-700">
         <li>20-minute guided session</li>
@@ -19,9 +19,9 @@ export default function FallMiniSessionsPage() {
       </ul>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">Ideal Locations</h2>
       <ul className="list-disc ml-6 mb-4 text-gray-700">
-        <li>Elizabeth Park (Hartford), Litchfield hills foliage, Southington orchards</li>
-        <li>Glastonbury, West Hartford Reservoir, Rocky Hill & Wethersfield parks</li>
-        <li>Local forests and parks across Connecticut</li>
+        <li>Parks and orchards with autumn foliage</li>
+        <li>Wooded trails and meadows across Connecticut</li>
+        <li>Historic towns and scenic overlooks</li>
       </ul>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">Sample Session Flow</h2>
       <ol className="list-decimal ml-6 mb-4 text-gray-700">

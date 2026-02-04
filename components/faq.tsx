@@ -97,6 +97,6 @@ export const standardFAQs: FAQItem[] = [
   },
   {
     question: "Do you travel for sessions?",
-    answer: "Yes! I serve all of Connecticut including Newington, Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, and Darien. I also travel throughout New England. For destinations beyond, travel fees may apply—contact me for a custom quote.",
+    answer: "Yes! I serve Connecticut and travel throughout New England. Whether you're in the Hartford area, along the coast, or anywhere in between—I'd love to capture your story. For destinations beyond, travel fees may apply—just reach out for a custom quote.",
   },
 ];

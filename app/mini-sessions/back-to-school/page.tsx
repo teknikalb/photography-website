@@ -8,7 +8,7 @@ export default function BackToSchoolMiniSessionsPage() {
     <div className="container mx-auto section-x py-16 max-w-2xl">
       <h1 className="font-serif text-4xl font-light mb-6 text-center mt-12">Back-to-School Mini Sessions in Connecticut</h1>
       <Image src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop" alt="Back-to-School Mini Session" width={600} height={400} className="rounded-lg object-cover mb-6 mx-auto" />
-      <p className="mb-4 text-lg text-gray-700 text-center">Mark the start of a new school year with fun, personality-filled back-to-school mini sessions. Perfect for kids, siblings, and families. Book your back-to-school mini session in Newington, Wethersfield, West Hartford, Rocky Hill, Southington, or across Connecticut today!</p>
+      <p className="mb-4 text-lg text-gray-700 text-center">Mark the start of a new school year with fun, personality-filled back-to-school mini sessions. Perfect for kids, siblings, and families—wherever you are in Connecticut.</p>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">What to Expect</h2>
       <ul className="list-disc ml-6 mb-4 text-gray-700">
         <li>15-minute guided session</li>
@@ -19,8 +19,8 @@ export default function BackToSchoolMiniSessionsPage() {
       </ul>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">Ideal Locations</h2>
       <ul className="list-disc ml-6 mb-4 text-gray-700">
-        <li>Local parks and playgrounds in Newington, Wethersfield, West Hartford, Rocky Hill, Southington</li>
-        <li>School campuses or urban spots across Connecticut</li>
+        <li>Local parks and playgrounds across Connecticut</li>
+        <li>School campuses or urban spots</li>
       </ul>
       <h2 className="font-serif text-2xl font-light mt-8 mb-4">Sample Session Flow</h2>
       <ol className="list-decimal ml-6 mb-4 text-gray-700">

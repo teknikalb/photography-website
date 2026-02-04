@@ -73,7 +73,7 @@ export default function ServicesPage() {
             Services & Sessions
           </h1>
           <p className="mt-4 text-base text-gray-600 sm:text-lg">
-            Choose a session below, or reach out and we’ll find the right fit. Based in <strong>Newington, CT</strong>—serving Wethersfield, Glastonbury, West Hartford, Rocky Hill, Southington, Litchfield, Greenwich, Darien & all of Connecticut.
+            Choose a session below, or reach out and we’ll find the right fit. I'm a Connecticut photographer—and I'd love to create something beautiful with you.
           </p>
         </div>
       </header>
@@ -133,7 +133,7 @@ export default function ServicesPage() {
             Where we create
           </h2>
           <p className="mt-4 text-gray-600 sm:text-lg leading-relaxed">
-            Every family session, maternity session, and portrait session is shaped by light and place. I&apos;m a Connecticut family photographer and maternity photographer based in Newington, and I travel across the state—from Hartford and West Hartford to Glastonbury, Greenwich, Stamford, New Haven, and the Litchfield Hills. Whether you want golden-hour meadows, blooming gardens, autumn leaves, or soft in-home light, we&apos;ll find the right backdrop for your story.{" "}
+            Every family session, maternity session, and portrait session is shaped by light and place. I'm a Connecticut family and maternity photographer who travels across the state—from golden-hour meadows and blooming gardens to autumn leaves and soft in-home light. Whatever your story, we'll find the right backdrop together.{" "}
             <Link href="/locations" className="font-medium text-gray-900 underline underline-offset-2 hover:no-underline">
               See all locations
             </Link>
