@@ -1,243 +1,177 @@
-"use client"
+import type { Metadata } from "next"
+import FaqList from "@/components/site/faq-list"
+import Reveal from "@/components/site/reveal"
+import Pill from "@/components/site/pill"
+import { CtaBanner, Cover, HeroImage, InstagramStrip, KindWords } from "@/components/site/sections"
+import { EXPERIENCE, FAQS, GALLERY, PHOTOS, SERVICES, SITE } from "@/lib/site"
 
-import Link from "next/link"
-import { Camera, Heart, Users, Calendar, Sparkles, ArrowRight, PawPrint, MapPin } from "lucide-react"
-import FAQ, { standardFAQs } from "@/components/faq"
+export const metadata: Metadata = {
+  title: "Photography Services & Pricing",
+  description:
+    "Family and couple sessions from $375, maternity from $425, graduation from $225 and seasonal minis from $250. Packages, pricing and FAQs for Connecticut photography.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Photography Services & Pricing | Connecticut",
+    description: "Packages and pricing for family, maternity, couple and graduation photography in Connecticut.",
+    url: "/services",
+  },
+}
 
-const services = [
-  {
-    id: "family",
-    title: "Family Session",
-    tagline: "In-home or outdoors—up to an hour, 50+ images, style guidance included.",
-    icon: Users,
-    price: "$450 + tax",
-  },
-  {
-    id: "couple-sessions",
-    title: "Couple Sessions",
-    tagline: "Relaxed sessions for couples & engagements—authentic, laid-back photos.",
-    icon: Heart,
-    price: "$450 + tax",
-  },
-  {
-    id: "elopements",
-    title: "Elopements",
-    tagline: "1–5 hours for New England celebrations of 20 guests or fewer.",
-    icon: MapPin,
-    price: "From $500/hr + tax",
-  },
-  {
-    id: "maternity",
-    title: "Maternity",
-    tagline: "Honor this chapter with gentle, timeless images.",
-    icon: Heart,
-    price: "$350",
-  },
-  {
-    id: "portraits",
-    title: "Portraits",
-    tagline: "You, as you are—graduation, branding, or just because.",
-    icon: Camera,
-    price: "$350",
-  },
-  {
-    id: "mini-sessions",
-    title: "Mini Sessions",
-    tagline: "Short, sweet sessions for seasonal themes and quick updates.",
-    icon: Sparkles,
-    price: "$200",
-  },
-  {
-    id: "pet-photography",
-    title: "Pet Photography",
-    tagline: "Your furry family members—personality and soul captured.",
-    icon: PawPrint,
-    price: "$250",
-  },
-  {
-    id: "events",
-    title: "Events & Celebrations",
-    tagline: "Milestones and celebrations—joy, tears, and love preserved.",
-    icon: Calendar,
-    price: "$350",
-  },
-]
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+}
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+    { "@type": "ListItem", position: 2, name: "Services", item: `${SITE.url}/services` },
+  ],
+}
 
 export default function ServicesPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-page">
-      {/* Hero: what this page is + where you are */}
-      <header className="border-b border-gray-200/80 bg-page section-x pt-14 pb-6 sm:pt-20 sm:pb-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="font-serif text-3xl font-light tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-            Services & Sessions
-          </h1>
-          <p className="mt-4 text-base text-gray-600 sm:text-lg">
-            Choose a session below, or reach out and we’ll find the right fit. I'm a Connecticut photographer—and I'd love to create something beautiful with you.
-          </p>
-        </div>
-      </header>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
-      {/* Service cards: scannable, one clear action per card */}
-      <section
-        className="section-x py-6 sm:py-8 md:py-10"
-        aria-labelledby="sessions-heading"
-      >
-        <h2 id="sessions-heading" className="sr-only">
-          Choose your session
-        </h2>
-        <div className="mx-auto max-w-5xl">
-          <ul className="grid list-none gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </ul>
-          <p className="mt-8 text-center text-sm text-gray-500 sm:mt-10">
-            Not sure which session is right for you?{" "}
-            <Link href="/contact" className="font-medium text-gray-900 underline underline-offset-2 hover:no-underline">
-              Tell me what you’re thinking
-            </Link>
-            —I’ll help you choose.
-          </p>
+      {/* Hero */}
+      <section className="relative isolate h-[560px] overflow-hidden bg-taupe lg:h-[790px]">
+        <HeroImage photo={GALLERY[9]} />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/60 via-ink/15 to-ink/10" aria-hidden />
+        <div className="wrap pt-[calc(var(--header-h)+40px)] lg:pt-[230px]">
+          <h1 className="display-xl rise text-bone [text-shadow:0_2px_30px_rgba(47,46,34,0.4)]">
+            Pricing &amp; packages
+            <span className="sr-only"> for Connecticut family, maternity and couples photography</span>
+          </h1>
         </div>
       </section>
 
-      {/* How it works: simple 3-step reassurance */}
-      <section
-        className="border-t border-gray-200/80 bg-page section-x py-8 sm:py-10 md:py-12"
-        aria-labelledby="how-it-works-heading"
-      >
-        <div className="mx-auto max-w-4xl">
-          <h2 id="how-it-works-heading" className="font-serif text-2xl font-light text-gray-900 sm:text-3xl">
-            How it works
-          </h2>
-          <p className="mt-2 text-gray-600 sm:text-lg">
-            Simple, personal, and stress-free.
-          </p>
-          <ol className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-6 md:mt-10">
-            <ProcessStep step={1} title="We connect" body="You share your vision; we pick a date. I’ll send a short style guide and prep tips." />
-            <ProcessStep step={2} title="We shoot" body="You relax. I guide gently and capture real moments—no stiff posing." />
-            <ProcessStep step={3} title="You get your gallery" body="Within 2–3 weeks, your edited images land in a private gallery—yours to keep and share." />
+      {/* Intro */}
+      <section aria-labelledby="intro" className="bg-page py-[64px] lg:py-[90px]">
+        <div className="wrap text-center">
+          <Reveal>
+            <h2 id="intro" className="mx-auto max-w-[860px]">
+              <span className="block text-[clamp(1.9rem,1.2rem+2.2vw,3rem)] leading-[1]">
+                Photography for couples, families
+              </span>
+              <em className="block text-[clamp(4rem,2rem+8vw,7.6rem)] leading-[0.9]">and little ones</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="lead mx-auto mt-8 max-w-[695px] space-y-5">
+              <p>
+                Each session is relaxed and gently guided so you can focus on being together while I photograph
+                things as they unfold.
+              </p>
+              <p>
+                Below you can find more information about the sessions and packages I offer across Connecticut.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Packages */}
+      <section aria-labelledby="packages" className="bg-cream py-[64px] lg:py-[100px]">
+        <div className="wrap">
+          <Reveal>
+            <h2 id="packages" className="display-xl text-center">
+              Sessions <em>+</em> pricing
+            </h2>
+          </Reveal>
+          <ul className="mt-12 grid list-none gap-x-[100px] gap-y-16 sm:grid-cols-2 lg:mt-[64px] lg:grid-cols-3">
+            {SERVICES.map((service, index) => (
+              <li key={service.id}>
+                <Reveal delay={(index % 3) * 120}>
+                  <article className="text-center">
+                    <div className="group relative aspect-[333/251] w-full overflow-hidden">
+                      <Cover
+                        photo={service.photo}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 333px"
+                        className="transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
+                      />
+                    </div>
+                    {service.tagline && <p className="label mt-6 text-clay">{service.tagline}</p>}
+                    <h3 className={`${service.tagline ? "mt-2" : "mt-6"} text-[1.7rem] leading-tight`}>{service.title}</h3>
+                    <p className="copy mt-3 text-[17px] lg:text-[17.5px]">{service.blurb}</p>
+                    <ul className="mt-4 space-y-1 text-[16px] font-medium uppercase tracking-[0.04em]">
+                      {service.includes.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                    <p className="mt-5 font-serif text-[1.9rem] italic leading-none">From ${service.from}</p>
+                  </article>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+          <Reveal className="mt-14 text-center">
+            <Pill href="/contact" tone="clay">
+              Book a session
+            </Pill>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* What to expect */}
+      <section aria-labelledby="expect" className="bg-page py-[64px] lg:py-[100px]">
+        <div className="wrap">
+          <Reveal>
+            <h2 id="expect" className="display-xl text-center">
+              What to <em>expect</em>
+            </h2>
+          </Reveal>
+          <ul className="mt-12 grid list-none gap-10 lg:mt-[56px] lg:grid-cols-3 lg:gap-[70px]">
+            {EXPERIENCE.pillars.map((pillar, index) => (
+              <li key={pillar.title}>
+                <Reveal delay={index * 120} className="text-center">
+                  <h3 className="text-[1.8rem] leading-tight lg:text-[2.1rem]">{pillar.title}</h3>
+                  <p className="copy mt-3">{pillar.body}</p>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+          <ol className="mt-16 grid list-none gap-x-[60px] gap-y-10 border-t border-ink/25 pt-12 sm:grid-cols-2 lg:grid-cols-4">
+            {EXPERIENCE.steps.map((step, index) => (
+              <li key={step.title}>
+                <Reveal delay={index * 100}>
+                  <p className="font-serif text-[2.6rem] italic leading-none text-clay">0{index + 1}</p>
+                  <h3 className="mt-3 text-[1.5rem] leading-tight">{step.title}</h3>
+                  <p className="copy mt-2 text-[17px]">{step.body}</p>
+                </Reveal>
+              </li>
+            ))}
           </ol>
         </div>
       </section>
 
-      {/* SEO + creative: where we shoot */}
-      <section
-        className="border-t border-gray-200/80 bg-page section-x py-10 sm:py-12 md:py-14"
-        aria-labelledby="where-we-shoot-heading"
-      >
-        <div className="mx-auto max-w-4xl">
-          <h2 id="where-we-shoot-heading" className="font-serif text-2xl font-light text-gray-900 sm:text-3xl flex items-center gap-3">
-            <MapPin className="h-7 w-7 text-gray-700" aria-hidden />
-            Where we create
-          </h2>
-          <p className="mt-4 text-gray-600 sm:text-lg leading-relaxed">
-            Every family session, maternity session, and portrait session is shaped by light and place. I'm a Connecticut family and maternity photographer who travels across the state—from golden-hour meadows and blooming gardens to autumn leaves and soft in-home light. Whatever your story, we'll find the right backdrop together.{" "}
-            <Link href="/locations" className="font-medium text-gray-900 underline underline-offset-2 hover:no-underline">
-              See all locations
-            </Link>
-            .
-          </p>
+      {/* FAQ */}
+      <section aria-labelledby="faq" className="bg-cream py-[64px] lg:py-[100px]">
+        <div className="wrap lg:px-[151px]">
+          <Reveal>
+            <h2 id="faq" className="display-xl mb-8 text-center lg:mb-[40px]">
+              Things you might <em>want to know</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <FaqList faqs={FAQS} />
+          </Reveal>
         </div>
       </section>
 
-      <FAQ faqs={standardFAQs} />
+      <KindWords photo={GALLERY[1]} />
 
-      {/* CTA: one clear next step */}
-      <section className="bg-page section-x py-12 sm:py-14 md:py-16" aria-labelledby="cta-heading">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 id="cta-heading" className="font-serif text-2xl font-light text-gray-900 sm:text-3xl">
-            Ready to book or have questions?
-          </h2>
-          <p className="mt-3 text-gray-600 sm:text-lg">
-            Get in touch—I’d love to hear from you.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-2 rounded-full bg-gray-900 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 focus:ring-offset-page"
-          >
-            Get in touch
-            <ArrowRight className="h-4 w-4" aria-hidden />
-          </Link>
-        </div>
-      </section>
-    </div>
-  )
-}
+      <CtaBanner photo={PHOTOS.banner} label="lets connect" tall />
 
-interface ServiceCardProps {
-  service: {
-    id: string
-    title: string
-    tagline: string
-    icon: React.ComponentType<{ className?: string }>
-    price: string
-  }
-}
-
-function ServiceCard({ service }: ServiceCardProps) {
-  const Icon = service.icon
-
-  return (
-    <li>
-      <article className="flex h-full flex-col rounded-2xl border border-gray-200/90 bg-page p-6 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 sm:p-7">
-        <div className="flex items-start gap-4">
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gray-900 text-white" aria-hidden>
-            <Icon className="h-6 w-6" />
-          </span>
-          <div className="min-w-0 flex-1">
-            <h3 className="font-serif text-xl font-medium text-gray-900">
-              {service.title}
-            </h3>
-            <p className="mt-1 text-sm text-gray-600">
-              {service.tagline}
-            </p>
-          </div>
-        </div>
-        <p className="mt-4 text-sm text-gray-500">
-          Starting from <span className="font-semibold text-gray-900">{service.price}</span>
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href={`/services/${service.id}`}
-            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-1.5 rounded-full border border-gray-900 bg-transparent px-5 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
-          >
-            Learn more
-            <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
-          >
-            Book
-          </Link>
-        </div>
-      </article>
-    </li>
-  )
-}
-
-function ProcessStep({
-  step,
-  title,
-  body,
-}: {
-  step: number
-  title: string
-  body: string
-}) {
-  return (
-    <li className="relative pl-10 sm:pl-0">
-      <span className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 bg-page font-serif text-base font-medium text-gray-700 sm:static sm:mb-4" aria-hidden>
-        {step}
-      </span>
-      <h3 className="font-serif text-lg font-medium text-gray-900 sm:text-xl">
-        {title}
-      </h3>
-      <p className="mt-1.5 text-sm text-gray-600 sm:text-base">
-        {body}
-      </p>
-    </li>
+      <InstagramStrip photos={GALLERY.slice(5, 10)} large />
+    </>
   )
 }

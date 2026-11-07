@@ -20,9 +20,6 @@ const config = {
     },
     extend: {
       colors: {
-        gray: {
-          900: "#50090c",
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -56,8 +53,14 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        page: "#e7e3d8",
-        "page-light": "#ebe8e0",
+        page: "#FCFCF3",
+        "page-light": "#FCFCF3",
+        cream: "#F0EBDA",
+        sand: "#C6BCA9",
+        taupe: "#ADA490",
+        clay: "#82624A",
+        bone: "#E0DED2",
+        ink: "#2F2E22",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -131,6 +134,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         serif: ["var(--font-serif)"],
+        display: ["var(--font-serif)"],
       },
       transitionTimingFunction: {
         "in-expo": "cubic-bezier(0.95, 0.05, 0.795, 0.035)",

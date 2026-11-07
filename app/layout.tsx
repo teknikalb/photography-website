@@ -1,154 +1,179 @@
 import type React from "react"
-import { Cormorant, Outfit } from "next/font/google"
+import { Barlow_Condensed, Instrument_Serif } from "next/font/google"
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 import "./globals.css"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import { ThemeProvider } from "@/components/theme-provider"
+import SiteHeader from "@/components/site/site-header"
+import SiteFooter from "@/components/site/site-footer"
+import RevealObserver from "@/components/site/reveal-observer"
+import { AREAS, SERVICES, SITE } from "@/lib/site"
 
-const outfit = Outfit({
+// Condensed sans for body, navigation and labels; narrow high-contrast serif for headlines.
+const barlow = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
   display: "swap",
-  preload: true,
-  adjustFontFallback: true,
 })
 
-const cormorant = Cormorant({
+const instrument = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "400",
+  style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",
-  preload: true,
-  adjustFontFallback: true,
 })
 
+const DEFAULT_TITLE = "Connecticut Family & Maternity Photographer | Greta Noelle"
+const DEFAULT_DESCRIPTION =
+  "Natural light family, maternity, couples and portrait photographer serving Newington, Hartford, West Hartford, Glastonbury and all of Connecticut."
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gretanoellephoto.com"),
-  robots: { index: true, follow: true },
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "Family & Maternity Photographer in Connecticut | Greta Noelle Photography",
-    template: `%s | Greta Noelle Photography`,
+    default: DEFAULT_TITLE,
+    template: `%s | ${SITE.name}`,
   },
-  description:
-    "Natural light family and maternity photography throughout Connecticut. Heartfelt, artistic sessions for families and couples—limited spots.",
-  keywords: [
-    "family photographer Newington CT",
-    "maternity photographer West Hartford",
-    "best family photographer Glastonbury",
-    "family photographer Greenwich CT",
-    "photographer Darien CT",
-    "maternity photographer near me",
-    "family photos West Hartford",
-    "family photographer Wethersfield CT",
-    "maternity photographer Newington",
-    "photographer Rocky Hill CT",
-    "family photographer Southington",
-    "Litchfield CT photographer",
-    "Mother's Day mini sessions Connecticut",
-    "professional portraits Connecticut",
-  ],
-  authors: [{ name: "Greta Noelle Photography" }],
-  creator: "Greta Noelle Photography",
-  publisher: "Greta Noelle Photography",
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE.name,
+  authors: [{ name: "Greta Noelle", url: SITE.url }],
+  creator: "Greta Noelle",
+  publisher: SITE.name,
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://gretanoellephoto.com",
-    title: "Family & Maternity Photographer in Connecticut | Greta Noelle Photography",
-    description:
-      "Natural light family and maternity photography throughout Connecticut. Heartfelt sessions for families and couples.",
-    siteName: "Greta Noelle Photography",
+    url: SITE.url,
+    siteName: SITE.name,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
     images: [
-      { url: "/hero-optimized.jpg", width: 1200, height: 630, alt: "Greta Noelle Photography" },
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mother and daughter walking through a Connecticut field, photographed by Greta Noelle",
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Family & Maternity Photographer in Connecticut | Greta Noelle Photography",
-    description:
-      "Natural light family and maternity photography throughout Connecticut. Heartfelt sessions for families and couples.",
-    creator: "@drenanoelle",
-    images: ["/hero-optimized.jpg"],
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: ["/og-image.jpg"],
   },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-16x16.png", sizes: "16x16" },
-    ],
-    shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  generator: 'v0.dev'
 }
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#C6BCA9",
+}
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "Photographer"],
+      "@id": `${SITE.url}/#business`,
+      name: SITE.name,
+      url: SITE.url,
+      image: `${SITE.url}/og-image.jpg`,
+      logo: `${SITE.url}/logo.png`,
+      description:
+        "Natural light family, maternity, couples, portrait and pet photography across Connecticut and New England.",
+      email: SITE.email,
+      priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: SITE.locality,
+        addressRegion: SITE.region,
+        addressCountry: SITE.country,
+      },
+      geo: { "@type": "GeoCoordinates", latitude: 41.6987, longitude: -72.7237 },
+      areaServed: [
+        ...AREAS.map((city) => ({ "@type": "City", name: `${city}, CT` })),
+        { "@type": "State", name: "Connecticut" },
+      ],
+      knowsAbout: [
+        "Family photography",
+        "Maternity photography",
+        "Couples photography",
+        "Portrait photography",
+        "Pet photography",
+        "Mini sessions",
+      ],
+      sameAs: [SITE.instagram],
+      founder: { "@type": "Person", name: "Greta Noelle" },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Photography sessions",
+        itemListElement: SERVICES.map((service) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: service.title, description: service.blurb },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice: service.from,
+            priceCurrency: "USD",
+          },
+        })),
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      inLanguage: "en-US",
+      publisher: { "@id": `${SITE.url}/#business` },
+    },
+  ],
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.variable} ${cormorant.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange storageKey="greta-theme">
-          <div className="relative z-10">
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-681WPRJZLL"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){window.dataLayer.push(arguments);} 
-              gtag('js', new Date());
-              gtag('config', 'G-681WPRJZLL');
-            `}
-          </Script>
-          <Script id="ld-photographer" type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              "@id": "https://gretanoellephoto.com/#photographer",
-              name: "Greta Noelle Photography",
-              description: "Family and maternity photographer in Connecticut. Natural light, heartfelt family photos and maternity sessions throughout the state.",
-              image: "https://gretanoellephoto.com/hero-optimized.jpg",
-              url: "https://gretanoellephoto.com",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Newington",
-                addressRegion: "CT",
-                addressCountry: "US"
-              },
-              areaServed: ["Newington", "Wethersfield", "Glastonbury", "West Hartford", "Rocky Hill", "Southington", "Litchfield", "Greenwich", "Darien", "Connecticut", "New England"],
-              priceRange: "$$",
-              sameAs: []
-            })}
-          </Script>
-          <Header />
-          <main className="relative z-10">{children}</main>
-          <Footer />
-          </div>
-          {/* Proactively unregister any existing service workers to avoid 404s from stale caches */}
-          <Script id="sw-unregister" strategy="afterInteractive">
-            {`
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(regs => {
-                  for (const reg of regs) {
-                    reg.unregister().catch(() => {});
-                  }
-                }).catch(() => {});
-              }
-            `}
-          </Script>
-        </ThemeProvider>
+    <html lang="en" className={`${barlow.variable} ${instrument.variable}`}>
+      <body>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-681WPRJZLL" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-681WPRJZLL');
+          `}
+        </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-6 focus:py-3 focus:text-primary-foreground"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="main">{children}</main>
+        <SiteFooter />
+        <RevealObserver />
+        {/* Remove any stale service workers left by older versions of the site */}
+        <Script id="sw-unregister" strategy="afterInteractive">
+          {`
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(regs){
+                regs.forEach(function(reg){ reg.unregister().catch(function(){}); });
+              }).catch(function(){});
+            }
+          `}
+        </Script>
       </body>
     </html>
   )

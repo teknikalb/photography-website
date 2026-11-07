@@ -1,101 +1,75 @@
 "use client"
 
-import { useState } from 'react';
-import { Mail, Phone, Send, CheckCircle, AlertCircle, Sparkles, Heart, Camera } from 'lucide-react';
-import { useFormspark } from "@formspark/use-formspark";
+import { useState } from "react"
+import { useFormspark } from "@formspark/use-formspark"
+import { SITE } from "@/lib/site"
 
-// Define the structure for the form data state
 interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  interest: string;
-  preferredDate: string;
-  message: string;
-  honey?: string; // honeypot field
+  name: string
+  email: string
+  message: string
+  honey?: string // honeypot field
 }
 
+const EMPTY: FormData = { name: "", email: "", message: "", honey: "" }
+
+const FIELD =
+  "mt-2 w-full border border-ink/40 bg-page px-4 py-3 text-[19px] font-medium text-ink placeholder:text-ink/45 transition-[border-color,box-shadow] duration-300 focus:border-ink focus:shadow-[0_0_0_3px_rgba(47,46,34,0.15)] focus:outline-none"
+
 export default function ContactForm() {
-  const formId = process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID || "";
-  const [submit, submitting] = useFormspark({
-    formId,
-  });
+  const formId = process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID || ""
+  const [submit] = useFormspark({ formId })
+  const [formData, setFormData] = useState<FormData>(EMPTY)
+  const [status, setStatus] = useState<"" | "submitting" | "success" | "error">("")
 
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    interest: "",
-    preferredDate: "",
-    message: "",
-    honey: "",
-  });
-
-  const [formStatus, setFormStatus] = useState("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value })
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormStatus("submitting");
+    e.preventDefault()
+    // Honeypot spam check
+    if (formData.honey && formData.honey.trim().length > 0) return
+    setStatus("submitting")
     try {
-      // Basic honeypot spam check
-      if (formData.honey && formData.honey.trim().length > 0) {
-        setFormStatus("");
-        return;
-      }
-      await submit(formData as any);
-      setFormStatus("success");
-      setFormData({ name: '', email: '', phone: '', interest: '', preferredDate: '', message: '', honey: '' });
-    } catch (err) {
-      setFormStatus("error");
+      await submit(formData as any)
+      setStatus("success")
+      setFormData(EMPTY)
+    } catch {
+      setStatus("error")
     }
-  };
+  }
 
   if (!formId) {
     return (
-      <div className="text-center p-6 rounded-xl border border-yellow-200 bg-yellow-50 text-yellow-800">
-        Contact form is temporarily unavailable. Please email me directly at
-        {" "}
-        <a href="mailto:greta@gretanoellephoto.com" className="underline">greta@gretanoellephoto.com</a>.
-      </div>
-    );
+      <p className="border border-ink/40 p-5 text-[19px]">
+        The contact form is temporarily unavailable. Please email me directly at{" "}
+        <a href={`mailto:${SITE.email}`} className="underline underline-offset-4">
+          {SITE.email}
+        </a>
+        .
+      </p>
+    )
   }
 
-  if (formStatus === "success") {
+  if (status === "success") {
     return (
-      <div className="text-center p-8">
-        <div className="relative">
-          <div className="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-            <CheckCircle className="h-10 w-10 text-green-600" />
-          </div>
-          <div className="absolute -top-2 -right-2">
-            <Sparkles className="h-6 w-6 text-primary animate-pulse" />
-          </div>
-        </div>
-        <h3 className="font-serif text-3xl font-light mb-4 text-gray-900">Thank You!</h3>
-        <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-          Your message has been sent successfully. I'll get back to you within 24 hours with excitement to discuss your vision!
+      <div role="status" className="py-4">
+        <p className="font-serif text-[2.4rem] uppercase leading-none">
+          Thank you <em>for reaching out!</em>
         </p>
-        <button 
-          onClick={() => setFormStatus("")}
-          className="text-primary hover:underline font-medium text-lg transition-colors hover:text-primary/80"
-        >
+        <p className="copy mt-4 max-w-[480px]">I&rsquo;ll get back to you soon. I can&rsquo;t wait to work with you.</p>
+        <button type="button" onClick={() => setStatus("")} className="link-underline mt-6 text-[18px] font-semibold">
           Send another message
         </button>
       </div>
-    );
+    )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8" noValidate>
-      {/* Honeypot */}
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <input
         type="text"
         name="honey"
-        id="honey"
         value={formData.honey}
         onChange={handleChange}
         tabIndex={-1}
@@ -103,192 +77,45 @@ export default function ContactForm() {
         className="hidden"
         aria-hidden="true"
       />
-      {/* Form Header */}
-      <div className="text-center mb-8">
-        <div className="flex items-center justify-center mb-4">
-          <Heart className="h-6 w-6 text-primary mr-2" />
-          <span className="text-sm font-medium text-primary">Let's Create Magic Together</span>
-          <Heart className="h-6 w-6 text-primary ml-2" />
-        </div>
-      </div>
 
-      {/* Name and Email Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="group">
-          <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
-            Full Name *
-          </label>
-          <div className="relative">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page"
-              placeholder="Your beautiful name"
-            />
-            <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-              <Sparkles className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
-            </div>
-          </div>
-        </div>
-        
-        <div className="group">
-          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
-            Email Address *
-          </label>
-          <div className="relative">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page"
-              placeholder="your@email.com"
-            />
-            <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-              <Mail className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Phone and Session Type Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="group">
-          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
-            Phone Number
-          </label>
-          <div className="relative">
-            <input
-              type="tel"
-              name="phone"
-              id="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page"
-              placeholder="(123) 456-7890"
-            />
-            <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-              <Phone className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
-            </div>
-          </div>
-        </div>
-        
-        <div className="group">
-          <label htmlFor="interest" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
-            Session Type *
-          </label>
-          <div className="relative">
-            <select 
-              name="interest"
-              id="interest"
-              value={formData.interest}
-              onChange={handleChange}
-              required
-              className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page appearance-none"
-            >
-              <option value="" disabled>Select your perfect session...</option>
-              <option value="Full Photography Session ($350)">Full Photography Session ($350)</option>
-              <option value="Fall Mini Session ($200)">Fall Mini Session ($200)</option>
-              <option value="Mother's Day Minis ($200)">Mother's Day Minis ($200)</option>
-              <option value="Valentine's Mini Session ($200)">Valentine's Mini Session ($200)</option>
-              <option value="Pet Photography Session ($250)">Pet Photography Session ($250)</option>
-              <option value="Family Session">Family Session</option>
-              <option value="Maternity Session">Maternity Session</option>
-              <option value="Couples/Engagement">Couples/Engagement</option>
-              <option value="Portraits/Headshots">Portraits/Headshots</option>
-              <option value="Graduation">Graduation</option>
-              <option value="Events">Events</option>
-              <option value="Other">Other (please specify in message)</option>
-            </select>
-            <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-              <Camera className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Preferred Date */}
-      <div className="group">
-        <label htmlFor="preferredDate" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
-          Preferred Date
+      <div>
+        <label htmlFor="name" className="label">
+          Name <span aria-hidden>*</span>
         </label>
-        <div className="relative">
-          <input
-            type="date"
-            name="preferredDate"
-            id="preferredDate"
-            value={formData.preferredDate}
-            onChange={handleChange}
-            className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page"
-          />
-          <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-            <Sparkles className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
-          </div>
-        </div>
-        <p className="text-sm text-gray-500 mt-2 italic">Optional - helps me check availability for your perfect day</p>
+        <input id="name" name="name" type="text" required autoComplete="name" value={formData.name} onChange={handleChange} className={FIELD} />
       </div>
 
-      {/* Message */}
-      <div className="group">
-        <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-3 group-hover:text-primary transition-colors">
-          Tell me about your vision *
+      <div>
+        <label htmlFor="email" className="label">
+          Email address <span aria-hidden>*</span>
         </label>
-        <div className="relative">
-          <textarea
-            name="message"
-            id="message"
-            rows={6}
-            required
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary transition-all duration-300 bg-page resize-none"
-            placeholder="Tell me about what you're looking for, any specific ideas you have, location preferences, or questions you might have. I'd love to hear your story and help bring your vision to life! ✨"
-          ></textarea>
-          <div className="absolute top-4 right-4 flex items-center pointer-events-none">
-            <Heart className="h-5 w-5 text-gray-400 group-hover:text-primary transition-colors" />
-          </div>
-        </div>
+        <input id="email" name="email" type="email" required autoComplete="email" value={formData.email} onChange={handleChange} className={FIELD} />
       </div>
 
-      {/* Submit Button */}
-      <div className="pt-6">
-        <button
-          type="submit"
-          disabled={formStatus === "submitting"}
-          className="w-full bg-gradient-to-r from-primary to-primary/90 text-white px-8 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 hover:from-primary/90 hover:to-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:scale-[1.02] transform"
-        >
-          {formStatus === "submitting" ? (
-            <>
-              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
-              Sending Your Message...
-            </>
-          ) : (
-            <>
-              <Send className="h-6 w-6" />
-              Send Message
-            </>
-          )}
-        </button>
+      <div>
+        <label htmlFor="message" className="label">
+          Message <span aria-hidden>*</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          required
+          value={formData.message}
+          onChange={handleChange}
+          className={`${FIELD} resize-none`}
+        />
       </div>
 
-      {/* Error State */}
-      {formStatus === 'error' && (
-        <div className="flex items-center gap-3 p-6 bg-red-50 border-2 border-red-200 rounded-2xl">
-          <AlertCircle className="h-6 w-6 text-red-600 flex-shrink-0" />
-          <p className="text-red-700 font-medium">Something went wrong. Please try again or email me directly at greta@gretanoellephoto.com</p>
-        </div>
+      <button type="submit" disabled={status === "submitting"} className="pill w-full disabled:opacity-50 sm:w-auto">
+        {status === "submitting" ? "Sending..." : "Send message"}
+      </button>
+
+      {status === "error" && (
+        <p role="alert" className="text-[18px] font-semibold text-destructive">
+          Something went wrong. Please try again or email me directly at {SITE.email}.
+        </p>
       )}
-
-      {/* Form Footer */}
-      <div className="text-center pt-6 border-t border-gray-200">
-        {/* Removed urgent inquiries phone number as requested */}
-      </div>
     </form>
-  );
+  )
 }
