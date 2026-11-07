@@ -57,19 +57,21 @@ const nextConfig = {
     ]
   },
   
+  // The site was reduced to six core pages. Every retired URL is permanently
+  // redirected to its closest remaining page so existing links and rankings carry over.
   async redirects() {
     return [
-      {
-        source: "/mini-sessions/:path*",
-        destination: "/services/mini-sessions",
-        permanent: true,
-      },
-      // Add canonical redirects for better SEO
-      {
-        source: "/index.html",
-        destination: "/",
-        permanent: true,
-      },
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/investment", destination: "/services", permanent: true },
+      { source: "/pricing", destination: "/services", permanent: true },
+      { source: "/services/:path+", destination: "/services", permanent: true },
+      { source: "/mini-sessions", destination: "/services", permanent: true },
+      { source: "/mini-sessions/:path*", destination: "/services", permanent: true },
+      { source: "/locations", destination: "/contact", permanent: true },
+      { source: "/locations/:path*", destination: "/contact", permanent: true },
+      { source: "/portfolio/:path+", destination: "/portfolio", permanent: true },
+      { source: "/sitemap-blog.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemap-portfolio.xml", destination: "/sitemap.xml", permanent: true },
     ]
   },
   
